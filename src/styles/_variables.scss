@@ -1,0 +1,66 @@
+$light: #FFFFFF;
+$medium: #FAFAFA;
+$dark: #000000;
+
+$color: (
+  "background": $light,
+  "background-variant": $medium,
+  "surface": $dark,
+  "on-background": $dark,
+  "on-surface": $light
+);
+
+$spacing-scale: 0.25rem;
+
+$spacing: (
+  "XS": $spacing-scale*1,
+  "S": $spacing-scale*2,
+  "M": $spacing-scale*4,
+  "L": $spacing-scale*16,
+  "XL": $spacing-scale*32
+);
+
+$type-family: "Helvetica Neue", -apple-system, BlinkMacSystemFont, sans-serif;
+$type-scale: 1rem;
+
+$type-title-1: (
+  "size": $type-scale*2.125,
+  "weight": bold,
+  "leading": $type-scale*2.5,
+  "character-spacing": -0.025rem
+);
+
+$type-title-2: (
+  "size": $type-scale*1.25,
+  "weight": bold,
+  "leading": $type-scale*1.5,
+  "character-spacing": -0.01875rem
+);
+
+$type-headline: (
+  "size": $type-scale*1.5,
+  "weight": normal,
+  "leading": $type-scale*2,
+  "character-spacing": -0.01875rem
+);
+
+$type-body: (
+  "size": $type-scale,
+  "weight": normal,
+  "leading": $type-scale*1.5,
+  "character-spacing": -0.0125rem
+);
+
+$type-caption: (
+  "size": $type-scale*0.75,
+  "weight": normal,
+  "leading": $type-scale,
+  "character-spacing": -0.00625rem
+);
+
+$type-link: (
+  "size": $type-scale,
+  "weight": bold,
+  "leading": $type-scale*1.5,
+  "character-spacing": -0.0125rem
+);
