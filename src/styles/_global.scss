@@ -47,10 +47,10 @@ small {
 
 a {
   color: map-get($color, "on-background");
-  font-size: map-get($type-link, "size");
   font-weight: map-get($type-link, "weight");
-  letter-spacing: map-get($type-link, "character-spacing");
-  line-height: map-get($type-link, "leading");
-  text-transform: uppercase;
   text-decoration: none;
+
+  &:hover {
+    text-decoration: underline;
+  }
 }
