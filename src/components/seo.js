@@ -10,78 +10,106 @@ import PropTypes from "prop-types"
 import Helmet from "react-helmet"
 import { useStaticQuery, graphql } from "gatsby"
 
-function SEO({ description, lang, meta, title }) {
+function SEO({ description, lang, image, meta, pathname, title }) {
   const { site } = useStaticQuery(
     graphql`
       query {
         site {
           siteMetadata {
-            title
-            description
-            author
+            defaultTitle: title
+            titleTemplate
+            defaultDescription: description
+            siteUrl: url
+            defaultImage: image
           }
         }
       }
     `
   )
 
-  const metaDescription = description || site.siteMetadata.description
+  const seo = {
+    title: title || site.siteMetadata.defaultTitle,
+    description: description || site.siteMetadata.defaultDescription,
+    image: `${site.siteMetadata.siteUrl}${image || site.siteMetadata.defaultImage}`,
+    url: `${site.siteMetadata.siteUrl}${pathname || "/"}`,
+  }
 
   return (
     <Helmet
       htmlAttributes={{
         lang,
       }}
-      title={title}
-      titleTemplate={`%s | ${site.siteMetadata.title}`}
+      title={seo.title}
+      titleTemplate={site.siteMetadata.titleTemplate}
       meta={[
         {
           name: `description`,
-          content: metaDescription,
+          content: seo.description,
         },
         {
           property: `og:title`,
-          content: title,
+          content: seo.title,
         },
         {
           property: `og:description`,
-          content: metaDescription,
+          content: seo.description,
+        },
+        {
+          name: "og:image",
+          content: seo.image,
+        },
+        {
+          property: "og:image:width",
+          content: "1200",
+        },
+        {
+          property: "og:image:height",
+          content: "628",
         },
         {
           property: `og:type`,
           content: `website`,
         },
         {
-          name: `twitter:card`,
-          content: `summary`,
-        },
-        {
-          name: `twitter:creator`,
-          content: site.siteMetadata.author,
+          property: `og:url`,
+          content: seo.url,
         },
         {
           name: `twitter:title`,
-          content: title,
+          content: seo.title,
         },
         {
           name: `twitter:description`,
-          content: metaDescription,
+          content: seo.description,
         },
+        {
+          name: "twitter:image",
+          content: seo.image,
+        },
+        {
+          name: "twitter:card",
+          content: "summary_large_image",
+        }
       ].concat(meta)}
     />
   )
 }
 
 SEO.defaultProps = {
+  description: null,
   lang: `en`,
+  image: null,
   meta: [],
-  description: ``,
+  pathname: null,
+  title: null,
 }
 
 SEO.propTypes = {
   description: PropTypes.string,
   lang: PropTypes.string,
+  image: PropTypes.string,
   meta: PropTypes.arrayOf(PropTypes.object),
+  pathname: PropTypes.string,
   title: PropTypes.string.isRequired,
 }
 

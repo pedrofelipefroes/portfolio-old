@@ -1,8 +1,10 @@
 module.exports = {
   siteMetadata: {
-    title: `Gatsby Default Starter`,
-    description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
-    author: `@gatsbyjs`,
+    title: `Froes ⸺ Design, Development, and Marketing.`,
+    titleTemplate: `%s. Froes ⸺ Design, Development, and Marketing.`,
+    description: `This is the portfolio of a Designer, Developer, and Marketer who loves to work developing cohesive brands through comprehensive design systems.`,
+    image: `/images/froes-og-image.png`,
+    url: `https://froes.design`,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
@@ -18,13 +20,13 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `gatsby-starter-default`,
-        short_name: `starter`,
+        name: `Froes ⸺ Designer, Developer, and Marketer `,
+        short_name: `Froes`,
         start_url: `/`,
-        background_color: `#663399`,
-        theme_color: `#663399`,
-        display: `minimal-ui`,
-        icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
+        background_color: `#FFFFFF`,
+        theme_color: `#FFFFFF`,
+        display: `standalone`,
+        icon: `src/images/icon.png`,
       },
     },
     // this (optional) plugin enables Progressive Web App + Offline functionality
