@@ -1,0 +1,39 @@
+.c-footer {
+  background-color: map-get($color, "surface");
+  display: flex;
+  padding: map-get($spacing, "XL") map-get($spacing, "L") map-get($spacing, "XXL");
+
+  @include for-tablet-and-up {
+    padding: map-get($spacing, "L") map-get($spacing, "L") map-get($spacing, "XXL");
+  }
+
+  @include for-desktop-and-up {
+    padding: map-get($spacing, "L") map-get($spacing, "XXL") map-get($spacing, "XXL");
+  }
+
+  &__container {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+  }
+
+  &__link {
+    font-size: map-get($type-link, "size");
+    font-weight: map-get($type-link, "weight");
+    line-height: map-get($type-link, "leading");
+    letter-spacing: map-get($type-link, "character-spacing");
+    text-transform: uppercase;
+
+    &:not(:last-of-type) {
+      margin-bottom: map-get($spacing, "XS");
+    }
+
+    &:last-of-type {
+      margin-bottom: map-get($spacing, "M");
+    }
+  }
+
+  a, small {
+    color: map-get($color, "on-surface");
+  }
+}
