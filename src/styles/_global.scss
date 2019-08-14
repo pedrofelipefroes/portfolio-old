@@ -54,3 +54,8 @@ a {
     text-decoration: underline;
   }
 }
+
+.l-container {
+  margin: 0 auto;
+  max-width: $container-max-width;
+}

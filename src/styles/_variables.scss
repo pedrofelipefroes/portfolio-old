@@ -16,9 +16,24 @@ $spacing: (
   "XS": $spacing-scale*1,
   "S": $spacing-scale*2,
   "M": $spacing-scale*4,
-  "L": $spacing-scale*16,
-  "XL": $spacing-scale*32
+  "L": $spacing-scale*8,
+  "XL": $spacing-scale*16,
+  "XXL": $spacing-scale*32
 );
+
+@mixin for-phone-only {
+  @media (max-width: 47.9375rem) { @content; }
+}
+
+@mixin for-tablet-and-up {
+  @media (min-width: 48rem) { @content; }
+}
+
+@mixin for-desktop-and-up {
+  @media (min-width: 85.375rem) { @content; }
+}
+
+$container-max-width: 85.375rem;
 
 $type-family: "Helvetica Neue", -apple-system, BlinkMacSystemFont, sans-serif;
 $type-scale: 1rem;
