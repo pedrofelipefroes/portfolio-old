@@ -1,20 +1,29 @@
 import React from "react"
-import { Link } from "gatsby"
 
 import Layout from "../components/layout"
-import Image from "../components/image"
 import SEO from "../components/seo"
+import ArrowedLink from "../components/arrowed-link/arrowedLink"
+
+import "../styles/index.scss"
 
 const IndexPage = () => (
   <Layout>
-    <SEO title="Home" />
-    <h1>Hi people</h1>
-    <p>Welcome to your new Gatsby site.</p>
-    <p>Now go build something great.</p>
-    <div style={{ maxWidth: `300px`, marginBottom: `1.45rem` }}>
-      <Image />
-    </div>
-    <Link to="/page-2/">Go to page 2</Link>
+    <SEO title="Portfolio" />
+    <header className="c-home-header l-container">
+      <div className="c-home-header__title">
+        <h1>
+          Design, Development, and Marketing should intertwine to create
+          powerful product experiences.
+        </h1>
+      </div>
+      <div className="c-home-header__headline">
+        <h2>
+          <strong>I am Froes</strong>, and I love to work in this intersection
+          developing cohesive brands through comprehensive design systems.
+        </h2>
+        <ArrowedLink to="/page-2/" label="More About Me" />
+      </div>
+    </header>
   </Layout>
 )
 
