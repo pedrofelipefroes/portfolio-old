@@ -4,11 +4,11 @@
   padding: map-get($spacing, "XL") map-get($spacing, "L") map-get($spacing, "XXL");
 
   @include for-tablet-and-up {
-    padding: map-get($spacing, "L") map-get($spacing, "L") map-get($spacing, "XXL");
+    padding: map-get($spacing, "XL") map-get($spacing, "L") map-get($spacing, "XXL");
   }
 
   @include for-desktop-and-up {
-    padding: map-get($spacing, "L") map-get($spacing, "XXL") map-get($spacing, "XXL");
+    padding: map-get($spacing, "XL") map-get($spacing, "XXL") map-get($spacing, "XXL");
   }
 
   &__container {
