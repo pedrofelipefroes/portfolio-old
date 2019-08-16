@@ -13,9 +13,9 @@ export default props => (
       xmlns="http://www.w3.org/2000/svg"
     >
       <rect id="line" width="16" height="2" x="4" y="11.5" />
-      <g id="beak" transform="translate(15, 12.5) rotate(45) translate(-15, -12.5) translate(11, 8.5)">
-        <rect width="8" height="2" x="0" y="0" />
-        <rect width="2" height="8" x="6" y="0" />
+      <g id="beak">
+        <rect width="8" height="2" x="0" y="0" transform="translate(15, 12.5) rotate(45) translate(-15, -12.5) translate(12, 7.5)" />
+        <rect width="2" height="8" x="6" y="0" transform="translate(15, 12.5) rotate(45) translate(-15, -12.5) translate(12, 7.5)" />
       </g>
     </svg>
   </Link>

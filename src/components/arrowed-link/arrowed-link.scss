@@ -17,7 +17,7 @@
     width: 3rem;
 
     #beak {
-      transition: transform 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+      transition: all 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
     }
 
     #line {
@@ -31,8 +31,7 @@
 
   &:hover &__arrow {
     #beak {
-      transform: translate(39px, 12.5px) rotate(45deg) translate(-39px, -12.5px)
-        translate(35px, 8.5px);
+      transform: translate(23px, 0);
     }
 
     #line {
