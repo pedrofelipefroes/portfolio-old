@@ -6,7 +6,7 @@ const Footer = () => (
       <a href="www.linkedin.com/in/froesdesign" className="c-footer__link">
         LinkedIn
       </a>
-      <a href="mailto:contact@froes.design" className="c-footer__link">
+      <a href="mailto:hello@froes.design" className="c-footer__link">
         Work Inquiries
       </a>
       <small>
