@@ -1,13 +1,15 @@
-$light: #FFFFFF;
-$medium: #FAFAFA;
-$dark: #000000;
+$lighter: #FFFFFF;
+$light: #FAFAFA;
+$dark: #808080;
+$darker: #000000;
 
 $color: (
-  "background": $light,
-  "background-variant": $medium,
-  "surface": $dark,
-  "on-background": $dark,
-  "on-surface": $light
+  "background": $lighter,
+  "background-variant": $light,
+  "surface": $darker,
+  "on-background": $darker,
+  "on-background-variant": $dark,
+  "on-surface": $lighter,
 );
 
 $spacing-scale: 0.25rem;

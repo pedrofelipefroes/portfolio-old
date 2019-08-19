@@ -1,0 +1,35 @@
+.c-nav {
+  background-color: map-get($color, "background");
+  box-sizing: border-box;
+  display: flex;
+  padding: map-get($spacing, "L") map-get($spacing, "L") map-get($spacing, "M");
+  position: fixed;
+  width: 100%;
+
+  @include for-tablet-and-up {
+    background-color: unset;
+
+    * {
+      color: map-get($color, "on-background-variant");
+      fill: map-get($color, "on-background-variant");
+    }
+  }
+
+  &__container {
+    display: flex;
+    flex-grow: 1;
+    justify-content: flex-end;
+  }
+
+  &__item {
+    text-transform: uppercase;
+    font-size: map-get($type-link, "size");
+    letter-spacing: map-get($type-link, "character-spacing");
+    line-height: map-get($type-link, "leading");
+    margin-left: map-get($spacing, "M");
+
+    &:hover {
+      text-decoration: none;
+    }
+  }
+}
