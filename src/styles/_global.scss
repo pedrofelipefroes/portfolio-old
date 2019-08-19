@@ -1,6 +1,8 @@
 html {
   font-family: $type-family;
+  -moz-osx-font-smoothing: grayscale;
   -ms-text-size-adjust: 100%;
+  -webkit-font-smoothing: antialiased;
   -webkit-text-size-adjust: 100%;
 }
 
@@ -62,44 +64,4 @@ strong {
 .l-container {
   margin: 0 auto;
   max-width: $container-max-width;
-}
-
-.c-home-header {
-  display: flex;
-  flex-direction: column;
-  padding: map-get($spacing, "XXL") map-get($spacing, "L")
-    map-get($spacing, "XL");
-
-  @include for-tablet-and-up {
-    padding: map-get($spacing, "XXL") map-get($spacing, "L")
-      map-get($spacing, "XL");
-  }
-
-  @include for-desktop-and-up {
-    flex-direction: row;
-    padding: map-get($spacing, "XXL") map-get($spacing, "XXL")
-      map-get($spacing, "XL");
-  }
-
-  &__title h1,
-  &__headline h2 {
-    margin-bottom: map-get($spacing, "L");
-
-    @include for-tablet-and-up {
-      max-width: $type-scale * 32;
-    }
-  }
-
-  &__title {
-    @include for-desktop-and-up {
-      flex-grow: 1;
-      margin-right: map-get($spacing, "XL");
-    }
-  }
-
-  &__headline {
-    @include for-desktop-and-up {
-      flex-grow: 1;
-    }
-  }
 }

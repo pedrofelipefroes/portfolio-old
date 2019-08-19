@@ -1,27 +1,27 @@
 import React from "react"
 
-import Layout from "../components/layout"
+import Layout from "../components/layout/layout"
 import SEO from "../components/seo"
 import ArrowedLink from "../components/arrowed-link/arrowedLink"
 
 import "../styles/index.scss"
 
 const IndexPage = () => (
-  <Layout>
+  <Layout hasNav={false} >
     <SEO title="Portfolio" />
-    <header className="c-home-header l-container">
-      <div className="c-home-header__title">
+    <header className="p-home-header l-container">
+      <div className="p-home-header__title">
         <h1>
           Design, Development, and Marketing should intertwine to create
           powerful product experiences.
         </h1>
       </div>
-      <div className="c-home-header__headline">
+      <div className="p-home-header__headline">
         <h2>
           <strong>I am Froes</strong>, and I love to work in this intersection
           developing cohesive brands through comprehensive design systems.
         </h2>
-        <ArrowedLink to="/page-2/" label="More About Me" />
+        <ArrowedLink to="/about/" label="More About Me" />
       </div>
     </header>
   </Layout>
