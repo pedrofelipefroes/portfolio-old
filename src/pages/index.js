@@ -9,14 +9,14 @@ import "../styles/index.scss"
 const IndexPage = () => (
   <Layout hasNav={false} >
     <SEO title="Portfolio" />
-    <header className="p-home-header l-container">
-      <div className="p-home-header__title">
+    <header className="p-home__header l-container">
+      <div className="p-home__header__title">
         <h1>
           Design, Development, and Marketing should intertwine to create
           powerful product experiences.
         </h1>
       </div>
-      <div className="p-home-header__headline">
+      <div className="p-home__header__headline">
         <h2>
           <strong>I am Froes</strong>, and I love to work in this intersection
           developing cohesive brands through comprehensive design systems.
