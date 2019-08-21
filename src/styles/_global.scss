@@ -38,6 +38,10 @@ p {
   font-weight: map-get($type-body, "weight");
   letter-spacing: map-get($type-body, "character-spacing");
   line-height: map-get($type-body, "leading");
+
+  &:not(:last-child) {
+    margin-bottom: map-get($type-body, "leading");
+  }
 }
 
 small {
