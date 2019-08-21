@@ -5,6 +5,7 @@
   padding: map-get($spacing, "L") map-get($spacing, "L") map-get($spacing, "M");
   position: fixed;
   width: 100%;
+  z-index: 100;
 
   &__container {
     display: flex;
