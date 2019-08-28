@@ -14,6 +14,7 @@
     fill: map-get($color, "on-background");
     fill-rule: nonzero;
     height: map-get($type-link, "leading");
+    margin-left: map-get($spacing, "XS");
     width: 3rem;
 
     &--before {
@@ -42,6 +43,14 @@
 
     #line {
       width: 39px;
+    }
+  }
+
+  &--external {
+    &:hover .c-arrowed-link__arrow {
+      #line.c-arrowed-link--external {
+        width: 35px;
+      }
     }
   }
 }
