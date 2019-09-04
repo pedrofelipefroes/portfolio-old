@@ -6,39 +6,69 @@
     display: flex;
     flex-direction: column;
     flex-grow: 1;
-    padding: map-get($spacing, "XL") map-get($spacing, "L")
-      map-get($spacing, "XXL");
+    padding: map-get($spacing, "XL") map-get($spacing, "L");
 
     @include for-tablet-and-up {
-      padding: map-get($spacing, "XL") map-get($spacing, "XL")
-        map-get($spacing, "XXL");
+      padding: map-get($spacing, "XL") map-get($spacing, "XL") map-get($spacing, "L");
     }
 
     @include for-desktop-and-up {
       box-sizing: border-box;
-      padding: map-get($spacing, "XL") map-get($spacing, "XXL")
-        map-get($spacing, "XXL");
+      padding: map-get($spacing, "XL") map-get($spacing, "XXL") map-get($spacing, "L");
     }
   }
 
-  &__link {
-    font-size: map-get($type-link, "size");
-    font-weight: map-get($type-link, "weight");
-    line-height: map-get($type-link, "leading");
-    letter-spacing: map-get($type-link, "character-spacing");
-    text-transform: uppercase;
+  &__links {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: map-get($spacing, "M");
 
-    &:not(:last-of-type) {
-      margin-bottom: map-get($spacing, "XS");
+
+    @include for-tablet-and-up {
+      flex-direction: row;
     }
 
-    &:last-of-type {
-      margin-bottom: map-get($spacing, "M");
+    .c-arrowed-link {
+      font-size: map-get($type-link, "size");
+      font-weight: map-get($type-link, "weight");
+      line-height: map-get($type-link, "leading");
+      letter-spacing: map-get($type-link, "character-spacing");
+      text-transform: uppercase;
+  
+      &:not(:last-of-type) {
+        margin-bottom: map-get($spacing, "XS");
+
+        @include for-tablet-and-up {
+          margin-bottom: unset;
+          margin-right: map-get($spacing, "L");
+        }
+      }
+    }
+  }
+
+  &__disclaimer {
+    border-top: solid 1px hsl(0,0,20);
+    display: flex;
+    flex-direction: column;
+    padding-top: map-get($spacing, "M");
+
+    @include for-tablet-and-up {
+      flex-direction: row;
+      justify-content: space-between;
+    }
+
+    small:not(:last-of-type) {
+      margin-bottom: map-get($spacing, "S");
     }
   }
 
   a,
-  small {
+  small,
+  .c-arrowed-link__label {
     color: map-get($color, "on-surface");
+  }
+
+  .c-arrowed-link__arrow {
+    fill: map-get($color, "on-surface");
   }
 }
