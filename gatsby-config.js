@@ -1,7 +1,7 @@
 module.exports = {
   siteMetadata: {
     title: `Froes ⸺ Design, Development, and Marketing.`,
-    titleTemplate: `%s. Froes ⸺ Design, Development, and Marketing.`,
+    titleTemplate: `%s Froes ⸺ Design, Development, and Marketing.`,
     description: `This is the portfolio of a Designer, Developer, and Marketer who loves to work developing cohesive brands through comprehensive design systems.`,
     image: `/froes-og-image.png`,
     url: `https://froes.design`,
