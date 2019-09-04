@@ -8,7 +8,7 @@ import "../styles/index.scss"
 
 const IndexPage = () => (
   <Layout hasNav={false} >
-    <SEO title="Portfolio" />
+    <SEO title="Portfolio. " />
     <header className="p-home__header l-container">
       <div className="p-home__header__title">
         <h1>
