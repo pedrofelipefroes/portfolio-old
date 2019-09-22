@@ -47,7 +47,6 @@ p {
 small {
   font-size: map-get($type-caption, "size");
   font-weight: map-get($type-caption, "weight");
-  letter-spacing: map-get($type-caption, "character-spacing");
   line-height: map-get($type-caption, "leading");
 }
 
@@ -65,7 +64,15 @@ strong {
   font-weight: bold;
 }
 
-.l-container {
+.container-canvas {
   margin: 0 auto;
-  max-width: $container-max-width;
+  max-width: $container-canvas;
+}
+
+.container-text--small {
+  max-width: $container-text--small;
+}
+
+.container-text--medium {
+  max-width: $container-text--medium;
 }
