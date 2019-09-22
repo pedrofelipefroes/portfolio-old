@@ -20,22 +20,29 @@ $spacing: (
   "M": $spacing-scale*4,
   "L": $spacing-scale*8,
   "XL": $spacing-scale*16,
-  "XXL": $spacing-scale*32
+  "XXL": $spacing-scale*32,
+  "XXXL": $spacing-scale*64
 );
 
-@mixin for-phone-only {
-  @media (max-width: 47.9375rem) { @content; }
+@mixin bp-small {
+  @media screen and (min-width: 37.5rem) { @content; }
 }
 
-@mixin for-tablet-and-up {
-  @media (min-width: 48rem) { @content; }
+@mixin bp-medium {
+  @media screen and (min-width: 60rem) { @content; }
 }
 
-@mixin for-desktop-and-up {
-  @media (min-width: 85.375rem) { @content; }
+@mixin bp-large {
+  @media screen and (min-width: 80rem) { @content; }
 }
 
-$container-max-width: 85.375rem;
+@mixin bp-x-large {
+  @media screen and (min-width: 120rem) { @content; }
+}
+
+$container-text--small: 32rem;
+$container-text--medium: 40rem;
+$container-canvas: 80rem;
 
 $type-family: "Helvetica Neue", -apple-system, BlinkMacSystemFont, sans-serif;
 $type-scale: 1rem;
@@ -43,36 +50,35 @@ $type-scale: 1rem;
 $type-title-1: (
   "size": $type-scale*2.125,
   "weight": bold,
-  "leading": $type-scale*2.5,
+  "leading": 1.1764705882,
   "character-spacing": -0.025rem
 );
 
 $type-title-2: (
   "size": $type-scale*1.25,
   "weight": bold,
-  "leading": $type-scale*1.5,
+  "leading": 1.2,
   "character-spacing": -0.01875rem
 );
 
 $type-headline: (
   "size": $type-scale*1.5,
   "weight": normal,
-  "leading": $type-scale*2,
+  "leading": 1.3333333333,
   "character-spacing": -0.01875rem
 );
 
 $type-body: (
-  "size": $type-scale,
+  "size": $type-scale*1.0625,
   "weight": normal,
-  "leading": $type-scale*1.5,
-  "character-spacing": -0.0125rem
+  "leading": 1.5294117647,
+  "character-spacing": -0.013125rem
 );
 
 $type-caption: (
   "size": $type-scale*0.75,
   "weight": normal,
-  "leading": $type-scale,
-  "character-spacing": -0.00625rem
+  "leading": $type-scale
 );
 
 $type-link: (
