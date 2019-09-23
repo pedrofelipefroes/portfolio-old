@@ -2,7 +2,7 @@
   display: flex;
 
   &__label {
-    color: map-get($color, "on-background-variant");
+    color: map-get($color, "on-background");
     font-size: map-get($type-link, "size");
     letter-spacing: map-get($type-link, "character-spacing");
     line-height: map-get($type-link, "leading");
@@ -12,12 +12,11 @@
 
     &:hover {
       text-decoration: none;
-      color: map-get($color, "on-background");
     }
   }
 
   &__arrow {
-    fill: map-get($color, "on-background-variant");
+    fill: map-get($color, "on-background");
     fill-rule: nonzero;
     height: map-get($type-link, "leading");
     margin-left: map-get($spacing, "XS");
@@ -40,12 +39,9 @@
 
   &:hover {
     text-decoration: none;
-    color: map-get($color, "on-background");
   }
 
   &:hover &__arrow {
-    fill: map-get($color, "on-background");
-
     #beak {
       transform: translate(23px, 0);
     }

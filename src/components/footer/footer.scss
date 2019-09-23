@@ -5,10 +5,18 @@
   small,
   .c-arrowed-link__label {
     color: map-get($color, "on-surface");
+
+    &:hover {
+      color: map-get($color, "on-surface-variant");
+    }
   }
 
   .c-arrowed-link__arrow {
     fill: map-get($color, "on-surface");
+
+    &:hover {
+      fill: map-get($color, "on-surface-variant");
+    }
   }
 
   .l-container__content {

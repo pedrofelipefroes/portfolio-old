@@ -2,11 +2,28 @@
   display: flex;
   justify-content: center;
 
-  .c-arrowed-link .c-arrowed-link__label {
-    display: none;
+  .c-arrowed-link {
+    .c-arrowed-link__label {
+      display: none;
 
-    @include bp-medium {
-      display: block;
+      @include bp-medium {
+        color: map-get($color, "on-background-variant");
+        display: block;
+      }
+    }
+
+    .c-arrowed-link__arrow {
+      fill: map-get($color, "on-background-variant");
+    }
+
+    &:hover {
+      .c-arrowed-link__label {
+        color: map-get($color, "on-background");
+      }
+
+      .c-arrowed-link__arrow {
+        fill: map-get($color, "on-background");
+      }
     }
   }
 
@@ -27,6 +44,11 @@
   }
 
   &__item {
+    color: map-get($color, "on-background-variant");
     margin-left: map-get($spacing, "L");
+
+    &:hover {
+      color: map-get($color, "on-background");
+    }
   }
 }
