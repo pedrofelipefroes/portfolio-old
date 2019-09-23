@@ -1,66 +1,5 @@
 .c-footer {
   background-color: map-get($color, "surface");
-  display: flex;
-
-  &__container {
-    display: flex;
-    flex-direction: column;
-    flex-grow: 1;
-    padding: map-get($spacing, "XL") map-get($spacing, "L");
-
-    @include for-tablet-and-up {
-      padding: map-get($spacing, "XL") map-get($spacing, "XL") map-get($spacing, "L");
-    }
-
-    @include for-desktop-and-up {
-      box-sizing: border-box;
-      padding: map-get($spacing, "XL") map-get($spacing, "XXL") map-get($spacing, "L");
-    }
-  }
-
-  &__links {
-    display: flex;
-    flex-direction: column;
-    margin-bottom: map-get($spacing, "M");
-
-
-    @include for-tablet-and-up {
-      flex-direction: row;
-    }
-
-    .c-arrowed-link {
-      font-size: map-get($type-link, "size");
-      font-weight: map-get($type-link, "weight");
-      line-height: map-get($type-link, "leading");
-      letter-spacing: map-get($type-link, "character-spacing");
-      text-transform: uppercase;
-  
-      &:not(:last-of-type) {
-        margin-bottom: map-get($spacing, "XS");
-
-        @include for-tablet-and-up {
-          margin-bottom: unset;
-          margin-right: map-get($spacing, "L");
-        }
-      }
-    }
-  }
-
-  &__disclaimer {
-    border-top: solid 1px hsl(0,0,20);
-    display: flex;
-    flex-direction: column;
-    padding-top: map-get($spacing, "M");
-
-    @include for-tablet-and-up {
-      flex-direction: row;
-      justify-content: space-between;
-    }
-
-    small:not(:last-of-type) {
-      margin-bottom: map-get($spacing, "S");
-    }
-  }
 
   a,
   small,
@@ -70,5 +9,55 @@
 
   .c-arrowed-link__arrow {
     fill: map-get($color, "on-surface");
+  }
+
+  .l-container__content {
+    display: flex;
+    flex-direction: column;
+    padding: map-get($spacing, "XL") map-get($spacing, "L");
+
+    @include bp-small {
+      padding: map-get($spacing, "XL");
+    }
+
+    @include bp-large {
+      padding: map-get($spacing, "XL") map-get($spacing, "XXL");
+    }
+  }
+
+  &__links,
+  &__disclaimer {
+    display: flex;
+    flex-direction: column;
+
+    @include bp-medium {
+      flex-direction: row;
+    }
+  }
+
+  &__links {
+    margin-bottom: map-get($spacing, "M");
+
+    .c-arrowed-link:not(:last-of-type) {
+      margin-bottom: map-get($spacing, "XS");
+
+      @include bp-medium {
+        margin-bottom: unset;
+        margin-right: map-get($spacing, "XL");
+      }
+    }
+  }
+
+  &__disclaimer {
+    border-top: solid 1px hsl(0, 0, 20);
+    padding-top: map-get($spacing, "M");
+
+    small:not(:last-of-type) {
+      margin-bottom: map-get($spacing, "S");
+    }
+
+    @include bp-medium {
+      justify-content: space-between;
+    }
   }
 }

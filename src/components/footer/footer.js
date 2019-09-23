@@ -4,7 +4,7 @@ import ArrowedLink from "../arrowed-link/arrowedLink"
 
 const Footer = () => (
   <footer className="c-footer">
-    <div className="l-container c-footer__container">
+    <div className="l-container__content">
       <section className="c-footer__links">
         <ArrowedLink
           to="https://www.linkedin.com/in/froesdesign"
@@ -25,7 +25,7 @@ const Footer = () => (
           </a>
           .
         </small>
-        <small>Froes. 2019.</small>
+        <small>© 2019 Froes.</small>
       </section>
     </div>
   </footer>
