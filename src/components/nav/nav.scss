@@ -1,47 +1,32 @@
 .c-nav {
-  background-color: map-get($color, "background");
-  box-sizing: border-box;
   display: flex;
-  padding: map-get($spacing, "L") map-get($spacing, "L") map-get($spacing, "M");
-  position: fixed;
-  width: 100%;
-  z-index: 100;
-
-  &__container {
-    display: flex;
-    flex-grow: 1;
-  }
+  justify-content: center;
 
   .c-arrowed-link .c-arrowed-link__label {
     display: none;
+
+    @include bp-medium {
+      display: block;
+    }
   }
 
-  @include for-tablet-and-up {
-    background-color: unset;
+  .l-container__content {
+    background-color: map-get($color, "background");
+    display: flex;
+    justify-content: space-between;
+    padding: map-get($spacing, "L") map-get($spacing, "L")
+      map-get($spacing, "M");
+    position: fixed;
+    width: 100%;
+    z-index: 100;
 
-    * {
-      color: map-get($color, "on-background-variant");
-      fill: map-get($color, "on-background-variant");
-    }
-
-    &__container {
+    @include bp-medium {
+      background-color: unset;
       justify-content: flex-end;
-    }
-
-    .c-arrowed-link .c-arrowed-link__label {
-      display: unset;
     }
   }
 
   &__item {
-    text-transform: uppercase;
-    font-size: map-get($type-link, "size");
-    letter-spacing: map-get($type-link, "character-spacing");
-    line-height: map-get($type-link, "leading");
-    margin-left: map-get($spacing, "M");
-
-    &:hover {
-      text-decoration: none;
-    }
+    margin-left: map-get($spacing, "L");
   }
 }

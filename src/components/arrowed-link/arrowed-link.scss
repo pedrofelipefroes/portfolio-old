@@ -1,17 +1,23 @@
 .c-arrowed-link {
   display: flex;
-  text-decoration: none;
-  text-transform: uppercase;
 
   &__label {
-    color: map-get($color, "on-background");
+    color: map-get($color, "on-background-variant");
     font-size: map-get($type-link, "size");
     letter-spacing: map-get($type-link, "character-spacing");
     line-height: map-get($type-link, "leading");
+    text-transform: uppercase;
+    text-decoration: none;
+    transition: color 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+
+    &:hover {
+      text-decoration: none;
+      color: map-get($color, "on-background");
+    }
   }
 
   &__arrow {
-    fill: map-get($color, "on-background");
+    fill: map-get($color, "on-background-variant");
     fill-rule: nonzero;
     height: map-get($type-link, "leading");
     margin-left: map-get($spacing, "XS");
@@ -28,15 +34,18 @@
     }
 
     #line {
-      transition: width 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+      transition: all 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
     }
   }
 
   &:hover {
     text-decoration: none;
+    color: map-get($color, "on-background");
   }
 
   &:hover &__arrow {
+    fill: map-get($color, "on-background");
+
     #beak {
       transform: translate(23px, 0);
     }

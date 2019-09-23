@@ -6,10 +6,13 @@ import ArrowedLink from "../arrowed-link/arrowedLink"
 
 const Nav = ({ hasAboutLink }) => (
   <nav className="c-nav">
-    <div className="l-container c-nav__container">
-      <ArrowedLink label="Work" isIconAfter={false} to="/" />
+    <div className="l-container__content">
+      <ArrowedLink label="Featured" isIconAfter={false} to="/" />
+      <Link to="/showcase/" className="c-nav__item c-arrowed-link__label">
+        Showcase
+      </Link>
       {hasAboutLink ? (
-        <Link to="/about/" className="c-nav__item">
+        <Link to="/about/" className="c-nav__item c-arrowed-link__label">
           About
         </Link>
       ) : null}
