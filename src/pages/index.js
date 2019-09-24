@@ -1,8 +1,8 @@
 import React from "react"
 
-import Layout from "../components/layout/layout"
-import SEO from "../components/seo/seo"
-import ArrowedLink from "../components/arrowed-link/arrowedLink"
+import Layout from "../components/layout"
+import SEO from "../components/seo"
+import ArrowedLink from "../components/arrowedLink"
 
 import "../styles/index.scss"
 

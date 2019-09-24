@@ -2,8 +2,8 @@ import { useStaticQuery, graphql } from "gatsby"
 import Img from "gatsby-image"
 import React from "react"
 
-import Layout from "../components/layout/layout"
-import SEO from "../components/seo/seo"
+import Layout from "../components/layout"
+import SEO from "../components/seo"
 
 const AboutPage = () => {
   const data = useStaticQuery(graphql`

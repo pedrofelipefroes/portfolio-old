@@ -1,8 +1,8 @@
 import React from "react"
 import PropTypes from "prop-types"
 
-import Footer from "../footer/footer"
-import Nav from "../nav/nav"
+import Footer from "./footer"
+import Nav from "./nav"
 
 const Layout = ({ children, hasNav, navHasAboutLink }) => {
   return (

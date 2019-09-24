@@ -2,7 +2,7 @@ import { Link } from "gatsby"
 import PropTypes from "prop-types"
 import React from "react"
 
-import ArrowedLink from "../arrowed-link/arrowedLink"
+import ArrowedLink from "./arrowedLink"
 
 const Nav = ({ hasAboutLink }) => (
   <nav className="c-nav">
