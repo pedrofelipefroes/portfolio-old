@@ -3,7 +3,7 @@ import Img from "gatsby-image"
 import React from "react"
 
 import Layout from "../components/layout/layout"
-import SEO from "../components/seo"
+import SEO from "../components/seo/seo"
 
 const AboutPage = () => {
   const data = useStaticQuery(graphql`
@@ -28,7 +28,7 @@ const AboutPage = () => {
   return (
     <Layout navHasAboutLink={false}>
       <SEO title="About " />
-      <div className="p-about l-container">
+      <div className="p-about container__content">
         <h2 className="p-about__header">
           <strong>
             Powerful product experiences spring from creative+technical
