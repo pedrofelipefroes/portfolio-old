@@ -1,0 +1,28 @@
+.p-index {
+  &__header {
+    padding: map-get($spacing, "XXL") map-get($spacing, "L")
+      map-get($spacing, "XXXL");
+
+    @include bp-small {
+      padding: map-get($spacing, "XXL") map-get($spacing, "XL")
+        map-get($spacing, "XXXL");
+    }
+
+    @include bp-large {
+      display: flex;
+      padding: map-get($spacing, "XXL") map-get($spacing, "XXL")
+        map-get($spacing, "XXXL");
+    }
+  }
+
+  &__header h1,
+  &__header h2 {
+    margin-bottom: map-get($spacing, "L");
+  }
+
+  &__header h1 {
+      @include bp-large {
+          margin-right: map-get($spacing, "XL");
+      }
+  }
+}
