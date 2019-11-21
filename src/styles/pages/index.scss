@@ -1,28 +1,110 @@
 .p-index {
   &__header {
-    padding: map-get($spacing, "XXL") map-get($spacing, "L")
-      map-get($spacing, "XXXL");
+    display: flex;
+    flex-direction: column;
+    padding-bottom: map-get($spacing, "XXL");
+    padding-top: map-get($spacing, "XXL");
 
-    @include bp-small {
-      padding: map-get($spacing, "XXL") map-get($spacing, "XL")
-        map-get($spacing, "XXXL");
+    @include bp-medium {
+      margin-left: auto;
+      margin-right: auto;
+      max-width: 54rem;
     }
 
-    @include bp-large {
-      display: flex;
-      padding: map-get($spacing, "XXL") map-get($spacing, "XXL")
-        map-get($spacing, "XXXL");
-    }
-  }
+    &__title {
+      margin-left: map-get($spacing, "M");
+      margin-right: map-get($spacing, "M");
+      padding-bottom: map-get($spacing, "L");
+      padding-left: map-get($spacing, "M");
+      padding-right: map-get($spacing, "M");
 
-  &__header h1,
-  &__header h2 {
-    margin-bottom: map-get($spacing, "L");
-  }
-
-  &__header h1 {
-      @include bp-large {
-          margin-right: map-get($spacing, "XL");
+      @include bp-small {
+        padding-bottom: map-get($spacing, "M");
       }
+    }
+
+    &__title h1 {
+      display: flex;
+      flex-wrap: wrap;
+    }
+
+    &__title h1 div:not(:last-child) {
+      margin-right: map-get($spacing, "S");
+    }
+
+    &__title::after {
+      animation: 10s ease-in-out infinite gradientBorderBackground,
+        2s $animation-ease-out-expo 1 gradientBorderIn;
+      background: map-get($color, "color-gradient");
+      background-size: 200% 200%;
+      content: "";
+      height: 0.125rem;
+      position: absolute;
+      margin-left: -1rem;
+      margin-top: 2rem;
+      width: calc(100% - 2rem);
+
+      @include bp-small {
+        margin-top: 1rem;
+      }
+
+      @include bp-medium {
+        margin-left: -2rem;
+        width: 36.75rem;
+      }
+    }
+
+    &__headline {
+      padding-left: map-get($spacing, "XXL");
+      padding-right: map-get($spacing, "L");
+      padding-top: map-get($spacing, "L");
+
+      @include bp-small {
+        align-self: flex-end;
+        padding-left: 0;
+        padding-top: map-get($spacing, "M");
+        width: 50%;
+      }
+
+      h1 {
+        padding-bottom: map-get($spacing, "XS");
+      }
+
+      h2 {
+        padding-bottom: map-get($spacing, "L");
+      }
+    }
+  }
+}
+
+@keyframes gradientBorderBackground {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@keyframes gradientBorderIn {
+  0% {
+    width: 0;
+  }
+  100% {
+    width: calc(100% - 2rem);
+  }
+}
+
+@include bp-medium {
+  @keyframes gradientBorderIn {
+    0% {
+      width: 0;
+    }
+    100% {
+      width: 36.75rem;
+    }
   }
 }

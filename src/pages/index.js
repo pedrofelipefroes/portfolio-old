@@ -9,17 +9,32 @@ import "../styles/index.scss"
 const IndexPage = () => (
   <Layout hasNav={false}>
     <SEO title="Portfolio. " />
-    <header className="p-index__header l-container__content">
-      <h1 className="l-container__text--small">
-        Design, Development, and Marketing should intertwine to create powerful
-        product experiences.
-      </h1>
+    <header className="p-index__header">
+      <div className="p-index__header__title">
+        <h1>
+          <div className="fadeInUp">
+            <strong>Designer</strong> +
+          </div>
+          <div className="fadeInUp--small">
+            <strong>Developer</strong> +
+          </div>
+          <div className="fadeInUp--smaller">
+            <strong>Marketer</strong>
+          </div>
+        </h1>
+      </div>
       <div className="p-index__header__headline">
-        <h2 className="l-container__text--small">
-          <strong>I am Froes</strong>, and I love to work in this intersection
-          developing cohesive brands through comprehensive design systems.
+        <h1>
+          <div className="fadeInDown">
+            I am <strong>Froes</strong>,
+          </div>
+        </h1>
+        <h2>
+          <div className="fadeInDown--small">
+            and I love to develop cohesive user experiences through
+            comprehensive design systems.
+          </div>
         </h2>
-        <ArrowedLink to="/about/" label="More About Me" />
       </div>
     </header>
   </Layout>
