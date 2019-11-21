@@ -1,36 +1,9 @@
 .c-footer {
-  background-color: map-get($color, "surface");
+  background-color: map-get($color, "background-variant");
+  padding: map-get($spacing, "L") map-get($spacing, "M");
 
-  a,
-  small,
-  .c-arrowed-link__label {
-    color: map-get($color, "on-surface");
-
-    &:hover {
-      color: map-get($color, "on-surface-variant");
-    }
-  }
-
-  .c-arrowed-link__arrow {
-    fill: map-get($color, "on-surface");
-
-    &:hover {
-      fill: map-get($color, "on-surface-variant");
-    }
-  }
-
-  .l-container__content {
-    display: flex;
-    flex-direction: column;
-    padding: map-get($spacing, "XL") map-get($spacing, "L");
-
-    @include bp-small {
-      padding: map-get($spacing, "XL");
-    }
-
-    @include bp-large {
-      padding: map-get($spacing, "XL") map-get($spacing, "XXL");
-    }
+  @include bp-small {
+    padding-top: map-get($spacing, "M");
   }
 
   &__links,
@@ -38,34 +11,39 @@
     display: flex;
     flex-direction: column;
 
-    @include bp-medium {
+    @include bp-small {
       flex-direction: row;
     }
   }
 
   &__links {
-    margin-bottom: map-get($spacing, "M");
+    margin-bottom: map-get($spacing, "S");
+    margin-left: map-get($spacing, "M");
+  }
 
-    .c-arrowed-link:not(:last-of-type) {
-      margin-bottom: map-get($spacing, "XS");
-
-      @include bp-medium {
-        margin-bottom: unset;
-        margin-right: map-get($spacing, "XL");
-      }
+  &__links p:not(:first-child) {
+    @include bp-small {
+      margin-left: map-get($spacing, "L");
     }
   }
 
   &__disclaimer {
-    border-top: solid 1px hsl(0, 0, 20);
-    padding-top: map-get($spacing, "M");
+    border-top: solid .5px map-get($color, "type-variant");
+    padding-left: map-get($spacing, "M");
+    padding-right: map-get($spacing, "M");
+    padding-top: map-get($spacing, "S");
+    text-align: right;
 
-    small:not(:last-of-type) {
-      margin-bottom: map-get($spacing, "S");
-    }
-
-    @include bp-medium {
+    @include bp-small {
       justify-content: space-between;
+    }
+  }
+
+  &__disclaimer small:last-of-type {
+    margin-top: map-get($spacing, "XS");
+
+    @include bp-small {
+      margin-top: 0;
     }
   }
 }

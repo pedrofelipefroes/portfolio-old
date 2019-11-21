@@ -6,16 +6,8 @@ const Footer = () => (
   <footer className="c-footer">
     <div className="l-container__content">
       <section className="c-footer__links">
-        <ArrowedLink
-          to="https://www.linkedin.com/in/froesdesign"
-          isLinkExternal
-          label="LinkedIn"
-        />
-        <ArrowedLink
-          to="mailto:hello@froes.design"
-          isLinkExternal
-          label="Work Inquiries"
-        />
+        <p><a href="https://www.linkedin.com/in/froesdesign">LinkedIn</a></p>
+        <p><a href="mailto:hello@froes.design">Work Inquiries</a></p>
       </section>
       <section className="c-footer__disclaimer">
         <small>
