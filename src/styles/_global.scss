@@ -7,8 +7,8 @@ html {
 }
 
 body {
-  background-color: map-get($color, "background");
-  color: map-get($color, "on-background");
+  background: map-get($color, "background");
+  color: map-get($color, "type");
   margin: 0;
 }
 
@@ -51,7 +51,7 @@ small {
 }
 
 a {
-  color: map-get($color, "on-background");
+  color: map-get($color, "type");
   font-weight: map-get($type-link, "weight");
   text-decoration: none;
 

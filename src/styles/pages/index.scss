@@ -35,7 +35,7 @@
     &__title::after {
       animation: 10s ease-in-out infinite gradientBorderBackground,
         2s $animation-ease-out-expo 1 gradientBorderIn;
-      background: map-get($color, "color-gradient");
+      background: map-get($color, "highlight");
       background-size: 200% 200%;
       content: "";
       height: 0.125rem;
