@@ -35,9 +35,13 @@ const IndexPage = () => (
             comprehensive design systems.
           </div>
         </h2>
-        <NavigationLink label="About" to="/about" />
-        <NavigationLink label="Showcase" to="/showcase" />
-        <div className="p-index__header__headline__featured">
+        <div className="fadeIn">
+          <NavigationLink label="About" to="/about" />
+        </div>
+        <div className="fadeIn">
+          <NavigationLink label="Showcase" to="/showcase" />
+        </div>
+        <div className="p-index__header__headline__featured fadeIn">
           <strong className="label">Featured Work</strong>
           <svg
             className="arrow"
