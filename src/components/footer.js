@@ -1,7 +1,5 @@
 import React from "react"
 
-import ArrowedLink from "./arrowedLink"
-
 const Footer = () => (
   <footer className="c-footer">
     <div className="l-container__content">
