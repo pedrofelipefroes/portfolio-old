@@ -1,71 +1,156 @@
-import { useStaticQuery, graphql } from "gatsby"
+import { graphql } from "gatsby"
 import Img from "gatsby-image"
 import React from "react"
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 
-const AboutPage = () => {
-  const data = useStaticQuery(graphql`
-    query {
-      aboutImage1: file(relativePath: { eq: "about-1.jpg" }) {
-        childImageSharp {
-          fluid(maxWidth: 523) {
-            ...GatsbyImageSharpFluid
-          }
-        }
-      }
-      aboutImage2: file(relativePath: { eq: "about-2.jpg" }) {
-        childImageSharp {
-          fluid(maxWidth: 523) {
-            ...GatsbyImageSharpFluid
-          }
-        }
-      }
-    }
-  `)
+const AboutPage = ({ data }) => {
+  var tools = {
+    design: [
+      "Product Design",
+      "Color Psychology",
+      "Typography",
+      "Design Sprint",
+      "Designer-to-Developer Handoff",
+      "User-centered Design",
+      "Wireframing",
+      "User Research",
+      "Competitive Analysis",
+      "Mobile Guidelines",
+      "Design Thinking",
+      "UX Design",
+      "Mobile Design",
+      "Design Systems",
+      "UI Design",
+      "Branding Identities",
+      "Graphic Design",
+      "Responsive Design",
+      "Branding Extension",
+    ],
+    development: [
+      "Behavior-driven Development",
+      "Sass",
+      "Angular",
+      "CSS",
+      "Vue.JS",
+      "JavaScript",
+      "BEM",
+      "React.Js",
+      "CSS Architetures",
+      "Server-side Rendering",
+      "HTML",
+      "Java",
+      "Semantic HTML",
+      "Test-driven Development",
+      "Front-end Development",
+      "Style Guides",
+      "Microinteractions",
+      "SQL",
+      "Accessibility Standards",
+      "CSS Preprocessors",
+      "Email Design",
+      "Programming Logic",
+      "Component Architeture",
+    ],
+    marketing: [
+      "Customer Relationship Management",
+      "Template Creation and Maintenance",
+      "Scrum",
+      "Search Engine Optimization",
+      "UX Writing",
+      "Brand Awareness",
+      "Kanban",
+      "Campaign Conceptualization and Management",
+      "Search Engine Marketing",
+      "Content Personalization",
+      "Landing Page Design",
+      "Agile Methodologies",
+      "Branding Guide Lines",
+      "Email Marketing",
+      "Lead Capture",
+    ],
+  }
 
   return (
-    <Layout navHasAboutLink={false}>
+    <Layout navHasAbout={false} className="p-about">
       <SEO title="About " />
-      <div className="p-about container__content">
-        <h2 className="p-about__header">
-          <strong>
-            Powerful product experiences spring from creative+technical
-            collaboration.
-          </strong>{" "}
-          By successfully integrating Design, Development, and Marketing
-          expertise, comprehensive design systems are built, and powerful,
-          innovative products are created.
-        </h2>
-        <Img
-          fluid={data.aboutImage2.childImageSharp.fluid}
-          className="p-about__figure"
-        />
-        <Img
-          fluid={data.aboutImage1.childImageSharp.fluid}
-          className="p-about__figure"
-        />
-        <section className="p-about__body">
-          <p>
-            <strong>I am Froes</strong>⸺short for Pedro Felipe Froes, someone
-            who’ve always been passionate about mixing creativity and systematic
-            thinking together. As someone who put a lot of effort into big
-            ideas, playing a role in Design, Development, and Marketing teams
-            over the years helped me blend their strengths and needs in order to
-            turn these ideas into realities.
+      <div className="l-container__content">
+        <section className="p-about__header">
+          <h1 className="l-container__text--large">
+            Adding up <strong>Design</strong> + <strong>Development</strong> +{" "}
+            <strong>Marketing</strong> leads to powerful user experiences.
+          </h1>
+          <h2 className="l-container__text--small">
+            <strong>I am Froes</strong>—a liaison between all three—and
+            connecting them from conception to execution is something I love to
+            work with.
+          </h2>
+        </section>
+        <section className="p-about__picture">
+          <Img
+            className="p-about__picture__img"
+            fluid={data.file.childImageSharp.fluid}
+          />
+          <p className="p-about__picture__marquee-container p-about__picture__marquee-container--1">
+            <strong>
+              {tools.design.map(item => (
+                <>{item} </>
+              ))}
+            </strong>
           </p>
-          <p>
-            After graduating in Computer Engineering and working for some time
-            in Belo Horizonte, Brazil, I'm currently filling my days in São
-            Paulo as a liaison between Avenue Code Design and Marketing teams.
-            At Avenue Code, I have the chance to collaborate with gifted
-            individuals who inspire me to become a better professional.
+          <p className="p-about__picture__marquee-container p-about__picture__marquee-container--2">
+            <strong>
+              {tools.development.map(item => (
+                <>{item} </>
+              ))}
+            </strong>
           </p>
+          <p className="p-about__picture__marquee-container p-about__picture__marquee-container--3">
+            <strong>
+              {tools.marketing.map(item => (
+                <>{item} </>
+              ))}
+            </strong>
+          </p>
+        </section>
+        <section className="p-about__info l-container__text--medium">
+          <p>
+            Froes is short for Pedro Felipe Froes. I currently spend my work
+            hours at Avenue Code collaborating with gifted individuals.
+            Typography, drawing, and listening to sad songs are some of the
+            things I’m really into. I’d love to connect and learn more about you
+            too, reader! Check my contact info below.
+          </p>
+          <ul>
+            <li>
+              <strong>Currently living on São Paulo, Brazil.</strong>
+            </li>
+            <li>
+              <a href="https://www.linkedin.com/in/froesdesign">
+                linkedin.com/froesdesign
+              </a>
+            </li>
+            <li>
+              <a href="mailto:hello@froes.design">hello@froes.design</a>
+            </li>
+          </ul>
         </section>
       </div>
     </Layout>
   )
 }
+
+export const query = graphql`
+  query {
+    file(relativePath: { eq: "about/froes-profile.jpg" }) {
+      childImageSharp {
+        fluid(maxWidth: 512, quality: 100) {
+          ...GatsbyImageSharpFluid
+        }
+      }
+    }
+  }
+`
 
 export default AboutPage

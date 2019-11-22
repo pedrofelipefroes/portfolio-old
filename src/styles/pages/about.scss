@@ -1,0 +1,115 @@
+.p-about {
+  .l-container__content {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__header {
+    padding: map-get($spacing, "XXXL") map-get($spacing, "L")
+      map-get($spacing, "XXL");
+
+    @include bp-medium {
+      padding-bottom: map-get($spacing, "XL");
+      padding-left: map-get($spacing, "XXL");
+      padding-top: map-get($spacing, "XXL");
+    }
+
+    @include bp-large {
+      padding-right: map-get($spacing, "XXL");
+    }
+
+    h1 {
+      margin-bottom: map-get($spacing, "L");
+    }
+  }
+
+  &__picture {
+    &__img {
+      left: -8rem;
+      max-width: 32rem;
+
+      @include bp-small {
+        left: -4rem;
+      }
+
+      @include bp-medium {
+        left: 0;
+      }
+    }
+
+    &__marquee-container {
+      @extend .c-navigation-link__label;
+
+      //background: red;
+      left: 0;
+      overflow: hidden;
+      margin-left: auto;
+      margin-right: auto;
+      max-width: 120rem;
+      position: absolute;
+      right: 0;
+      white-space: nowrap;
+      width: 100%;
+
+      strong {
+        animation: ease-in-out infinite gradientBorderBackground,
+          linear infinite alternate marqueeTranslation;
+        background: map-get($color, "highlight-variant");
+        background-size: 300% 300%;
+        background-clip: text;
+        display: inline-block;
+        -webkit-text-fill-color: transparent;
+      }
+    }
+
+    &__marquee-container--1 {
+      margin-top: -128px;
+
+      strong {
+        animation-duration: 60s, 350s;
+        animation-delay: 1s, 500ms;
+      }
+    }
+
+    &__marquee-container--2 {
+      margin-top: -108px;
+
+      strong {
+        animation-duration: 60s, 400s;
+        animation-delay: 2s, 750ms;
+      }
+    }
+
+    &__marquee-container--3 {
+      margin-top: -88px;
+
+      strong {
+        animation-duration: 60s, 450s;
+        animation-delay: 3s, 1s;
+      }
+    }
+  }
+
+  &__info {
+    align-self: flex-end;
+    padding: map-get($spacing, "L") map-get($spacing, "L")
+      map-get($spacing, "XXL");
+
+    ul {
+      margin-top: map-get($spacing, "S");
+    }
+
+    li {
+      line-height: map-get($type-body, "leading");
+    }
+  }
+}
+
+@keyframes marqueeTranslation {
+  0% {
+    transform: translate(0, 0);
+  }
+  100% {
+    transform: translate(-25%, 0);
+  }
+}
