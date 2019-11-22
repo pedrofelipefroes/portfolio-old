@@ -7,7 +7,7 @@ import NavigationLink from "../components/navigationLink"
 import "../styles/index.scss"
 
 const IndexPage = () => (
-  <Layout hasNav={false}>
+  <Layout hasNav={false} className="p-index">
     <SEO title="Portfolio. " />
     <header className="p-index__header">
       <section className="p-index__header__title">
