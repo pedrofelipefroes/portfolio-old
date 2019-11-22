@@ -73,6 +73,26 @@
       h2 {
         padding-bottom: map-get($spacing, "L");
       }
+
+      &__featured {
+        @extend .c-navigation-link;
+
+        padding-top: map-get($spacing, "L");
+      }
+
+      &__featured .label {
+        @extend .c-navigation-link__label;
+
+        color: map-get($color, "type-variant");
+      }
+      
+      &__featured .arrow {
+        fill: map-get($color, "type-variant");
+        left: 0;
+        position: relative;
+        top: 0;
+        transform: rotate(90deg);
+      }
     }
   }
 }
