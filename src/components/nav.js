@@ -2,30 +2,61 @@ import { Link } from "gatsby"
 import PropTypes from "prop-types"
 import React from "react"
 
-import ArrowedLink from "./arrowedLink"
-
-const Nav = ({ hasAboutLink }) => (
+const Nav = ({ hasShowcase, hasAbout }) => (
   <nav className="c-nav">
-    <div className="l-container__content">
-      <ArrowedLink label="Featured" isIconAfter={false} to="/" />
-      <Link to="/showcase/" className="c-nav__item c-arrowed-link__label">
-        Showcase
+    <div className="l-container__content--large">
+      <Link to="/">
+        <svg
+          className="c-nav__arrow"
+          width="48px"
+          height="24px "
+          viewBox="0 0 48 24"
+          version="1.1"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <rect id="line" width="16" height="2" x="2" y="11.5" />
+          <g id="beak">
+            <rect
+              width="8"
+              height="2"
+              x="0"
+              y="0"
+              transform="translate(13, 12.5) rotate(45) translate(-13, -12.5) translate(10, 7.5)"
+            />
+            <rect
+              width="2"
+              height="8"
+              x="6"
+              y="0"
+              transform="translate(13, 12.5) rotate(45) translate(-13, -12.5) translate(10, 7.5)"
+            />
+          </g>
+        </svg>
       </Link>
-      {hasAboutLink ? (
-        <Link to="/about/" className="c-nav__item c-arrowed-link__label">
-          About
-        </Link>
-      ) : null}
+      <div className="c-nav__items">
+        {hasShowcase ? (
+          <Link to="/showcase" className="c-nav__items__link">
+            Showcase
+          </Link>
+        ) : null}
+        {hasAbout ? (
+          <Link to="/about" className="c-nav__items__link">
+            About
+          </Link>
+        ) : null}
+      </div>
     </div>
   </nav>
 )
 
 Nav.propTypes = {
-  hasAboutLink: PropTypes.bool,
+  hasShowcase: PropTypes.bool,
+  hasAbout: PropTypes.bool,
 }
 
 Nav.defaultProps = {
-  hasAboutLink: false,
+  hasShowcase: true,
+  hasAbout: true,
 }
 
 export default Nav

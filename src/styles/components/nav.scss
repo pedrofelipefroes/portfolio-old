@@ -1,54 +1,43 @@
 .c-nav {
-  display: flex;
-  justify-content: center;
+  background: #fff;
+  padding-bottom: map-get($spacing, "M");
+  padding-top: map-get($spacing, "M");
+  position: fixed;
+  width: 100%;
 
-  .c-arrowed-link {
-    .c-arrowed-link__label {
-      display: none;
+  @include bp-large {
+    background: unset;
+  }
 
-      @include bp-medium {
-        color: map-get($color, "on-background-variant");
-        display: block;
-      }
-    }
+  &__arrow {
+    @extend .c-navigation-link__arrow;
 
-    .c-arrowed-link__arrow {
-      fill: map-get($color, "on-background-variant");
-    }
+    transform: rotate(180deg);
 
     &:hover {
-      .c-arrowed-link__label {
-        color: map-get($color, "on-background");
+      #beak {
+        transform: translate(23px, 0);
       }
 
-      .c-arrowed-link__arrow {
-        fill: map-get($color, "on-background");
+      #line {
+        width: 39px;
       }
     }
   }
 
-  .l-container__content {
-    background-color: map-get($color, "background");
+  &__items {
+    display: inline-flex;
+
+    &__link {
+      @extend .c-navigation-link__label;
+
+      margin-right: map-get($spacing, "L");
+    }
+  }
+
+  .l-container__content--large {
     display: flex;
+    flex-grow: 1;
     justify-content: space-between;
-    padding: map-get($spacing, "L") map-get($spacing, "L")
-      map-get($spacing, "M");
-    position: fixed;
-    width: 100%;
-    z-index: 100;
-
-    @include bp-medium {
-      background-color: unset;
-      justify-content: flex-end;
-    }
-  }
-
-  &__item {
-    color: map-get($color, "on-background-variant");
-    margin-left: map-get($spacing, "L");
-
-    &:hover {
-      color: map-get($color, "on-background");
-    }
   }
 }

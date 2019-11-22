@@ -16,7 +16,7 @@ $color: (
   "background": $gradientGrayscale,
   "background-variant": $gray-light,
   "type": $gray-dark,
-  "type-variant":  $gray-medium,
+  "type-variant": $gray-medium,
   "highlight": $gradientColor,
 );
 
@@ -47,13 +47,7 @@ $spacing: (
 }
 
 @mixin bp-large {
-  @media screen and (min-width: 80rem) {
-    @content;
-  }
-}
-
-@mixin bp-x-large {
-  @media screen and (min-width: 120rem) {
+  @media screen and (min-width: 90rem) {
     @content;
   }
 }
@@ -61,6 +55,7 @@ $spacing: (
 $container-text--small: 32rem;
 $container-text--medium: 40rem;
 $container__content: 64rem;
+$container__large-content: 90rem;
 
 $type-family: "Helvetica Neue", -apple-system, BlinkMacSystemFont, sans-serif;
 $type-scale: 1rem;

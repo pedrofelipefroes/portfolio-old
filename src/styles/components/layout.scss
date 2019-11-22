@@ -4,6 +4,12 @@
   max-width: $container__content;
 }
 
+.l-container__content--large {
+  box-sizing: border-box;
+  margin: 0 auto;
+  max-width: $container__large-content;
+}
+
 .l-container__text--small {
   max-width: $container-text--small;
 }
