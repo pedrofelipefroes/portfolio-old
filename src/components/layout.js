@@ -4,13 +4,19 @@ import PropTypes from "prop-types"
 import Footer from "./footer"
 import Nav from "./nav"
 
-const Layout = ({ children, hasNav, navHasShowcase, navHasAbout }) => {
+const Layout = ({
+  children,
+  className,
+  hasNav,
+  navHasShowcase,
+  navHasAbout,
+}) => {
   return (
     <>
       {hasNav ? (
         <Nav hasShowcase={navHasShowcase} hasAbout={navHasAbout} />
       ) : null}
-      <main>{children}</main>
+      <main className={className}>{children}</main>
       <Footer />
     </>
   )
@@ -18,6 +24,7 @@ const Layout = ({ children, hasNav, navHasShowcase, navHasAbout }) => {
 
 Layout.propTypes = {
   children: PropTypes.node.isRequired,
+  className: PropTypes.string,
   hasNav: PropTypes.bool,
   navHasShowcase: PropTypes.bool,
   navHasAbout: PropTypes.bool,
