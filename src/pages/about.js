@@ -179,6 +179,7 @@ const AboutPage = ({ data }) => {
           <Img
             className="p-about__picture__img"
             fluid={data.file.childImageSharp.fluid}
+            alt="Portrait picture of Froes."
           />
           {createMarquee(tools)}
         </section>
