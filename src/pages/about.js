@@ -182,7 +182,7 @@ const AboutPage = ({ data }) => {
             fluid={data.file.childImageSharp.fluid}
             alt="Portrait picture of Froes."
           />
-          <Fade bottom cascade>
+          <Fade bottom cascade duration={3000}>
             <div>{createMarquee(tools)}</div>
           </Fade>
         </section>
