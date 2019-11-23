@@ -1,6 +1,7 @@
 import { graphql } from "gatsby"
 import Img from "gatsby-image"
 import React from "react"
+import Fade from "react-reveal/Fade"
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
@@ -181,7 +182,9 @@ const AboutPage = ({ data }) => {
             fluid={data.file.childImageSharp.fluid}
             alt="Portrait picture of Froes."
           />
-          {createMarquee(tools)}
+          <Fade bottom cascade>
+            <div>{createMarquee(tools)}</div>
+          </Fade>
         </section>
         <section className="p-about__info l-container__text--medium">
           <p>
