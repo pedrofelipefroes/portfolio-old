@@ -27,6 +27,7 @@
     &__img {
       left: -8rem;
       max-width: 32rem;
+      z-index: 50;
 
       @include bp-small {
         left: -4rem;
@@ -40,7 +41,6 @@
     &__marquee-container {
       @extend .c-navigation-link__label;
 
-      //background: red;
       left: 0;
       overflow: hidden;
       margin-left: auto;
@@ -62,30 +62,14 @@
       }
     }
 
-    &__marquee-container--1 {
-      margin-top: -128px;
+    @for $i from 0 to 6 {
+      &__marquee-container--#{$i + 1} {
+        margin-top: calc(-178px + calc(#{$i+1} * 20px));
 
-      strong {
-        animation-duration: 60s, 350s;
-        animation-delay: 1s, 500ms;
-      }
-    }
-
-    &__marquee-container--2 {
-      margin-top: -108px;
-
-      strong {
-        animation-duration: 60s, 400s;
-        animation-delay: 2s, 750ms;
-      }
-    }
-
-    &__marquee-container--3 {
-      margin-top: -88px;
-
-      strong {
-        animation-duration: 60s, 450s;
-        animation-delay: 3s, 1s;
+        strong {
+          animation-duration: 60s, calc(300s + calc(#{$i+1} * 30s));
+          animation-delay: #{$i + 1}s, calc(300ms + calc(#{$i+1} * 200ms));
+        }
       }
     }
   }

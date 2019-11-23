@@ -6,8 +6,31 @@ import Layout from "../components/layout"
 import SEO from "../components/seo"
 
 const AboutPage = ({ data }) => {
-  var tools = {
-    design: [
+  var tools = [
+    [
+      "Designer",
+      "Designer",
+      "Designer",
+      "Designer",
+      "Designer",
+      "Designer",
+      "Designer",
+      "Designer",
+      "Designer",
+      "Designer",
+      "Designer",
+      "Designer",
+      "Designer",
+      "Designer",
+      "Designer",
+      "Designer",
+      "Designer",
+      "Designer",
+      "Designer",
+      "Designer",
+      "Designer",
+    ],
+    [
       "Product Design",
       "Color Psychology",
       "Typography",
@@ -28,7 +51,29 @@ const AboutPage = ({ data }) => {
       "Responsive Design",
       "Branding Extension",
     ],
-    development: [
+    [
+      "Developer",
+      "Developer",
+      "Developer",
+      "Developer",
+      "Developer",
+      "Developer",
+      "Developer",
+      "Developer",
+      "Developer",
+      "Developer",
+      "Developer",
+      "Developer",
+      "Developer",
+      "Developer",
+      "Developer",
+      "Developer",
+      "Developer",
+      "Developer",
+      "Developer",
+      "Developer",
+    ],
+    [
       "Behavior-driven Development",
       "Sass",
       "Angular",
@@ -53,7 +98,29 @@ const AboutPage = ({ data }) => {
       "Programming Logic",
       "Component Architeture",
     ],
-    marketing: [
+    [
+      "Marketer",
+      "Marketer",
+      "Marketer",
+      "Marketer",
+      "Marketer",
+      "Marketer",
+      "Marketer",
+      "Marketer",
+      "Marketer",
+      "Marketer",
+      "Marketer",
+      "Marketer",
+      "Marketer",
+      "Marketer",
+      "Marketer",
+      "Marketer",
+      "Marketer",
+      "Marketer",
+      "Marketer",
+      "Marketer",
+    ],
+    [
       "Customer Relationship Management",
       "Template Creation and Maintenance",
       "Scrum",
@@ -70,6 +137,27 @@ const AboutPage = ({ data }) => {
       "Email Marketing",
       "Lead Capture",
     ],
+  ]
+
+  function createMarquee(items) {
+    let marquee = []
+
+    for (let i = 0; i < 6; i++) {
+      let marqueeClass =
+        "p-about__picture__marquee-container p-about__picture__marquee-container--" +
+        `${i + 1}`
+      marquee.push(
+        <p className={marqueeClass}>
+          <strong>
+            {items[i].map(item => (
+              <>{item} </>
+            ))}
+          </strong>
+        </p>
+      )
+    }
+
+    return marquee
   }
 
   return (
@@ -92,27 +180,7 @@ const AboutPage = ({ data }) => {
             className="p-about__picture__img"
             fluid={data.file.childImageSharp.fluid}
           />
-          <p className="p-about__picture__marquee-container p-about__picture__marquee-container--1">
-            <strong>
-              {tools.design.map(item => (
-                <>{item} </>
-              ))}
-            </strong>
-          </p>
-          <p className="p-about__picture__marquee-container p-about__picture__marquee-container--2">
-            <strong>
-              {tools.development.map(item => (
-                <>{item} </>
-              ))}
-            </strong>
-          </p>
-          <p className="p-about__picture__marquee-container p-about__picture__marquee-container--3">
-            <strong>
-              {tools.marketing.map(item => (
-                <>{item} </>
-              ))}
-            </strong>
-          </p>
+          {createMarquee(tools)}
         </section>
         <section className="p-about__info l-container__text--medium">
           <p>
