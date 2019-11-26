@@ -1,33 +1,13 @@
-$gray-light: #f0f0f0;
-$gray-medium: #b1b1b1;
-$gray-dark: #2b2b2b;
-$gradientColor: linear-gradient(
-  90deg,
-  #26b7ed 0%,
-  #65d6c4 12.5%,
-  #93db7b 25%,
-  #f9f500 50%,
-  #fe6828 85%,
-  #ff133b 100%
-);
-$gradientColorTransparent: linear-gradient(
-  90deg,
-  rgba(38, 183, 237, 0.75) 0%,
-  rgba(101, 214, 196, 0.75) 12.5%,
-  rgba(147, 219, 123, 0.75) 25%,
-  rgba(249, 245, 0, 0.75) 50%,
-  rgba(254, 104, 40, 0.75) 85%,
-  rgba(255, 19, 59, 0.75) 100%
-);
-$gradientGrayscale: linear-gradient(180deg, #ffffff 0%, #fafafa 100%);
+$grayscale-100: #fafafa;
+$grayscale-200: #f0f0f0;
+$grayscale-300: #bebebe;
+$grayscale-400: #131313;
 
 $color: (
-  "background": $gradientGrayscale,
-  "background-variant": $gray-light,
-  "type": $gray-dark,
-  "type-variant": $gray-medium,
-  "highlight": $gradientColor,
-  "highlight-variant": $gradientColorTransparent,
+  "background": $grayscale-100,
+  "background-variant": $grayscale-200,
+  "type": $grayscale-400,
+  "type-variant": $grayscale-300,
 );
 
 $animation-ease-out-expo: cubic-bezier(0.19, 1, 0.22, 1);
@@ -38,6 +18,7 @@ $spacing: (
   "XS": $spacing-scale * 1,
   "S": $spacing-scale * 2,
   "M": $spacing-scale * 4,
+  "ML": $spacing-scale * 6,
   "L": $spacing-scale * 8,
   "XL": $spacing-scale * 16,
   "XXL": $spacing-scale * 32,
@@ -62,52 +43,57 @@ $spacing: (
   }
 }
 
-$container-text--small: 32rem;
-$container-text--medium: 40rem;
-$container-text--large: 48rem;
-$container__content: 64rem;
-$container__large-content: 90rem;
+$container-text--S: 32rem;
+$container-text--M: 40rem;
+$container-text--L: 48rem;
+
+$container-content--S: 64rem;
+$container-content--L: 90rem;
 
 $type-family: "Helvetica Neue", -apple-system, BlinkMacSystemFont, sans-serif;
 $type-scale: 1rem;
 
 $type-title-1: (
-  "size": $type-scale * 2.125,
-  "weight": normal,
-  "leading": 1.1764705882,
-  "character-spacing": -0.025rem,
+  "size--S": $type-scale * 2.625,
+  "size--M": $type-scale * 4.25,
+  "weight": bold,
+  "leading": 1.0588235294,
+  "character-spacing": -0.05rem,
 );
 
 $type-title-2: (
-  "size": $type-scale * 1.25,
+  "size--S": $type-scale * 1.4375,
+  "size--M": $type-scale * 2,
   "weight": bold,
-  "leading": 1.2,
-  "character-spacing": -0.01875rem,
+  "leading": 1.0625,
+  "character-spacing": -0.02375rem,
 );
 
-$type-headline: (
-  "size": $type-scale * 1.5,
+$type-body-1: (
+  "size--S": $type-scale * 1.1875,
+  "size--M": $type-scale * 1.3125,
   "weight": normal,
-  "leading": 1.3333333333,
-  "character-spacing": -0.01875rem,
+  "leading": 1.380952381,
+  "character-spacing": -0.01625rem,
 );
 
-$type-body: (
-  "size": $type-scale * 1.0625,
+$type-body-2: (
+  "size--S": $type-scale * 1.0625,
   "weight": normal,
   "leading": 1.5294117647,
   "character-spacing": -0.013125rem,
 );
 
 $type-caption: (
-  "size": $type-scale * 0.75,
+  "size--S": $type-scale * 0.75,
   "weight": normal,
-  "leading": $type-scale,
+  "leading": 1.3333333333,
+  "character-spacing": -0.00625rem,
 );
 
-$type-link: (
-  "size": $type-scale * 0.875,
+$type-navigation-link: (
+  "size--S": $type-scale * 0.875,
   "weight": bold,
-  "leading": $type-scale * 1.5,
-  "character-spacing": -0.0125rem,
+  "leading": 1.7142857143,
+  "character-spacing": -0.01125rem,
 );

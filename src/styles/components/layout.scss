@@ -1,23 +1,23 @@
-.l-container__content {
+.l-container__content--S {
   box-sizing: border-box;
   margin: 0 auto;
-  max-width: $container__content;
+  max-width: $container-content--S;
 }
 
-.l-container__content--large {
+.l-container__content--L {
   box-sizing: border-box;
   margin: 0 auto;
-  max-width: $container__large-content;
+  max-width: $container-content--L;
 }
 
-.l-container__text--small {
-  max-width: $container-text--small;
+.l-container__text--S {
+  max-width: $container-text--S;
 }
 
-.l-container__text--medium {
-  max-width: $container-text--medium;
+.l-container__text--M {
+  max-width: $container-text--M;
 }
 
-.l-container__text--large {
-  max-width: $container-text--large;
+.l-container__text--L {
+  max-width: $container-text--L;
 }
