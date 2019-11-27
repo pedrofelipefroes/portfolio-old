@@ -67,7 +67,7 @@ const IndexPage = () => {
               smooth={true}
               className="p-index__header__links__featured c-navigation-link highlighted-type"
             >
-              <strong className="c-navigation-link__label navigation-link">
+              <strong className="c-navigation-link__label">
                 Featured Work
               </strong>
               <svg

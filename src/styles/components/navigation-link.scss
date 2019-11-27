@@ -6,9 +6,9 @@
   }
 
   &__label {
-    font-size: map-get($type-link, "size");
-    letter-spacing: map-get($type-link, "character-spacing");
-    line-height: map-get($type-link, "leading");
+    font-size: map-get($type-navigation-link, "size--S");
+    letter-spacing: map-get($type-navigation-link, "character-spacing");
+    line-height: map-get($type-navigation-link, "leading");
     text-transform: uppercase;
 
     &:hover {
@@ -19,7 +19,7 @@
   &__arrow {
     fill: map-get($color, "type");
     fill-rule: nonzero;
-    height: map-get($type-link, "leading");
+    height: map-get($spacing, "ML");
     margin-left: map-get($spacing, "XS");
     width: 3rem;
 
