@@ -3,7 +3,7 @@
   padding: map-get($spacing, "L") map-get($spacing, "M");
 
   @include bp-small {
-    padding-top: map-get($spacing, "M");
+    padding-top: map-get($spacing, "ML");
   }
 
   &__links,
