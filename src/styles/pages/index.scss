@@ -37,7 +37,7 @@
     &__title::after {
       animation: ease-in-out 16s infinite rainbowGradientTransition,
         3500ms $animation-ease-out-expo 1s 1 both titleDividerIn;
-      background: map-get($color, "highlight");
+      background: map-get($color, "highlight-variant");
       background-size: 200% 200%;
       content: "";
       height: 0.3125rem;

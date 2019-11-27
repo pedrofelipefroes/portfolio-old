@@ -3,6 +3,12 @@ $grayscale-200: #f0f0f0;
 $grayscale-300: #bebebe;
 $grayscale-400: #131313;
 
+$grayscale-gradient: linear-gradient(
+  90deg,
+  rgba(238, 238, 238, 0.7) 0%,
+  rgba(190, 190, 190, 0.7) 50%,
+  rgba(238, 238, 238, 0.7) 99%
+);
 $rainbow-gradient: linear-gradient(
   90deg,
   rgba(38, 183, 237, 0.7) 0%,
@@ -19,6 +25,7 @@ $color: (
   "type": $grayscale-400,
   "type-variant": $grayscale-300,
   "highlight": $rainbow-gradient,
+  "highlight-variant": $grayscale-gradient,
 );
 
 $animation-ease-out-expo: cubic-bezier(0.19, 1, 0.22, 1);
