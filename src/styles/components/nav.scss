@@ -1,5 +1,5 @@
 .c-nav {
-  background: #fff;
+  background: map-get($color, "background");
   padding-bottom: map-get($spacing, "M");
   padding-top: map-get($spacing, "M");
   position: fixed;
