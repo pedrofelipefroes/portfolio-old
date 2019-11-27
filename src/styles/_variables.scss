@@ -3,11 +3,22 @@ $grayscale-200: #f0f0f0;
 $grayscale-300: #bebebe;
 $grayscale-400: #131313;
 
+$rainbow-gradient: linear-gradient(
+  90deg,
+  rgba(38, 183, 237, 0.7) 0%,
+  rgba(101, 214, 196, 0.7) 12.5%,
+  rgba(147, 219, 123, 0.7) 25%,
+  rgba(249, 245, 0, 0.7) 50%,
+  rgba(254, 104, 40, 0.7) 85%,
+  rgba(255, 19, 59, 0.7) 100%
+);
+
 $color: (
   "background": $grayscale-100,
   "background-variant": $grayscale-200,
   "type": $grayscale-400,
   "type-variant": $grayscale-300,
+  "highlight": $rainbow-gradient,
 );
 
 $animation-ease-out-expo: cubic-bezier(0.19, 1, 0.22, 1);
