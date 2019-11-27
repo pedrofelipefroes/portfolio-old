@@ -4,7 +4,7 @@ import React from "react"
 
 const Nav = ({ hasShowcase, hasAbout }) => (
   <nav className="c-nav">
-    <div className="l-container__content--large">
+    <div className="l-container__content--L">
       <Link to="/">
         <svg
           className="c-nav__arrow"
