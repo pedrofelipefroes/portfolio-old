@@ -132,9 +132,9 @@ const AboutPage = ({ data }) => {
               you too, reader! Contact me:
             </p>
             <ul>
-              <li>
-                <strong>Currently living on São Paulo, Brazil.</strong>
-              </li>
+              {/* <li>
+                <strong>Resumé</strong>
+              </li> */}
               <li>
                 <a href="https://www.linkedin.com/in/froesdesign">
                   linkedin.com/froesdesign
