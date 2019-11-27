@@ -1,90 +1,106 @@
 .p-about {
-  .l-container__content {
+  .l-container__content--S {
     display: flex;
     flex-direction: column;
   }
 
   &__header {
-    padding: map-get($spacing, "XXXL") map-get($spacing, "L")
-      map-get($spacing, "XXL");
+    margin: map-get($spacing, "XXL") map-get($spacing, "L");
 
     @include bp-medium {
-      padding-bottom: map-get($spacing, "XL");
-      padding-left: map-get($spacing, "XXL");
-      padding-top: map-get($spacing, "XXL");
-    }
-
-    @include bp-large {
-      padding-right: map-get($spacing, "XXL");
-    }
-
-    h1 {
-      margin-bottom: map-get($spacing, "L");
-    }
-  }
-
-  &__picture {
-    &__img {
-      left: -8rem;
-      max-width: 32rem;
-      z-index: 50;
-
-      @include bp-small {
-        left: -4rem;
-      }
-
-      @include bp-medium {
-        left: 0;
-      }
-    }
-
-    &__marquee-container {
-      @extend .c-navigation-link__label;
-
-      left: 0;
-      overflow: hidden;
+      margin-bottom: map-get($spacing, "XXL");
       margin-left: auto;
       margin-right: auto;
-      max-width: 120rem;
-      position: absolute;
-      right: 0;
-      white-space: nowrap;
-      width: 100%;
-
-      strong {
-        animation: ease-in-out infinite gradientBorderBackground,
-          linear infinite alternate marqueeTranslation;
-        background: map-get($color, "highlight-variant");
-        background-size: 300% 300%;
-        background-clip: text;
-        display: inline-block;
-        -webkit-text-fill-color: transparent;
-      }
-    }
-
-    @for $i from 0 to 6 {
-      &__marquee-container--#{$i + 1} {
-        margin-top: calc(-178px + calc(#{$i+1} * 20px));
-
-        strong {
-          animation-duration: 60s, calc(300s + calc(#{$i+1} * 30s));
-          animation-delay: #{$i + 1}s, calc(300ms + calc(#{$i+1} * 200ms));
-        }
-      }
     }
   }
 
   &__info {
-    align-self: flex-end;
-    padding: map-get($spacing, "L") map-get($spacing, "L")
-      map-get($spacing, "XXL");
+    @include bp-medium {
+      align-items: end;
+      display: grid;
+      grid-template-columns: 32rem 1fr;
+      margin-bottom: map-get($spacing, "XXL");
+    }
+  }
 
-    ul {
-      margin-top: map-get($spacing, "S");
+  &__info__picture {
+    &__marquee {
+      $marquee-background: linear-gradient(
+        180deg,
+        #000000 80%,
+        rgba(0, 0, 0, 0) 100%
+      );
+
+      background: $marquee-background;
+      margin-bottom: -2rem;
+      max-width: $container-text--S;
+      overflow: hidden;
+      padding-bottom: map-get($spacing, "S");
+      padding-top: map-get($spacing, "XL");
+      position: relative;
+      z-index: 75;
+
+      @include bp-medium {
+        margin-bottom: -4rem;
+      }
+
+      .marquee-container {
+        position: relative;
+        white-space: nowrap;
+      }
+
+      .marquee-container h2 {
+        animation: ease-in-out 10s infinite rainbowGradientTransition,
+          linear 320s infinite alternate marqueeTranslation;
+        background: map-get($color, "highlight");
+        background-clip: text;
+        background-size: 300% 300%;
+        display: inline-block;
+        line-height: 1.25;
+
+        -webkit-text-fill-color: transparent;
+      }
+
+      @for $i from 0 to 4 {
+        .marquee-container--#{$i} {
+          left: calc(-1 * calc(#{$i+1} * 2rem));
+        }
+
+        .marquee-container--#{$i} h2 {
+          animation-delay: calc(#{$i+1} * 1000ms);
+        }
+      }
     }
 
-    li {
-      line-height: map-get($type-body, "leading");
+    &__img {
+      max-width: $container-text--S;
+      z-index: 50;
+    }
+  }
+
+  &__info__text {
+    margin: map-get($spacing, "L") map-get($spacing, "L")
+      map-get($spacing, "XXL");
+
+    @include bp-small {
+      margin-left: auto;
+    }
+
+    @include bp-medium {
+      margin-left: map-get($spacing, "L");
+      margin-bottom: map-get($spacing, "L");
+    }
+
+    h2 {
+      margin-bottom: map-get($spacing, "L");
+    }
+
+    p {
+      margin-bottom: map-get($spacing, "M");
+    }
+
+    ul li:not(:last-child) {
+      margin-bottom: map-get($spacing, "S");
     }
   }
 }

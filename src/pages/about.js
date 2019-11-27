@@ -1,36 +1,13 @@
 import { graphql } from "gatsby"
+import Fade from "react-reveal/Fade"
 import Img from "gatsby-image"
 import React from "react"
-import Fade from "react-reveal/Fade"
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 
 const AboutPage = ({ data }) => {
   var tools = [
-    [
-      "Designer",
-      "Designer",
-      "Designer",
-      "Designer",
-      "Designer",
-      "Designer",
-      "Designer",
-      "Designer",
-      "Designer",
-      "Designer",
-      "Designer",
-      "Designer",
-      "Designer",
-      "Designer",
-      "Designer",
-      "Designer",
-      "Designer",
-      "Designer",
-      "Designer",
-      "Designer",
-      "Designer",
-    ],
     [
       "Product Design",
       "Color Psychology",
@@ -51,28 +28,6 @@ const AboutPage = ({ data }) => {
       "Graphic Design",
       "Responsive Design",
       "Branding Extension",
-    ],
-    [
-      "Developer",
-      "Developer",
-      "Developer",
-      "Developer",
-      "Developer",
-      "Developer",
-      "Developer",
-      "Developer",
-      "Developer",
-      "Developer",
-      "Developer",
-      "Developer",
-      "Developer",
-      "Developer",
-      "Developer",
-      "Developer",
-      "Developer",
-      "Developer",
-      "Developer",
-      "Developer",
     ],
     [
       "Behavior-driven Development",
@@ -100,28 +55,6 @@ const AboutPage = ({ data }) => {
       "Component Architeture",
     ],
     [
-      "Marketer",
-      "Marketer",
-      "Marketer",
-      "Marketer",
-      "Marketer",
-      "Marketer",
-      "Marketer",
-      "Marketer",
-      "Marketer",
-      "Marketer",
-      "Marketer",
-      "Marketer",
-      "Marketer",
-      "Marketer",
-      "Marketer",
-      "Marketer",
-      "Marketer",
-      "Marketer",
-      "Marketer",
-      "Marketer",
-    ],
-    [
       "Customer Relationship Management",
       "Template Creation and Maintenance",
       "Scrum",
@@ -143,18 +76,16 @@ const AboutPage = ({ data }) => {
   function createMarquee(items) {
     let marquee = []
 
-    for (let i = 0; i < 6; i++) {
-      let marqueeClass =
-        "p-about__picture__marquee-container p-about__picture__marquee-container--" +
-        `${i + 1}`
+    for (let i = 0; i < 3; i++) {
+      let marqueeClass = "marquee-container marquee-container--" + `${i + 1}`
       marquee.push(
-        <p className={marqueeClass}>
-          <strong>
+        <div className={marqueeClass}>
+          <h2>
             {items[i].map(item => (
               <>{item} </>
             ))}
-          </strong>
-        </p>
+          </h2>
+        </div>
       )
     }
 
@@ -164,49 +95,56 @@ const AboutPage = ({ data }) => {
   return (
     <Layout navHasAbout={false} className="p-about">
       <SEO title="About " />
-      <div className="l-container__content">
-        <section className="p-about__header">
-          <h1 className="l-container__text--large">
-            Adding up <strong>Design</strong> + <strong>Development</strong> +{" "}
-            <strong>Marketing</strong> leads to powerful user experiences.
-          </h1>
-          <h2 className="l-container__text--small">
-            <strong>I am Froes</strong>—a liaison between all three—and
-            connecting them from conception to execution is something I love to
-            work with.
-          </h2>
-        </section>
-        <section className="p-about__picture">
-          <Img
-            className="p-about__picture__img"
-            fluid={data.file.childImageSharp.fluid}
-            alt="Portrait picture of Froes."
-          />
-          <Fade bottom cascade duration={3000}>
-            <div>{createMarquee(tools)}</div>
-          </Fade>
-        </section>
-        <section className="p-about__info l-container__text--medium">
-          <p>
-            Froes is short for Pedro Felipe Froes. I currently spend my work
-            hours at Avenue Code collaborating with gifted individuals.
-            Typography, drawing, and listening to sad songs are some of the
-            things I’m really into. I’d love to connect and learn more about you
-            too, reader! Check my contact info below.
-          </p>
-          <ul>
-            <li>
-              <strong>Currently living on São Paulo, Brazil.</strong>
-            </li>
-            <li>
-              <a href="https://www.linkedin.com/in/froesdesign">
-                linkedin.com/froesdesign
-              </a>
-            </li>
-            <li>
-              <a href="mailto:hello@froes.design">hello@froes.design</a>
-            </li>
-          </ul>
+      <div className="l-container__content--S">
+        <h1 className="p-about__header l-container__text--L">
+          Adding up <span className="highlighted-type">Design</span> +{" "}
+          <span className="highlighted-type">Development</span> +{" "}
+          <span className="highlighted-type">Marketing</span> leads to powerful
+          user experiences.
+        </h1>
+        <section className="p-about__info">
+          <figure className="p-about__info__picture">
+            <div className="p-about__info__picture__marquee">
+              <Fade top cascade duration={3000}>
+                <div>{createMarquee(tools)}</div>
+              </Fade>
+            </div>
+            <Img
+              className="p-about__info__picture__img"
+              fluid={data.file.childImageSharp.fluid}
+              alt="Portrait picture of Froes."
+            />
+          </figure>
+          <div className="p-about__info__text l-container__text--S">
+            <h2>
+              I am <span className="highlighted-type">Froes</span>—a liaison
+              between all three—and connecting them from conception to execution
+              is something I love to work with.
+            </h2>
+            <p>
+              Froes is short for Pedro Felipe Froes. I currently spend my work
+              hours in São Paulo, Brazil at Avenue Code collaborating with
+              gifted individuals.
+            </p>
+            <p>
+              Typography, drawing, and listening to sad songs are some of the
+              things I’m really into. I’d love to connect and learn more about
+              you too, reader! Contact me:
+            </p>
+            <ul>
+              <li>
+                <strong>Currently living on São Paulo, Brazil.</strong>
+              </li>
+              <li>
+                <a href="https://www.linkedin.com/in/froesdesign">
+                  linkedin.com/froesdesign
+                </a>
+              </li>
+              <li>
+                <a href="mailto:hello@froes.design">hello@froes.design</a>
+              </li>
+            </ul>
+          </div>
         </section>
       </div>
     </Layout>
