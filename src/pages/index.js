@@ -28,7 +28,7 @@ const IndexPage = () => {
 
   return (
     <Layout hasNav={false} className="p-index">
-      <SEO title="Portfolio. " />
+      <SEO title="" />
       <header className="p-index__header">
         <section className="p-index__header__title">
           <Fade cascade>
