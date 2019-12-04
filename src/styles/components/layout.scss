@@ -21,3 +21,9 @@
 .l-container__text--L {
   max-width: $container-text--L;
 }
+
+.l-featured {
+  &--rebranding-avenue-code .c-featured-header__img-backdrop {
+    background-color: #000000;
+  }
+}
