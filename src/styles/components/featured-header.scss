@@ -1,0 +1,70 @@
+.c-featured-header {
+  padding-left: map-get($spacing, "L");
+  padding-right: map-get($spacing, "L");
+
+  @include bp-medium {
+    padding-left: map-get($spacing, "XL");
+    padding-right: map-get($spacing, "XL");
+  }
+
+  &__img-backdrop {
+    padding-top: 3.625rem; // Nav size
+
+    @include bp-large {
+      padding-top: 0;
+    }
+  }
+
+  h1 {
+    margin-bottom: map-get($spacing, "M");
+    margin-top: map-get($spacing, "XXL");
+  }
+
+  &__section {
+    margin-bottom: map-get($spacing, "XL");
+    margin-top: map-get($spacing, "XL");
+
+    &:last-child {
+      margin-bottom: map-get($spacing, "XXL");
+    }
+
+    h2 {
+      margin-bottom: map-get($spacing, "S");
+    }
+  }
+
+  &__section__content {
+    display: flex;
+    flex-direction: column;
+
+    @include bp-small {
+      flex-direction: row;
+      flex-wrap: wrap;
+    }
+
+    @include bp-medium {
+      flex-wrap: nowrap;
+    }
+
+    &__item {
+      margin-bottom: map-get($spacing, "M");
+
+      @include bp-small {
+        margin-right: 3rem;
+        max-width: 16rem;
+      }
+
+      @include bp-medium {
+        margin-bottom: 0;
+      }
+    }
+
+    &__item:last-child {
+      margin-bottom: 0;
+
+      @include bp-small {
+        margin-right: 0;
+      }
+    }
+  }
+}
