@@ -13,8 +13,8 @@ const IndexPage = () => {
   let featuredProjects = [
     {
       title: "Rebranding Avenue Code",
-      subtitle: "A new identify for the global technology consulting agency.",
-      img: "/featured-work/rebranding-ac.jpg",
+      subtitle: "A new identify for the global technology consulting company.",
+      img: "/featured-work/rebranding-avenue-code.jpg",
       url: "/rebranding-avenue-code",
     },
     {
