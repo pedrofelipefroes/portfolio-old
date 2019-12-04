@@ -13,6 +13,7 @@
   &__arrow {
     @extend .c-navigation-link__arrow;
 
+    fill: map-get($color, "type-variant") !important;
     transform: rotate(180deg);
 
     &:hover {
@@ -32,6 +33,7 @@
     &__link {
       @extend .c-navigation-link__label;
 
+      color: map-get($color, "type-variant");
       margin-right: map-get($spacing, "L");
     }
   }
