@@ -1,0 +1,37 @@
+.c-featured-section-text {
+  display: flex;
+  flex-direction: column;
+
+  p {
+    padding: map-get($spacing, "L") map-get($spacing, "L")
+      map-get($spacing, "XXL");
+  }
+
+  &--center {
+    align-items: center;
+  }
+
+  &--left {
+    @include bp-medium {
+      p {
+        box-sizing: border-box;
+        max-width: $container-text--S;
+        padding: map-get($spacing, "L") 0 map-get($spacing, "XXL")
+          map-get($spacing, "L");
+      }
+    }
+  }
+
+  &--right {
+    align-items: flex-end;
+
+    @include bp-medium {
+      p {
+        box-sizing: border-box;
+        max-width: $container-text--S;
+        padding-right: map-get($spacing, "L") map-get($spacing, "L")
+          map-get($spacing, "XXL") 0;
+      }
+    }
+  }
+}
