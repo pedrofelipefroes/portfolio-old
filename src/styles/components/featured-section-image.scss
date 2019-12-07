@@ -1,0 +1,26 @@
+.c-featured-section-image {
+  column-gap: map-get($spacing, "M");
+  display: grid;
+  row-gap: map-get($spacing, "M");
+
+  @include bp-medium {
+    padding-left: map-get($spacing, "L");
+    padding-right: map-get($spacing, "L");
+  }
+
+  &--2 {
+    @include bp-small {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+
+  &--4 {
+    @include bp-small {
+      grid-template-columns: 1fr 1fr;
+    }
+
+    @include bp-medium {
+      grid-template-columns: 1fr 1fr 1fr 1fr;
+    }
+  }
+}
