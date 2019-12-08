@@ -3,17 +3,17 @@ import PropTypes from "prop-types"
 import React from "react"
 import Slide from "react-reveal/Slide"
 
-const FeaturedSectionCarousel = ({ images }) => {
+const Carousel = ({ images }) => {
   const CarouselUI = ({ children, handleClick, position, total }) => (
-    <div className="c-featured-section-carousel">
-      <figure className="c-featured-section-carousel__slide">{children}</figure>
-      <span className="c-featured-section-carousel__dots">
+    <div className="c-carousel">
+      <figure className="c-carousel__slide">{children}</figure>
+      <span className="c-carousel__dots">
         {Array(...Array(total)).map((val, index) => (
           <span
             className={
               index === position
-                ? "c-featured-section-carousel__dots__item c-featured-section-carousel__dots__item--selected"
-                : "c-featured-section-carousel__dots__item"
+                ? "c-carousel__dots__item c-carousel__dots__item--selected"
+                : "c-carousel__dots__item"
             }
             key={index}
             onClick={handleClick}
@@ -24,27 +24,25 @@ const FeaturedSectionCarousel = ({ images }) => {
     </div>
   )
 
-  const Carousel = makeCarousel(CarouselUI)
+  const CarouselContainer = makeCarousel(CarouselUI)
 
   function createSlides(slides) {
     return (
-      <Carousel defaultWait={3000} maxTurns={0}>
+      <CarouselContainer defaultWait={3000} maxTurns={0}>
         {slides.map(slide => (
           <Slide right>
-            <div className="c-featured-section-carousel__slide-container">
-              {slide}
-            </div>
+            <div className="c-carousel__slide-container">{slide}</div>
           </Slide>
         ))}
-      </Carousel>
+      </CarouselContainer>
     )
   }
 
   return <>{createSlides(images)}</>
 }
 
-FeaturedSectionCarousel.propTypes = {
+Carousel.propTypes = {
   images: PropTypes.array,
 }
 
-export default FeaturedSectionCarousel
+export default Carousel
