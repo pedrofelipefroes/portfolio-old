@@ -19,8 +19,8 @@
   &__arrow {
     fill: map-get($color, "type");
     fill-rule: nonzero;
-    height: map-get($spacing, "ML");
-    margin-left: map-get($spacing, "XS");
+    height: map-get($spacing, "M");
+    margin-left: -1 * map-get($spacing, "XS");
     width: 3rem;
 
     #beak {

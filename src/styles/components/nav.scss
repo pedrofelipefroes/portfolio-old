@@ -1,7 +1,7 @@
 .c-nav {
   background: map-get($color, "background");
-  padding-bottom: map-get($spacing, "M");
-  padding-top: map-get($spacing, "M");
+  padding-bottom: map-get($spacing, "ML");
+  padding-top: map-get($spacing, "ML");
   position: fixed;
   width: 100%;
   z-index: 100;
@@ -10,13 +10,21 @@
     background: unset;
   }
 
-  &__arrow {
-    @extend .c-navigation-link__arrow;
-
-    fill: map-get($color, "type-variant") !important;
-    transform: rotate(180deg);
+  &__home {
+    display: flex;
 
     &:hover {
+      text-decoration: none;
+    }
+
+    &__arrow {
+      @extend .c-navigation-link__arrow;
+
+      fill: map-get($color, "type-variant") !important;
+      transform: rotate(180deg);
+    }
+
+    &:hover &__arrow {
       #beak {
         transform: translate(23px, 0);
       }
@@ -24,6 +32,10 @@
       #line {
         width: 39px;
       }
+    }
+
+    .c-nav__items__link {
+      margin-left: -1 * map-get($spacing, "XS");
     }
   }
 

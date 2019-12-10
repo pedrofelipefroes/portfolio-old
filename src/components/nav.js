@@ -5,9 +5,9 @@ import React from "react"
 const Nav = ({ hasShowcase, hasAbout }) => (
   <nav className="c-nav">
     <div className="l-container__content--L">
-      <Link to="/">
+      <Link className="c-nav__home" to="/">
         <svg
-          className="c-nav__arrow"
+          className="c-nav__home__arrow"
           width="48px"
           height="24px "
           viewBox="0 0 48 24"
@@ -32,6 +32,7 @@ const Nav = ({ hasShowcase, hasAbout }) => (
             />
           </g>
         </svg>
+        <span className="c-nav__items__link">Froes.Design</span>
       </Link>
       <div className="c-nav__items">
         {hasShowcase ? (

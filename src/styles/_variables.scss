@@ -73,9 +73,9 @@ $type-scale: 1rem;
 
 $type-title-1: (
   "size--S": $type-scale * 2.625,
-  "size--M": $type-scale * 4.25,
+  "size--M": $type-scale * 3,
   "weight": bold,
-  "leading": 1.0588235294,
+  "leading": 1.0833333333,
   "character-spacing": -0.05rem,
 );
 
@@ -110,8 +110,8 @@ $type-caption: (
 );
 
 $type-navigation-link: (
-  "size--S": $type-scale * 0.875,
+  "size--S": $type-scale * 0.75,
   "weight": bold,
-  "leading": 1.7142857143,
+  "leading": 1.3333333333,
   "character-spacing": -0.01125rem,
 );
