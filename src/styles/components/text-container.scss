@@ -1,36 +1,81 @@
 .c-text-container {
+  align-items: flex-end;
   display: flex;
   flex-direction: column;
 
+  & + & {
+    margin-top: map-get($spacing, "L");
+  }
+
   p {
-    padding: map-get($spacing, "L") map-get($spacing, "L")
-      map-get($spacing, "XXL");
-  }
+    box-sizing: border-box;
+    padding-left: map-get($spacing, "L");
+    padding-right: map-get($spacing, "L");
 
-  &--center {
-    align-items: center;
-  }
-
-  &--left {
     @include bp-medium {
-      p {
-        box-sizing: border-box;
-        max-width: $container-text--S;
-        padding: map-get($spacing, "L") 0 map-get($spacing, "XXL")
-          map-get($spacing, "L");
-      }
+      padding-left: map-get($spacing, "XL");
+      padding-right: map-get($spacing, "XL");
+    }
+
+    @include bp-large {
+      padding-right: 0;
     }
   }
 
-  &--right {
-    align-items: flex-end;
+  &--highlighted p {
+    background-color: map-get($color, "background-variant");
+    box-sizing: border-box;
+    padding: map-get($spacing, "L");
+
+    @include bp-small {
+      border-radius: map-get($spacing, "XS");
+      margin-left: map-get($spacing, "L");
+      margin-right: map-get($spacing, "L");
+      max-width: $container-text--M - map-get($spacing, "XL");
+      padding: map-get($spacing, "L") map-get($spacing, "L")
+        map-get($spacing, "L") map-get($spacing, "XXL");
+    }
 
     @include bp-medium {
-      p {
-        box-sizing: border-box;
-        max-width: $container-text--S;
-        padding-right: map-get($spacing, "L") map-get($spacing, "L")
-          map-get($spacing, "XXL") 0;
+      margin-left: map-get($spacing, "XL");
+      margin-right: map-get($spacing, "XL");
+      max-width: $container-text--M - map-get($spacing, "XXL");
+    }
+
+    @include bp-large {
+      margin-right: 0;
+      max-width: $container-text--M - map-get($spacing, "XL");
+    }
+  }
+
+  &__header {
+    align-self: flex-start;
+    margin-left: map-get($spacing, "L");
+    margin-top: map-get($spacing, "L");
+    position: absolute;
+    z-index: 25;
+
+    @include bp-small {
+      align-self: flex-end;
+      color: map-get($color, "background");
+      font-size: 640%;
+      margin-left: -23.5rem;
+      margin-top: 10.875rem;
+      transform: rotate(90deg);
+    }
+
+    @include bp-medium {
+      margin-left: -21.5rem;
+    }
+  }
+
+  &__subheader {
+    display: block;
+    margin-top: map-get($spacing, "L");
+
+    @include bp-small {
+      &:first-of-type {
+        margin-top: 0;
       }
     }
   }
