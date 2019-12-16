@@ -1,26 +1,54 @@
 .c-image-container {
-  column-gap: map-get($spacing, "M");
+  box-sizing: content-box !important;
   display: grid;
-  row-gap: map-get($spacing, "M");
+  grid-template-columns: 1fr;
+  row-gap: map-get($spacing, "S");
 
-  @include bp-medium {
-    padding-left: map-get($spacing, "L");
-    padding-right: map-get($spacing, "L");
+  .c-text-container + & {
+    padding-bottom: map-get($spacing, "XL");
+    padding-top: map-get($spacing, "XL");
   }
 
-  &--2 {
+  @include bp-medium {
+    &.l-container__content--S {
+      padding-left: map-get($spacing, "XXXL");
+    }
+  }
+
+  @include bp-large {
+    &.l-container__content--L {
+      padding-left: map-get($spacing, "S");
+      padding-right: map-get($spacing, "S");
+    }
+  }
+
+  &--multiple {
     @include bp-small {
+      column-gap: map-get($spacing, "S");
       grid-template-columns: 1fr 1fr;
     }
   }
 
-  &--4 {
+  &__caption {
+    color: map-get($color, "type-variant");
+    padding-left: map-get($spacing, "L");
+    padding-right: map-get($spacing, "L");
+    text-align: right;
+
     @include bp-small {
-      grid-template-columns: 1fr 1fr;
+      grid-column-start: span 2;
     }
 
     @include bp-medium {
-      grid-template-columns: 1fr 1fr 1fr 1fr;
+      padding-right: map-get($spacing, "XL");
+    }
+
+    @include bp-large {
+      padding-right: map-get($spacing, "XXL");
+    }
+
+    small {
+      display: inline-flex;
     }
   }
 }
