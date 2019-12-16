@@ -73,6 +73,10 @@ strong {
   font-weight: bold;
 }
 
+video {
+  outline: none;
+}
+
 .highlighted-type {
   color: map-get($color, "type-variant");
 }

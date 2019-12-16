@@ -31,7 +31,7 @@
     border-top: solid 1px map-get($color, "type-variant");
     padding-left: map-get($spacing, "M");
     padding-right: map-get($spacing, "M");
-    padding-top: map-get($spacing, "S");
+    padding-top: map-get($spacing, "S") + map-get($spacing, "XS");
     text-align: right;
 
     @include bp-small {
