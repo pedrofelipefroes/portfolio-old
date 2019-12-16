@@ -3,9 +3,9 @@ import Fade from "react-reveal/Fade"
 import React from "react"
 import SEO from "../components/seo"
 
-import FeaturedCard from "../components/featuredCard"
 import Layout from "../components/layout"
 import NavigationLink from "../components/navigationLink"
+import ProjectCard from "../components/projectCard"
 
 import "../styles/index.scss"
 
@@ -14,15 +14,8 @@ const IndexPage = () => {
     {
       title: "Rebranding Avenue Code",
       subtitle: "A new identify for the global technology consulting company.",
-      img: "/featured-work/rebranding-avenue-code.jpg",
+      img: "/rebranding-avenue-code/header.jpg",
       url: "/rebranding-avenue-code",
-    },
-    {
-      title: "Responsive Design Insights",
-      subtitle:
-        "Why an international large-scale e-commerce should invest in responsiveness across it’s product.",
-      img: "/featured-work/rebranding-ac.jpg",
-      url: "/responsive-design-insights",
     },
   ]
 
@@ -72,8 +65,8 @@ const IndexPage = () => {
               </strong>
               <svg
                 className="p-index__header__links__featured__arrow"
-                width="24px"
-                height="48px "
+                width="16px"
+                height="32px "
                 viewBox="0 0 24 48"
                 version="1.1"
                 xmlns="http://www.w3.org/2000/svg"
@@ -102,7 +95,7 @@ const IndexPage = () => {
       </header>
       <div className="p-index__featured l-container__content--L">
         {featuredProjects.map((project, index) => (
-          <FeaturedCard
+          <ProjectCard
             id={index}
             title={project.title}
             subtitle={project.subtitle}
