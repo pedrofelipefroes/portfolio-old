@@ -48,8 +48,8 @@
       width: 16rem;
     }
 
-    h2 {
-      margin-bottom: map-get($spacing, "M");
+    h2, p {
+      margin-bottom: map-get($spacing, "S");
     }
   }
 }
