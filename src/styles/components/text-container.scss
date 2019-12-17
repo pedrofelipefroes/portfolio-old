@@ -58,14 +58,14 @@
     @include bp-small {
       align-self: flex-end;
       color: map-get($color, "background");
-      font-size: 640%;
+      font-size: 720%;
       margin-left: -23.5rem;
-      margin-top: 10.875rem;
+      margin-top: 11.875rem;
       transform: rotate(90deg);
     }
 
     @include bp-medium {
-      margin-left: -21.5rem;
+      margin-left: -20rem;
     }
   }
 

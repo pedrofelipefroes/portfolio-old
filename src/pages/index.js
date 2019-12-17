@@ -35,12 +35,12 @@ const IndexPage = () => {
           </Fade>
         </section>
         <section className="p-index__header__headline">
-          <Fade top delay={1500} duration={2000} distance={"24px"}>
+          <Fade top delay={1000} duration={500} distance={"24px"}>
             <h1>
               <span className="highlighted-type">I am </span>Froes
             </h1>
           </Fade>
-          <Fade top delay={2000} duration={2400} distance={"24px"}>
+          <Fade top delay={1500} duration={1000} distance={"24px"}>
             <h3>
               and I love to develop cohesive user experiences through
               comprehensive design systems.

@@ -8,6 +8,8 @@ import ProjectHeader from "../components/projectHeader"
 import SEO from "../components/seo"
 import TextContainer from "../components/textContainer"
 
+import "../styles/index.scss"
+
 const RebrandingAvenueCodePage = ({ data }) => {
   let projectData = {
     title: "Rebranding Avenue Code",
