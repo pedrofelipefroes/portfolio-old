@@ -1,0 +1,76 @@
+@import "../../styles/index.scss";
+
+.c-project-header {
+  overflow: hidden;
+
+  &__title h1,
+  &__title h3 {
+    padding-left: map-get($spacing, "L");
+    padding-right: map-get($spacing, "L");
+
+    @include bp-medium {
+      background-color: map-get($color, "background");
+      position: relative;
+      z-index: 50;
+    }
+
+    @include bp-large {
+      padding-left: 0;
+    }
+  }
+
+  &__title h1 {
+    padding-top: map-get($spacing, "XXL");
+    padding-bottom: map-get($spacing, "XS");
+  }
+
+  &__title h3 {
+    padding-bottom: map-get($spacing, "L");
+  }
+
+  &__cover {
+    box-sizing: border-box;
+    margin: 0 auto;
+    max-width: $container-content--S + 9rem;
+
+    &__content {
+      @include bp-medium {
+        bottom: map-get($spacing, "XXL");
+        left: map-get($spacing, "XL") + 4.5rem;
+        margin-bottom: -1 * map-get($spacing, "XL");
+        position: relative;
+      }
+    }
+  }
+
+  &__details {
+    border-left: solid 3px var(--color-primary);
+    display: flex;
+    flex-direction: column;
+    margin: map-get($spacing, "L") map-get($spacing, "L")
+      map-get($spacing, "XL");
+    padding-left: map-get($spacing, "L");
+
+    @include bp-medium {
+      margin-bottom: 0;
+      margin-top: 0;
+      position: absolute;
+    }
+
+    @include bp-large {
+      margin-left: 0;
+      margin-right: 0;
+    }
+
+    &__content {
+      display: flex;
+      flex-direction: column;
+      margin-bottom: map-get($spacing, "M");
+      max-width: 16rem;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+}
