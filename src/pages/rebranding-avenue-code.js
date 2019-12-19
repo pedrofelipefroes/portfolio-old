@@ -80,7 +80,7 @@ const RebrandingAvenueCodePage = ({ data }) => {
       <SEO title="Rebranding Avenue Code" />
       <ProjectHeader projectData={projectData}>
         <Img
-          fluid={data.header.childImageSharp.fluid}
+          fluid={data.cover.childImageSharp.fluid}
           alt="Rebranding Avenue Code project header with Avenue Code logo."
         />
       </ProjectHeader>
@@ -317,6 +317,16 @@ const RebrandingAvenueCodePage = ({ data }) => {
   )
 }
 
+export const coverImage = graphql`
+  fragment coverImage on File {
+    childImageSharp {
+      fluid(maxWidth: 1024, quality: 100) {
+        ...GatsbyImageSharpFluid
+      }
+    }
+  }
+`
+
 export const fullImage = graphql`
   fragment fullImage on File {
     childImageSharp {
@@ -339,14 +349,10 @@ export const quarterImage = graphql`
 
 export const query = graphql`
   query {
-    header: file(
-      relativePath: { eq: "rebranding-avenue-code/rebranding-avenue-code.jpg" }
+    cover: file(
+      relativePath: { eq: "rebranding-avenue-code/cover.jpg" }
     ) {
-      childImageSharp {
-        fluid(maxWidth: 959, quality: 100) {
-          ...GatsbyImageSharpFluid
-        }
-      }
+      ...coverImage
     }
     previousBranding1: file(
       relativePath: { eq: "rebranding-avenue-code/previous-branding-1.jpg" }
