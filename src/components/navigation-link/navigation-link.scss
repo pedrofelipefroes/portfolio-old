@@ -1,0 +1,54 @@
+@import "../../styles/index.scss";
+
+.c-navigation-link {
+  align-items: center;
+  display: inline-flex;
+
+  &:hover {
+    text-decoration: none;
+    opacity: 0.5;
+  }
+
+  &--no-arrow &__arrow {
+    display: none;
+  }
+
+  &--reverse-arrow {
+    flex-direction: row-reverse;
+  }
+
+  &--reverse-arrow &__arrow {
+    margin-left: 0;
+    margin-right: map-get($spacing, "XS");
+    transform: scaleX(-1);
+  }
+
+  &__label:hover {
+    text-decoration: none;
+  }
+
+  &__arrow {
+    fill-rule: nonzero;
+    height: map-get($spacing, "M");
+    margin-left: map-get($spacing, "XS");
+    width: 3rem;
+
+    & > g {
+      transition: all 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    }
+
+    & > rect {
+      transition: all 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    }
+  }
+
+  &:hover &__arrow {
+    & > g {
+      transform: translate(23px, 0);
+    }
+
+    & > rect {
+      width: 55px;
+    }
+  }
+}
