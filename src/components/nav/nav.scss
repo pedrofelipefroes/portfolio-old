@@ -1,36 +1,47 @@
 @import "../../styles/index.scss";
 
+@keyframes c-nav__background-is-set {
+  from {
+    background-color: transparent;
+  }
+  to {
+    background-color: map-get($color, "background");
+  }
+}
+
 .c-nav {
-  background: map-get($color, "background");
-  padding-bottom: map-get($spacing, "ML");
-  padding-top: map-get($spacing, "ML");
+  background-color: map-get($color, "background");
   position: fixed;
   width: 100%;
+  top: 0;
   z-index: 100;
 
+  @include bp-small {
+    animation: 800ms $animation-ease-out-expo 2400ms both
+      c-nav__background-is-set;
+  }
+
   &__link-to-home {
-    padding-left: map-get($spacing, "S");
+    margin-left: map-get($spacing, "L");
 
-    .c-navigation-link__label {
-      display: none;
-
-      @include bp-small {
-        display: unset;
-      }
+    &::before {
+      content: "Froes";
+      font-weight: bold;
     }
+  }
 
-    .c-navigation-link__arrow {
-      fill: map-get($color, "type-variant");
-    }
+  &__items {
+    display: flex;
   }
 
   &__items .c-navigation-link {
     margin-right: map-get($spacing, "L");
   }
 
-  .l-container__content--L {
+  .u-content-container--XL {
     display: flex;
     flex-grow: 1;
     justify-content: space-between;
+    padding: map-get($spacing, "M") 0;
   }
 }

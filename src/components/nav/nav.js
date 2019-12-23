@@ -1,4 +1,3 @@
-//import { Link } from "gatsby"
 import PropTypes from "prop-types"
 import React from "react"
 
@@ -6,52 +5,50 @@ import NavigationLink from "../navigation-link/navigationLink"
 
 import "./nav.scss"
 
-const Nav = ({ hasShowcase, hasAbout }) => (
+const Nav = ({ hasAbout, hasShowcase }) => (
   <nav className="c-nav">
-    <div className="l-container__content--L">
-      <small>
+    <div className="u-content-container--XL">
+      <h4>
         <strong>
           <NavigationLink
-            hasClass="c-nav__link-to-home u-color-type-variant"
-            hasArrow
-            hasReverseArrow
+            className="c-nav__link-to-home u-color-type"
             to="/"
-            label="FROES.design"
+            label=".design"
           />
         </strong>
-      </small>
+      </h4>
       <div className="c-nav__items">
-        <small>
-          <strong>
-            {hasShowcase ? (
-              <NavigationLink
-                hasClass="u-color-type-variant"
-                to="/showcase"
-                label="Showcase"
-              />
-            ) : null}
-            {hasAbout ? (
-              <NavigationLink
-                hasClass="u-color-type-variant"
-                to="/about"
-                label="About"
-              />
-            ) : null}
-          </strong>
-        </small>
+        {hasShowcase ? (
+          <h4>
+            <NavigationLink
+              className="u-color-type-variant"
+              to="/showcase"
+              label="Showcase"
+            />
+          </h4>
+        ) : null}
+        {hasAbout ? (
+          <h4>
+            <NavigationLink
+              className="u-color-type-variant"
+              to="/about"
+              label="About"
+            />
+          </h4>
+        ) : null}
       </div>
     </div>
   </nav>
 )
 
 Nav.propTypes = {
-  hasShowcase: PropTypes.bool,
   hasAbout: PropTypes.bool,
+  hasShowcase: PropTypes.bool,
 }
 
 Nav.defaultProps = {
-  hasShowcase: true,
   hasAbout: true,
+  hasShowcase: true,
 }
 
 export default Nav
