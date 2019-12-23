@@ -1,0 +1,49 @@
+@import "../../styles/index.scss";
+
+.c-text-container {
+  align-items: flex-end;
+  display: flex;
+  flex-direction: column;
+
+  & + & {
+    margin-top: map-get($spacing, "L") + map-get($spacing, "S");
+  }
+
+  & > *:first-child {
+    box-sizing: border-box;
+    max-width: $container-text--M;
+    padding-left: map-get($spacing, "L");
+    padding-right: map-get($spacing, "L");
+    width: 100%;
+
+    @include bp-medium {
+      padding-left: map-get($spacing, "XL");
+      padding-right: map-get($spacing, "XL");
+    }
+
+    @include bp-large {
+      padding-left: 0;
+      padding-right: 0;
+    }
+  }
+
+  &--header + & {
+    margin-top: map-get($spacing, "M");
+  }
+
+  &--highlighted > *:first-child {
+    border-left: solid 3px var(--color-primary);
+    margin-left: map-get($spacing, "L");
+    max-width: $container-text--M - map-get($spacing, "L");
+    padding-left: map-get($spacing, "L");
+    width: unset;
+
+    @include bp-medium {
+      max-width: $container-text--M - map-get($spacing, "XL");
+    }
+
+    @include bp-large {
+      max-width: $container-text--M;
+    }
+  }
+}
