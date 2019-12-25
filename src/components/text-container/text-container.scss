@@ -5,30 +5,26 @@
   display: flex;
   flex-direction: column;
 
+  .c-image-container + &,
   & + & {
-    margin-top: map-get($spacing, "L") + map-get($spacing, "S");
+    margin-top: map-get($spacing, "L");
+  }
+
+  .c-image-container__caption + & {
+    margin-top: map-get($spacing, "L");
   }
 
   & > *:first-child {
     box-sizing: border-box;
-    max-width: $container-text--M;
+    max-width: map-get($container, "M");
     padding-left: map-get($spacing, "L");
     padding-right: map-get($spacing, "L");
     width: 100%;
-
-    @include bp-medium {
-      padding-left: map-get($spacing, "XL");
-      padding-right: map-get($spacing, "XL");
-    }
-
-    @include bp-large {
-      padding-left: 0;
-      padding-right: 0;
-    }
   }
 
-  &--header + & {
-    margin-top: map-get($spacing, "M");
+  & + &--is-header,
+  [class*="c-image-container"] + &--is-header {
+    margin-top: map-get($spacing, "XXL");
   }
 
   &--highlighted > *:first-child {

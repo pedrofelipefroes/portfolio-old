@@ -1,25 +1,25 @@
+import Fade from "react-reveal/Fade"
 import PropTypes from "prop-types"
 import React from "react"
 
 import "./text-container.scss"
 
-const TextContainer = ({ children, isHeader, isHighlighted }) => {
+const TextContainer = ({ isHeader, text }) => {
   return (
     <div
       className={
         "l-container__content--S c-text-container" +
-        (isHeader ? " c-text-container--header" : "") +
-        (isHighlighted ? " c-text-container--highlighted" : "")
+        (isHeader ? " c-text-container--is-header" : "")
       }
     >
-      {children}
+      <Fade bottom>{text}</Fade>
     </div>
   )
 }
 
 TextContainer.propTypes = {
-  children: PropTypes.node.isRequired,
-  isHighlighted: PropTypes.bool,
+  isHeader: PropTypes.bool,
+  text: PropTypes.node.isRequired,
 }
 
 export default TextContainer
