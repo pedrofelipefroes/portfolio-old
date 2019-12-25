@@ -1,34 +1,31 @@
 import PropTypes from "prop-types"
 import React from "react"
+import Reveal from "react-reveal/Reveal"
 
 import "./project-header.scss"
 
-const ProjectHeader = ({ children, projectData }) => {
+const ProjectHeader = ({ cover, details, subtitle, title }) => {
   return (
     <header className="c-project-header">
-      <section className="c-project-header__title l-container__content--S">
-        <h1 className="l-container__text--M">{projectData.title}</h1>
-        <h3 className="l-container__text--M u-color-type-variant">
-          {projectData.subtitle}
-        </h3>
-      </section>
-      <figure className="c-project-header__cover">
-        <div className="c-project-header__cover__content">{children}</div>
+      <figure className="c-project-header__cover u-content-container--XL">
+        <Reveal>{cover}</Reveal>
       </figure>
-      <div className="l-container__content--S">
+      <section className="c-project-header__title u-content-container--L">
+        <h1>{title}</h1>
+      </section>
+      <div className="c-project-header__details-and-subtitle u-content-container--L">
         <section className="c-project-header__details">
-          {projectData.details.map(item => (
+          {details.map(item => (
             <div className="c-project-header__details__content">
               <small>
-                <em>
-                  <strong className="u-color-type-variant">
-                    {item.title}:{" "}
-                  </strong>
-                  {item.content}
-                </em>
+                <strong>{item.title}</strong>
               </small>
+              <small className="u-color-type-variant">{item.content}</small>
             </div>
           ))}
+        </section>
+        <section className="c-project-header__subtitle">
+          <h3>{subtitle}</h3>
         </section>
       </div>
     </header>
@@ -36,8 +33,10 @@ const ProjectHeader = ({ children, projectData }) => {
 }
 
 ProjectHeader.propTypes = {
-  children: PropTypes.node.isRequired,
-  projectData: PropTypes.object,
+  cover: PropTypes.node.isRequired,
+  details: PropTypes.object.isRequired,
+  subtitle: PropTypes.string.isRequired,
+  title: PropTypes.string.isRequired,
 }
 
 export default ProjectHeader
