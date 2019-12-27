@@ -1,0 +1,76 @@
+@import "../../styles/index.scss";
+
+.c-image-container {
+  & + & {
+    margin-top: map-get($spacing, "L");
+  }
+
+  .c-text-container + & {
+    margin-top: map-get($spacing, "XL");
+  }
+
+  &__title {
+    align-items: flex-end;
+    display: flex;
+    flex-direction: column;
+
+    p {
+      box-sizing: border-box;
+      margin-bottom: map-get($spacing, "L");
+      margin-top: map-get($spacing, "L");
+      max-width: map-get($container, "M");
+      padding-left: map-get($spacing, "L");
+      padding-right: map-get($spacing, "L");
+      width: 100%;
+    }
+  }
+
+  &.u-content-container--M &__image,
+  &.u-content-container--L &__image,
+  &.u-content-container--XL &__image {
+    display: grid;
+  }
+
+  &.u-content-container--M {
+    max-width: map-get($container, "L");
+
+    @include bp-medium {
+      align-items: flex-end;
+      display: flex;
+      flex-direction: column;
+    }
+  }
+
+  &.u-content-container--M &__image {
+    @include bp-medium {
+      width: map-get($container, "M");
+    }
+  }
+
+  &--2 &__image,
+  &--3 &__image {
+    column-gap: map-get($spacing, "XS");
+  }
+
+  &--2 &__image {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  &--3 &__image {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+
+  &__caption {
+    align-items: flex-end;
+    display: flex;
+    flex-direction: column;
+    text-align: right;
+
+    small {
+      margin-top: map-get($spacing, "L");
+      max-width: map-get($container, "S");
+      padding-left: map-get($spacing, "L");
+      padding-right: map-get($spacing, "L");
+    }
+  }
+}
