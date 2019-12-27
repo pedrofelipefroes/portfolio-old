@@ -1,7 +1,7 @@
 import PropTypes from "prop-types"
 import React from "react"
 
-import NavigationLink from "../navigation-link/navigationLink"
+import NavigationLink from "../navigation-link/navigation-link"
 
 import "./nav.scss"
 
