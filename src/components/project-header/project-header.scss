@@ -6,7 +6,8 @@
       padding: 0;
     }
     to {
-      padding: map-get($spacing, "XL") map-get($spacing, "XL") 0;
+      padding: map-get($spacing, "XL") map-get($spacing, "XL")
+        map-get($spacing, "L");
     }
   }
 }
@@ -20,7 +21,7 @@
 }
 
 .c-project-header {
-  margin-top: 4.3125rem; // Nav height size
+  margin-top: map-get($spacing, "XL");
 
   @include bp-small {
     margin-top: 0;
@@ -41,14 +42,13 @@
 
     @include bp-small {
       background-color: map-get($color, "background");
-      margin-top: -1 * map-get($spacing, "XL");
+      margin-top: -1 * map-get($spacing, "XXL");
       position: relative;
       z-index: 50;
     }
 
     @include bp-medium {
       box-sizing: border-box;
-      margin-top: -1 * map-get($spacing, "XXL");
       max-width: map-get($container, "M");
     }
   }
