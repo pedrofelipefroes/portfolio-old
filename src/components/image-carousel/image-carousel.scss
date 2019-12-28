@@ -1,0 +1,85 @@
+@import "../../styles/index.scss";
+
+.c-image-carousel {
+  display: flex;
+  flex-direction: column;
+
+  & + & {
+    margin-top: map-get($spacing, "L");
+  }
+
+  .c-text-container + & {
+    margin-top: map-get($spacing, "XL");
+  }
+
+  &__title {
+    align-items: flex-end;
+    display: flex;
+    flex-direction: column;
+
+    p {
+      box-sizing: border-box;
+      margin-bottom: map-get($spacing, "L");
+      margin-top: map-get($spacing, "L");
+      max-width: map-get($container, "M");
+      padding-left: map-get($spacing, "L");
+      padding-right: map-get($spacing, "L");
+      width: 100%;
+    }
+  }
+
+  &__container.u-content-container--M {
+    align-self: flex-end;
+    margin: 0;
+  }
+
+  &__container .carousel {
+    .control-dots {
+      margin: map-get($spacing, "XS") 0 0;
+      position: unset;
+    }
+
+    .control-dots .dot {
+      background-color: map-get($color, "type-variant");
+      box-shadow: none;
+      opacity: 1;
+      outline: none;
+
+      &:hover {
+        opacity: 0.5;
+      }
+
+      &.selected {
+        background-color: map-get($color, "type");
+      }
+
+      &.selected:hover {
+        opacity: 1;
+      }
+    }
+
+    .slide {
+      background: transparent;
+    }
+
+    .slide picture img {
+      margin-top: -62.5%;
+      position: unset !important;
+    }
+  }
+
+  &__caption {
+    align-items: flex-end;
+    display: flex;
+    flex-direction: column;
+    text-align: right;
+
+    small {
+      margin-bottom: map-get($spacing, "XL");
+      margin-top: map-get($spacing, "L");
+      max-width: map-get($container, "S");
+      padding-left: map-get($spacing, "L");
+      padding-right: map-get($spacing, "L");
+    }
+  }
+}
