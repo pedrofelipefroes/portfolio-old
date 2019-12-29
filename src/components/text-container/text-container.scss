@@ -5,12 +5,9 @@
   display: flex;
   flex-direction: column;
 
+  .c-image-carousel + &,
   .c-image-container + &,
   & + & {
-    margin-top: map-get($spacing, "L");
-  }
-
-  .c-image-container__caption + & {
     margin-top: map-get($spacing, "L");
   }
 
@@ -23,8 +20,12 @@
   }
 
   & + &--is-header,
-  [class*="c-image-container"] + &--is-header {
+  .c-image-container + &--is-header {
     margin-top: map-get($spacing, "XXL");
+  }
+
+  .c-image-container__caption + &--is-header {
+    margin-top: map-get($spacing, "XL");
   }
 
   &--highlighted > *:first-child {

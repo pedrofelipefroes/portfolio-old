@@ -67,6 +67,7 @@
     text-align: right;
 
     small {
+      margin-bottom: map-get($spacing, "XL");
       margin-top: map-get($spacing, "L");
       max-width: map-get($container, "S");
       padding-left: map-get($spacing, "L");
