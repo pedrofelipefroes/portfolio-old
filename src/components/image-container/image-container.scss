@@ -50,6 +50,7 @@
   &--2 &__image,
   &--3 &__image {
     column-gap: map-get($spacing, "XS");
+    row-gap: map-get($spacing, "XS");
   }
 
   &--2 &__image {
