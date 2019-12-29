@@ -27,20 +27,4 @@
   .c-image-container__caption + &--is-header {
     margin-top: map-get($spacing, "XL");
   }
-
-  &--highlighted > *:first-child {
-    border-left: solid 3px var(--color-primary);
-    margin-left: map-get($spacing, "L");
-    max-width: $container-text--M - map-get($spacing, "L");
-    padding-left: map-get($spacing, "L");
-    width: unset;
-
-    @include bp-medium {
-      max-width: $container-text--M - map-get($spacing, "XL");
-    }
-
-    @include bp-large {
-      max-width: $container-text--M;
-    }
-  }
 }
