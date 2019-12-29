@@ -1,0 +1,22 @@
+@import "../../styles/index.scss";
+
+.c-project-outro {
+  align-items: flex-end;
+  display: flex;
+  flex-direction: column;
+  padding-top: map-get($spacing, "XXL");
+
+  & > small {
+    box-sizing: border-box;
+    max-width: map-get($container, "M");
+    padding-left: map-get($spacing, "L");
+    padding-right: map-get($spacing, "L");
+    width: 100%;
+  }
+
+  &__divider {
+    border: 0.5px solid map-get($color, "type");
+    width: 50%;
+    margin: 0 0 map-get($spacing, "L");
+  }
+}
