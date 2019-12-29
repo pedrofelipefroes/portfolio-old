@@ -19,8 +19,8 @@ const ImageContainer = ({ caption, image, hasSize, isSplitIn, title }) => {
       <figure
         className={
           "c-image-container" +
-          (isSplitIn ? " c-image-container--" + `${isSplitIn}` : "") +
-          (hasSize ? " u-content-container--" + `${hasSize}` : "")
+          (isSplitIn ? `c-image-container--${isSplitIn}` : "") +
+          (hasSize ? ` u-content-container--${hasSize}` : "")
         }
       >
         <div className="c-image-container__image">{image}</div>

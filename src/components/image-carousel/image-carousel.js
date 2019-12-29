@@ -27,7 +27,6 @@ const ImageCarousel = ({ caption, hasSize, images, title }) => {
         }
       >
         <Carousel
-          autoPlay
           className={
             hasSize === "M"
               ? "c-image-carousel__container u-content-container--M"
@@ -39,7 +38,9 @@ const ImageCarousel = ({ caption, hasSize, images, title }) => {
           showStatus={false}
           showThumbs={false}
         >
-          {images.map(item => item)}
+          {images.map((index, item) => (
+            <div key={index}>{item}</div>
+          ))}
         </Carousel>
       </section>
       {caption ? (
