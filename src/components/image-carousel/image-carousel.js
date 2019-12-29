@@ -38,9 +38,7 @@ const ImageCarousel = ({ caption, hasSize, images, title }) => {
           showStatus={false}
           showThumbs={false}
         >
-          {images.map((index, item) => (
-            <div key={index}>{item}</div>
-          ))}
+          {images.map(item => item)}
         </Carousel>
       </section>
       {caption ? (
