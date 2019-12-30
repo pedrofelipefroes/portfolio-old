@@ -1,4 +1,6 @@
 html {
+  --color-primary: map-get($color, "type-variant");
+
   font-family: $type-family;
   -moz-osx-font-smoothing: grayscale;
   -ms-text-size-adjust: 100%;
@@ -45,11 +47,21 @@ h3 {
   }
 }
 
+h4 {
+  font-size: map-get($type-caption-1, "size--S");
+  font-weight: map-get($type-caption-1, "weight");
+  line-height: map-get($type-caption-1, "leading");
+}
+
 p {
   font-size: map-get($type-body-2, "size--S");
   font-weight: map-get($type-body-2, "weight");
   letter-spacing: map-get($type-body-2, "character-spacing");
   line-height: map-get($type-body-2, "leading");
+
+  @include bp-medium {
+    font-size: map-get($type-body-2, "size--M");
+  }
 }
 
 small {
@@ -60,31 +72,24 @@ small {
 }
 
 a {
-  color: map-get($color, "type");
-  font-weight: map-get($type-navigation-link, "weight");
+  color: map-get($type-anchor, "color");
+  font-weight: map-get($type-anchor, "weight");
   text-decoration: none;
 
   &:hover {
-    text-decoration: underline;
+    opacity: .5;
+    text-decoration: none;
   }
 }
 
+em {
+  font-style: italic;
+}
+
 strong {
-  font-weight: bold;
+  font-weight: 500;
 }
 
 video {
   outline: none;
-}
-
-.highlighted-type {
-  color: map-get($color, "type-variant");
-}
-
-.navigation-link {
-  font-size: map-get($type-navigation-link, "size--S");
-
-  &:hover {
-    text-decoration: none;
-  }
 }

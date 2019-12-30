@@ -1,0 +1,25 @@
+.u-content-container--M {
+  box-sizing: border-box;
+  margin: 0 auto;
+  max-width: map-get($container, "M");
+}
+
+.u-content-container--L {
+  box-sizing: border-box;
+  margin: 0 auto;
+  max-width: map-get($container, "L");
+}
+
+.u-content-container--XL {
+  box-sizing: border-box;
+  margin: 0 auto;
+  max-width: map-get($container, "XL");
+}
+
+.u-color-type {
+  color: map-get($color, "type");
+}
+
+.u-color-type-variant {
+  color: map-get($color, "type-variant");
+}

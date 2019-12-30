@@ -1,6 +1,6 @@
-$grayscale-100: #fafafa;
+$grayscale-100: #ffffff;
 $grayscale-200: #f0f0f0;
-$grayscale-300: #bebebe;
+$grayscale-300: #737373;
 $grayscale-400: #131313;
 
 $grayscale-gradient: linear-gradient(
@@ -30,17 +30,15 @@ $color: (
 
 $animation-ease-out-expo: cubic-bezier(0.19, 1, 0.22, 1);
 
-$spacing-scale: 0.25rem;
+$spacing-scale: 0.5rem;
 
 $spacing: (
   "XS": $spacing-scale * 1,
   "S": $spacing-scale * 2,
-  "M": $spacing-scale * 4,
-  "ML": $spacing-scale * 6,
-  "L": $spacing-scale * 8,
-  "XL": $spacing-scale * 16,
-  "XXL": $spacing-scale * 32,
-  "XXXL": $spacing-scale * 64,
+  "M": $spacing-scale * 3,
+  "L": $spacing-scale * 4,
+  "XL": $spacing-scale * 8,
+  "XXL": $spacing-scale * 16,
 );
 
 @mixin bp-small {
@@ -61,6 +59,16 @@ $spacing: (
   }
 }
 
+$container-scale: 1rem;
+
+$container: (
+  "XS": $container-scale * 16,
+  "S": $container-scale * 32,
+  "M": $container-scale * 40,
+  "L": $container-scale * 64,
+  "XL": $container-scale * 90,
+);
+
 $container-text--S: 32rem;
 $container-text--M: 40rem;
 $container-text--L: 48rem;
@@ -68,38 +76,49 @@ $container-text--L: 48rem;
 $container-content--S: 64rem;
 $container-content--L: 90rem;
 
+$content-container--small: 32rem;
+$content-container--medium: 64rem;
+$content-container--large: 90rem;
+
 $type-family: "Helvetica Neue", -apple-system, BlinkMacSystemFont, sans-serif;
 $type-scale: 1rem;
 
 $type-title-1: (
+  "size--M": $type-scale * 5.5,
   "size--S": $type-scale * 2.625,
-  "size--M": $type-scale * 3,
-  "weight": bold,
-  "leading": 1.0833333333,
+  "weight": 500,
+  "leading": 1.0454545455,
   "character-spacing": -0.05rem,
 );
 
 $type-title-2: (
   "size--S": $type-scale * 1.4375,
-  "size--M": $type-scale * 2,
-  "weight": bold,
-  "leading": 1.0625,
+  "size--M": $type-scale * 2.375,
+  "weight": 500,
+  "leading": 1.3684210526,
   "character-spacing": -0.02375rem,
 );
 
 $type-body-1: (
   "size--S": $type-scale * 1.1875,
-  "size--M": $type-scale * 1.3125,
-  "weight": normal,
-  "leading": 1.5238095238,
+  "size--M": $type-scale * 1.5,
+  "weight": 500,
+  "leading": 1.4166666667,
   "character-spacing": -0.01625rem,
 );
 
 $type-body-2: (
   "size--S": $type-scale * 1.0625,
+  "size--M": $type-scale * 1.125,
   "weight": normal,
   "leading": 1.6470588235,
   "character-spacing": -0.013125rem,
+);
+
+$type-caption-1: (
+  "size--S": $type-scale * 0.9375,
+  "weight": 500,
+  "leading": 1.0666666667,
 );
 
 $type-caption: (
@@ -109,9 +128,7 @@ $type-caption: (
   "character-spacing": -0.00625rem,
 );
 
-$type-navigation-link: (
-  "size--S": $type-scale * 0.75,
-  "weight": bold,
-  "leading": 1.3333333333,
-  "character-spacing": -0.01125rem,
+$type-anchor: (
+  "color": map-get($color, "type"),
+  "weight": 500,
 );
