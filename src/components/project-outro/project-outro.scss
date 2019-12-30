@@ -6,16 +6,25 @@
   flex-direction: column;
   padding-top: map-get($spacing, "XXL");
 
-  & > small {
+  &__text-container {
     box-sizing: border-box;
     max-width: map-get($container, "M");
     padding-left: map-get($spacing, "L");
     padding-right: map-get($spacing, "L");
     width: 100%;
+
+    & > * {
+      display: block;
+      max-width: map-get($container, "S");
+    }
+
+    & > *:not(:last-child) {
+      margin-bottom: map-get($spacing, "M");
+    }
   }
 
   &__divider {
-    border: 0.5px solid map-get($color, "type");
+    border: 0.5px solid map-get($color, "type-variant");
     width: 50%;
     margin: 0 0 map-get($spacing, "L");
   }

@@ -8,10 +8,10 @@ const ProjectOutro = ({ text }) => {
   return (
     <div className="l-container__content--S c-project-outro">
       <Fade bottom>
-        <small className="u-color-type-variant">
+        <div className="c-project-outro__text-container u-color-type-variant">
           <hr className="c-project-outro__divider" />
           {text}
-        </small>
+        </div>
       </Fade>
     </div>
   )
