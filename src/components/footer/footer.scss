@@ -1,0 +1,46 @@
+@import "../../styles/index.scss";
+
+.c-footer {
+  background-color: map-get($color, "background-variant");
+  padding: map-get($spacing, "L");
+
+  @include bp-small {
+    padding-top: map-get($spacing, "ML");
+  }
+
+  & .u-content-container--XL {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    @include bp-medium {
+      align-items: center;
+      flex-direction: row;
+    }
+  }
+
+  &__links {
+    border-bottom: 0.5px solid map-get($color, "type-variant");
+    display: flex;
+    flex-direction: row;
+    margin-bottom: map-get($spacing, "S");
+    padding-bottom: map-get($spacing, "S");
+
+    @include bp-medium {
+      border-bottom: none;
+      margin-bottom: 0;
+      padding-bottom: 0;
+    }
+
+    & h3:not(:first-child) {
+      margin-left: map-get($spacing, "L");
+    }
+  }
+
+  &__copyright {
+    display: flex;
+    flex-direction: column;
+    padding-left: map-get($spacing, "M");
+    text-align: right;
+  }
+}

@@ -1,25 +1,27 @@
 import React from "react"
 
+import "./footer.scss"
+
 const Footer = () => (
   <footer className="c-footer">
-    <div className="l-container__content--S">
+    <div className="u-content-container--XL">
       <section className="c-footer__links">
-        <p>
+        <h3>
           <a href="https://www.linkedin.com/in/froesdesign">LinkedIn</a>
-        </p>
-        <p>
+        </h3>
+        <h3>
           <a href="mailto:hello@froes.design">Work Inquiries</a>
-        </p>
+        </h3>
       </section>
-      <section className="c-footer__disclaimer">
-        <small>
+      <section className="c-footer__copyright">
+        <small className="u-color-type-variant">
           This site was fully designed and developed by me. Check out its{" "}
           <a href="https://github.com/pedrofelipefroes/portfolio">
             GitHub repo
           </a>
           .
         </small>
-        <small>© 2019 Froes.</small>
+        <small className="u-color-type-variant">© 2019 Froes.</small>
       </section>
     </div>
   </footer>
