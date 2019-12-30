@@ -6,7 +6,7 @@ import "./project-outro.scss"
 
 const ProjectOutro = ({ text }) => {
   return (
-    <div className="l-container__content--S c-project-outro">
+    <div className="u-content-container--L c-project-outro">
       <Fade bottom>
         <div className="c-project-outro__text-container u-color-type-variant">
           <hr className="c-project-outro__divider" />

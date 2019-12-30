@@ -8,7 +8,7 @@ const TextContainer = ({ isHeader, text }) => {
   return (
     <div
       className={
-        "l-container__content--S c-text-container" +
+        "u-content-container--L c-text-container" +
         (isHeader ? " c-text-container--is-header" : "")
       }
     >
