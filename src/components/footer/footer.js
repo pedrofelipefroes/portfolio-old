@@ -21,7 +21,7 @@ const Footer = () => (
           </a>
           .
         </small>
-        <small className="u-color-type-variant">© 2019 Froes.</small>
+        <small className="u-color-type-variant">© 2020 Froes.</small>
       </section>
     </div>
   </footer>
