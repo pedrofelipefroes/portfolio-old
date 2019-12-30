@@ -34,7 +34,7 @@ const ProjectHeader = ({ cover, details, subtitle, title }) => {
 
 ProjectHeader.propTypes = {
   cover: PropTypes.node.isRequired,
-  details: PropTypes.object.isRequired,
+  details: PropTypes.array.isRequired,
   subtitle: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired,
 }
