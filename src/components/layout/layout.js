@@ -1,8 +1,10 @@
-import React from "react"
 import PropTypes from "prop-types"
+import React from "react"
 
-import Footer from "./footer"
-import Nav from "./nav"
+import Footer from "../footer/footer"
+import Nav from "../nav/nav"
+
+import "./layout.scss"
 
 const Layout = ({
   children,
@@ -16,7 +18,9 @@ const Layout = ({
       {hasNav ? (
         <Nav hasShowcase={navHasShowcase} hasAbout={navHasAbout} />
       ) : null}
-      <main className={className}>{children}</main>
+      <main className={className ? `c-layout ${className}` : "c-layout"}>
+        {children}
+      </main>
       <Footer />
     </>
   )
