@@ -1,24 +1,22 @@
-import Fade from "react-reveal/Fade"
 import PropTypes from "prop-types"
 import React from "react"
 
+import TextContainer from "../text-container/text-container"
+
 import "./project-outro.scss"
 
-const ProjectOutro = ({ text }) => {
+const ProjectOutro = ({ children }) => {
   return (
-    <div className="u-content-container--L c-project-outro">
-      <Fade bottom>
-        <div className="c-project-outro__text-container u-color-type-variant">
-          <hr className="c-project-outro__divider" />
-          {text}
-        </div>
-      </Fade>
-    </div>
+    <TextContainer className="c-project-outro">
+      <small>
+        <em>{children}</em>
+      </small>
+    </TextContainer>
   )
 }
 
 ProjectOutro.propTypes = {
-  text: PropTypes.node.isRequired,
+  children: PropTypes.node.isRequired,
 }
 
 export default ProjectOutro

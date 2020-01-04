@@ -1,31 +1,35 @@
 @import "../../styles/index.scss";
 
 .c-project-outro {
-  align-items: flex-end;
-  display: flex;
-  flex-direction: column;
   padding-top: map-get($spacing, "XXL");
 
-  &__text-container {
+  & + & {
+    padding-top: 0;
+  }
+
+  small {
     box-sizing: border-box;
     max-width: map-get($container, "M");
     padding-left: map-get($spacing, "L");
     padding-right: map-get($spacing, "L");
     width: 100%;
-
-    & > * {
-      display: block;
-      max-width: map-get($container, "S");
-    }
-
-    & > *:not(:last-child) {
-      margin-bottom: map-get($spacing, "M");
-    }
   }
 
-  &__divider {
-    border: 0.5px solid map-get($color, "type-variant");
-    width: 50%;
+  small::before {
+    background-color: map-get($color, "type-variant");
+    content: "";
+    display: block;
     margin: 0 0 map-get($spacing, "L");
+    width: 50%;
+    height: 1px;
+  }
+
+  & + & small::before {
+    display: none;
+  }
+
+  small em {
+    display: block;
+    max-width: map-get($container, "S");
   }
 }
