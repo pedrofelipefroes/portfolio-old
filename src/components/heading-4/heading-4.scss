@@ -1,0 +1,9 @@
+@import "../../styles/index.scss";
+
+.c-heading-4 h4 {
+  box-sizing: border-box;
+  max-width: map-get($container, "M");
+  padding-left: map-get($spacing, "L");
+  padding-right: map-get($spacing, "L");
+  width: 100%;
+}
