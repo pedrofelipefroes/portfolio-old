@@ -4,22 +4,24 @@ import React from "react"
 
 import "./text-container.scss"
 
-const TextContainer = ({ isHeader, text }) => {
+const TextContainer = ({ children, className, isHeader }) => {
   return (
     <div
       className={
         "u-content-container--L c-text-container" +
-        (isHeader ? " c-text-container--is-header" : "")
+        (isHeader ? " c-text-container--is-header" : "") +
+        (className ? ` ${className}` : "")
       }
     >
-      <Fade bottom>{text}</Fade>
+      <Fade bottom>{children}</Fade>
     </div>
   )
 }
 
 TextContainer.propTypes = {
+  children: PropTypes.node.isRequired,
+  className: PropTypes.string,
   isHeader: PropTypes.bool,
-  text: PropTypes.node.isRequired,
 }
 
 export default TextContainer

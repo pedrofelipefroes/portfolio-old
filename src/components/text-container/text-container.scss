@@ -11,14 +11,6 @@
     margin-top: map-get($spacing, "L");
   }
 
-  & > *:first-child {
-    box-sizing: border-box;
-    max-width: map-get($container, "M");
-    padding-left: map-get($spacing, "L");
-    padding-right: map-get($spacing, "L");
-    width: 100%;
-  }
-
   & + &--is-header,
   .c-image-container + &--is-header {
     margin-top: map-get($spacing, "XXL");
