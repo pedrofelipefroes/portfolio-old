@@ -5,6 +5,8 @@ import Reveal from "react-reveal/Reveal"
 import "./project-header.scss"
 
 const ProjectHeader = ({ cover, details, subtitle, title }) => {
+  const detailsTitles = ["Activity", "Design Process", "Client", "Timeline"]
+
   return (
     <header className="c-project-header">
       <figure className="c-project-header__cover u-content-container--XL">
@@ -15,12 +17,12 @@ const ProjectHeader = ({ cover, details, subtitle, title }) => {
       </section>
       <div className="c-project-header__details-and-subtitle u-content-container--L">
         <section className="c-project-header__details">
-          {details.map(item => (
+          {details.map((item, index) => (
             <div className="c-project-header__details__content">
               <small>
-                <strong>{item.title}</strong>
+                <strong>{detailsTitles[index]}</strong>
               </small>
-              <small className="u-color-type-variant">{item.content}</small>
+              <small className="u-color-type-variant">{item}</small>
             </div>
           ))}
         </section>
