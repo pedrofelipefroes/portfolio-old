@@ -2,14 +2,14 @@ import Fade from "react-reveal/Fade"
 import PropTypes from "prop-types"
 import React from "react"
 
-import "./image-container.scss"
+import "./img-container.scss"
 
-const ImageContainer = ({ caption, image, hasSize, isSplitIn, title }) => {
+const ImgContainer = ({ caption, image, hasSize, isSplitIn, title }) => {
   return (
     <>
       {title ? (
         <Fade bottom>
-          <div className="c-image-container__title u-content-container--L">
+          <div className="c-img-container__title u-content-container--L">
             <p>
               <strong>{title}</strong>
             </p>
@@ -18,16 +18,16 @@ const ImageContainer = ({ caption, image, hasSize, isSplitIn, title }) => {
       ) : null}
       <figure
         className={
-          "c-image-container" +
-          (isSplitIn ? ` c-image-container--${isSplitIn}` : "") +
+          "c-img-container" +
+          (isSplitIn ? ` c-img-container--${isSplitIn}` : "") +
           (hasSize ? ` u-content-container--${hasSize}` : "")
         }
       >
-        <div className="c-image-container__image">{image}</div>
+        <div className="c-img-container__image">{image}</div>
       </figure>
       {caption ? (
         <Fade bottom>
-          <figcaption className="c-image-container__caption u-content-container--L">
+          <figcaption className="c-img-container__caption u-content-container--L">
             <small className="u-color-type-variant">{caption}</small>
           </figcaption>
         </Fade>
@@ -36,7 +36,7 @@ const ImageContainer = ({ caption, image, hasSize, isSplitIn, title }) => {
   )
 }
 
-ImageContainer.propTypes = {
+ImgContainer.propTypes = {
   caption: PropTypes.string,
   image: PropTypes.node.isRequired,
   hasSize: PropTypes.string,
@@ -44,8 +44,8 @@ ImageContainer.propTypes = {
   title: PropTypes.string,
 }
 
-ImageContainer.defaultProps = {
+ImgContainer.defaultProps = {
   hasSize: "L",
 }
 
-export default ImageContainer
+export default ImgContainer

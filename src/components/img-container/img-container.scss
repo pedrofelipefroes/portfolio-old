@@ -1,6 +1,6 @@
 @import "../../styles/index.scss";
 
-.c-image-container {
+.c-img-container {
   & + & {
     margin-top: map-get($spacing, "L");
   }

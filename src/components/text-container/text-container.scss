@@ -6,17 +6,17 @@
   flex-direction: column;
 
   .c-image-carousel + &,
-  .c-image-container + &,
+  .c-img-container + &,
   & + & {
     margin-top: map-get($spacing, "L");
   }
 
   & + &--is-header,
-  .c-image-container + &--is-header {
+  .c-img-container + &--is-header {
     margin-top: map-get($spacing, "XXL");
   }
 
-  .c-image-container__caption + &--is-header {
+  .c-img-container__caption + &--is-header {
     margin-top: map-get($spacing, "XL");
   }
 }
