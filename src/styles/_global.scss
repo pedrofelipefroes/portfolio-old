@@ -83,7 +83,7 @@ a {
 }
 
 em {
-  font-style: italic;
+  color: map-get($color, "type-variant");
 }
 
 strong {
