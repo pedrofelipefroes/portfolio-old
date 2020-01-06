@@ -4,14 +4,14 @@ import PropTypes from "prop-types"
 import React from "react"
 
 import "react-responsive-carousel/lib/styles/carousel.min.css"
-import "./image-carousel.scss"
+import "./img-carousel.scss"
 
-const ImageCarousel = ({ caption, hasSize, images, title }) => {
+const ImgCarousel = ({ caption, hasSize, images, title }) => {
   return (
     <>
       {title ? (
         <Fade bottom>
-          <div className="c-image-carousel__title u-content-container--L">
+          <div className="c-img-carousel__title u-content-container--L">
             <p>
               <strong>{title}</strong>
             </p>
@@ -20,7 +20,7 @@ const ImageCarousel = ({ caption, hasSize, images, title }) => {
       ) : null}
       <section
         className={
-          "c-image-carousel" +
+          "c-img-carousel" +
           (hasSize === "XL"
             ? " u-content-container--XL"
             : " u-content-container--L")
@@ -29,8 +29,8 @@ const ImageCarousel = ({ caption, hasSize, images, title }) => {
         <Carousel
           className={
             hasSize === "M"
-              ? "c-image-carousel__container u-content-container--M"
-              : "c-image-carousel__container"
+              ? "c-img-carousel__container u-content-container--M"
+              : "c-img-carousel__container"
           }
           emulateTouch={true}
           interval={5000}
@@ -43,7 +43,7 @@ const ImageCarousel = ({ caption, hasSize, images, title }) => {
       </section>
       {caption ? (
         <Fade bottom>
-          <div className="c-image-carousel__caption u-content-container--L">
+          <div className="c-img-carousel__caption u-content-container--L">
             <small className="u-color-type-variant">{caption}</small>
           </div>
         </Fade>
@@ -52,10 +52,10 @@ const ImageCarousel = ({ caption, hasSize, images, title }) => {
   )
 }
 
-ImageCarousel.propTypes = {
+ImgCarousel.propTypes = {
   caption: PropTypes.string,
   hasSize: PropTypes.string,
   images: PropTypes.array.isRequired,
 }
 
-export default ImageCarousel
+export default ImgCarousel
