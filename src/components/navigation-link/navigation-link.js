@@ -28,27 +28,27 @@ const NavigationLink = ({
     {hasArrow ? (
       <svg
         className="c-navigation-link__arrow"
-        width="72px"
+        width="80px"
         height="24px "
-        viewBox="0 0 72 24"
+        viewBox="0 0 80 24"
         version="1.1"
         xmlns="http://www.w3.org/2000/svg"
       >
-        <rect width="32" height="1.5" x="2" y="11.75" />
+        <rect width="40" height="3" x="2" y="12" />
         <g>
           <rect
-            width="8"
-            height="1.5"
+            width="12"
+            height="3"
             x="0"
             y="0"
-            transform="translate(29, 12.5) rotate(45) translate(-13, -12.5) translate(10, 7.5)"
+            transform="translate(35, 10) rotate(45) translate(-13, -12.5) translate(10, 7.5)"
           />
           <rect
-            width="1.5"
-            height="8"
-            x="6.5"
+            width="3"
+            height="12"
+            x="10"
             y="0"
-            transform="translate(29, 12.5) rotate(45) translate(-13, -12.5) translate(10, 7.5)"
+            transform="translate(35, 10) rotate(45) translate(-13, -12.5) translate(10, 7.5)"
           />
         </g>
       </svg>
