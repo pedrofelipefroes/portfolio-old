@@ -30,7 +30,7 @@
   &__arrow {
     fill-rule: nonzero;
     height: map-get($spacing, "M");
-    margin-left: map-get($spacing, "XS");
+    margin-left: map-get($spacing, "XS") / 2;
     width: 3rem;
 
     & > g {
