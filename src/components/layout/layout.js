@@ -9,15 +9,17 @@ import "./layout.scss"
 const Layout = ({
   children,
   className,
-  hasNav,
-  navHasShowcase,
   navHasAbout,
+  navHasShowcase,
+  navIsOnDark,
 }) => {
   return (
     <>
-      {hasNav ? (
-        <Nav hasShowcase={navHasShowcase} hasAbout={navHasAbout} />
-      ) : null}
+      <Nav
+        hasAbout={navHasAbout}
+        hasShowcase={navHasShowcase}
+        isOnDark={navIsOnDark}
+      />
       <main className={className ? `c-layout ${className}` : "c-layout"}>
         {children}
       </main>
@@ -29,15 +31,15 @@ const Layout = ({
 Layout.propTypes = {
   children: PropTypes.node.isRequired,
   className: PropTypes.string,
-  hasNav: PropTypes.bool,
-  navHasShowcase: PropTypes.bool,
   navHasAbout: PropTypes.bool,
+  navHasShowcase: PropTypes.bool,
+  navIsOnDark: PropTypes.bool,
 }
 
 Layout.defaultProps = {
-  hasNav: true,
-  navHasShowcase: true,
   navHasAbout: true,
+  navHasShowcase: true,
+  navIsOnDark: false,
 }
 
 export default Layout

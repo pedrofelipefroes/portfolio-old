@@ -5,13 +5,13 @@ import NavigationLink from "../navigation-link/navigation-link"
 
 import "./nav.scss"
 
-const Nav = ({ hasAbout, hasShowcase }) => (
-  <nav className="c-nav">
+const Nav = ({ hasAbout, hasShowcase, isOnDark }) => (
+  <nav className={isOnDark ? "c-nav c-nav--on-dark" : "c-nav"}>
     <div className="u-content-container--XL">
       <h4>
         <strong>
           <NavigationLink
-            className="c-nav__link-to-home u-color-type"
+            className="c-nav__link-to-home"
             to="/"
             label=".design"
           />
@@ -21,21 +21,21 @@ const Nav = ({ hasAbout, hasShowcase }) => (
         {hasShowcase ? (
           <h4>
             <NavigationLink
-              className="u-color-type-variant"
+              className="c-nav__item"
               to="/showcase"
               label="Showcase"
             />
           </h4>
-        ) : null}
+        ) : (
+          <h4 className="c-nav__item c-nav__item--selected">Showcase</h4>
+        )}
         {hasAbout ? (
           <h4>
-            <NavigationLink
-              className="u-color-type-variant"
-              to="/about"
-              label="About"
-            />
+            <NavigationLink className="c-nav__item" to="/about" label="About" />
           </h4>
-        ) : null}
+        ) : (
+          <h4 className="c-nav__item c-nav__item--selected">About</h4>
+        )}
       </div>
     </div>
   </nav>
@@ -44,11 +44,13 @@ const Nav = ({ hasAbout, hasShowcase }) => (
 Nav.propTypes = {
   hasAbout: PropTypes.bool,
   hasShowcase: PropTypes.bool,
+  isOnDark: PropTypes.bool,
 }
 
 Nav.defaultProps = {
   hasAbout: true,
   hasShowcase: true,
+  isOnDark: false,
 }
 
 export default Nav

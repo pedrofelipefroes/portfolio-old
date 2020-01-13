@@ -9,6 +9,15 @@
   }
 }
 
+@keyframes c-nav__background-is-set--on-dark {
+  from {
+    background-color: transparent;
+  }
+  to {
+    background-color: map-get($color, "type");
+  }
+}
+
 .c-nav {
   background-color: map-get($color, "background");
   position: fixed;
@@ -22,6 +31,7 @@
   }
 
   &__link-to-home {
+    color: map-get($color, "type");
     margin-left: map-get($spacing, "L");
 
     &::before {
@@ -34,8 +44,29 @@
     display: flex;
   }
 
-  &__items .c-navigation-link {
+  &__items &__item {
+    color: map-get($color, "type-variant");
     margin-right: map-get($spacing, "L");
+  }
+
+  &__item--selected {
+    border-bottom: solid 1px map-get($color, "type-variant");
+    opacity: 0.5;
+    padding: 0 map-get($spacing, "XS") / 2 map-get($spacing, "XS") / 2;
+    margin: 0 -1 * map-get($spacing, "XS") / 2 -1 * map-get($spacing, "XS") / 2;
+  }
+
+  &--on-dark {
+    background-color: map-get($color, "type");
+
+    @include bp-small {
+      animation: 800ms $animation-ease-out-expo 2400ms both
+        c-nav__background-is-set--on-dark;
+    }
+  }
+
+  &--on-dark &__link-to-home {
+    color: map-get($color, "background-variant");
   }
 
   .u-content-container--XL {
