@@ -18,7 +18,7 @@ const Nav = ({ hasAbout, hasShowcase, isOnDark }) => (
         </strong>
       </h4>
       <div className="c-nav__items">
-        {hasShowcase ? (
+        {/* {hasShowcase ? (
           <h4>
             <NavigationLink
               className="c-nav__item"
@@ -28,7 +28,7 @@ const Nav = ({ hasAbout, hasShowcase, isOnDark }) => (
           </h4>
         ) : (
           <h4 className="c-nav__item c-nav__item--selected">Showcase</h4>
-        )}
+        )} */}
         {hasAbout ? (
           <h4>
             <NavigationLink className="c-nav__item" to="/about" label="About" />
