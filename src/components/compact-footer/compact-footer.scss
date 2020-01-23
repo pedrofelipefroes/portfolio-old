@@ -1,0 +1,37 @@
+@import "../../styles/index.scss";
+
+.c-compact-footer {
+  background-color: map-get($color, "type");
+  color: map-get($color, "background-variant");
+  padding: 0 map-get($spacing, "L") map-get($spacing, "L");
+
+  & .u-content-container--XL {
+    align-items: center;
+    display: flex;
+  }
+
+  &__copyright {
+    border-top: solid 1px map-get($color, "type-variant");
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    justify-content: space-between;
+    padding-top: map-get($spacing, "S");
+
+    @include bp-medium {
+      flex-direction: row;
+    }
+
+    small:last-child {
+      margin-top: map-get($spacing, "S");
+
+      @include bp-small {
+        margin-top: 0;
+      }
+    }
+
+    a {
+      color: map-get($color, "background-variant");
+    }
+  }
+}
