@@ -32,23 +32,29 @@ export default function ProjectPageLayout({
   }
 
   const getImgAlt = index => {
-    return images[index].node.base
-      .split(" - ")[1]
-      .split(".")[0]
-      .concat(".")
+    const imgAlt =
+      images[index] === undefined
+        ? ""
+        : images[index].node.base
+            .split(" - ")[1]
+            .split(".")[0]
+            .concat(".")
+
+    return imgAlt
   }
 
   const getImgSrc = index => {
-    return images[index].node.childImageSharp.fluid
+    const imgSrc =
+      images[index] === undefined
+        ? ""
+        : images[index].node.childImageSharp.fluid
+
+    return imgSrc
   }
 
   return (
     <MDXProvider components={components}>
-      <Layout
-        navHasAbout
-        navHasShowcase
-        className={`p-${project.frontmatter.id}`}
-      >
+      <Layout className={`p-${project.frontmatter.id}`}>
         <SEO title={project.frontmatter.title} />
         <ProjectHeader
           title={project.frontmatter.title}
@@ -61,12 +67,6 @@ export default function ProjectPageLayout({
           ]}
           cover={<Img alt={getImgAlt(0)} fluid={getImgSrc(0)} />}
         />
-        {console.log([
-          project.frontmatter.activity,
-          project.frontmatter.designProcess,
-          project.frontmatter.client,
-          project.frontmatter.timeline,
-        ])}
         <article>
           <MDXRenderer img={{ alt: getImgAlt, src: getImgSrc }}>
             {project.body}
