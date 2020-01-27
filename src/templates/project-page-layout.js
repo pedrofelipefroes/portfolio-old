@@ -16,10 +16,9 @@ import ProjectOutro from "../components/project-outro/project-outro"
 import SEO from "../components/seo/seo"
 
 export default function ProjectPageLayout({
-  data: { project, cover, smallImages, mediumImages, largeImages },
+  data: { project, smallImages, mediumImages, largeImages },
 }) {
-  const images = cover.edges
-    .concat(smallImages.edges)
+  const images = smallImages.edges
     .concat(mediumImages.edges)
     .concat(largeImages.edges)
   const shortcodes = { Img, ImgCarousel, ImgContainer, ProjectOutro }
@@ -65,7 +64,15 @@ export default function ProjectPageLayout({
             project.frontmatter.client,
             project.frontmatter.timeline,
           ]}
-          cover={<Img alt={getImgAlt(0)} fluid={getImgSrc(0)} />}
+          cover={
+            <Img
+              alt={project.frontmatter.featuredImage.base
+                .split(" - ")[1]
+                .split(".")[0]
+                .concat(".")}
+              fluid={project.frontmatter.featuredImage.childImageSharp.fluid}
+            />
+          }
         />
         <article>
           <MDXRenderer img={{ alt: getImgAlt, src: getImgSrc }}>
@@ -83,21 +90,16 @@ export const projectPageQuery = graphql`
       body
       frontmatter {
         id
+        featuredImage {
+          ...coverImage
+          base
+        }
         title
         subtitle
         activity
         designProcess
         client
         timeline
-      }
-    }
-    cover: allFile(
-      filter: { name: { regex: "/.cover/" }, relativeDirectory: { eq: $id } }
-    ) {
-      edges {
-        node {
-          ...coverImage
-        }
       }
     }
     smallImages: allFile(
