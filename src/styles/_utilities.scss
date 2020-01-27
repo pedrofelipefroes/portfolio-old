@@ -16,6 +16,10 @@
   max-width: map-get($container, "XL");
 }
 
+.u-color-background-variant {
+  color: map-get($color, "background-variant");
+}
+
 .u-color-type {
   color: map-get($color, "type");
 }
