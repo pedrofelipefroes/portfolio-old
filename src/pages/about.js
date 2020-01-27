@@ -3,10 +3,10 @@ import Fade from "react-reveal/Fade"
 import Img from "gatsby-image"
 import React from "react"
 
-import Layout from "../components/layout"
-import SEO from "../components/seo"
+import Layout from "../components/layout/layout"
+import SEO from "../components/seo/seo"
 
-import "../styles/index.scss"
+import "../styles/pages/about.scss"
 
 const AboutPage = ({ data }) => {
   var tools = [
@@ -79,7 +79,7 @@ const AboutPage = ({ data }) => {
     let marquee = []
 
     for (let i = 0; i < 3; i++) {
-      let marqueeClass = "marquee-container marquee-container--" + `${i + 1}`
+      let marqueeClass = `marquee-container marquee-container--${i + 1}`
       marquee.push(
         <div className={marqueeClass}>
           <h2>
@@ -97,12 +97,12 @@ const AboutPage = ({ data }) => {
   return (
     <Layout navHasAbout={false} className="p-about">
       <SEO title="About " />
-      <div className="l-container__content--S">
-        <h1 className="p-about__header l-container__text--L">
-          Adding up <span className="highlighted-type">Design</span> +{" "}
-          <span className="highlighted-type">Development</span> +{" "}
-          <span className="highlighted-type">Marketing</span> leads to powerful
-          user experiences.
+      <div className="u-content-container--L">
+        <h1 className="p-about__header">
+          Adding up <span className="u-color-type-variant">Design</span> +{" "}
+          <span className="u-color-type-variant">Development</span> +{" "}
+          <span className="u-color-type-variant">Marketing</span> leads to
+          powerful user experiences.
         </h1>
         <section className="p-about__info">
           <figure className="p-about__info__picture">
@@ -117,9 +117,9 @@ const AboutPage = ({ data }) => {
               alt="Portrait picture of Froes."
             />
           </figure>
-          <div className="p-about__info__text l-container__text--S">
+          <div className="p-about__info__text">
             <h2>
-              I am <span className="highlighted-type">Froes</span>—a liaison
+              I am <span className="u-color-type-variant">Froes</span>—a liaison
               between all three—and connecting them from conception to execution
               is something I love to work with.
             </h2>
