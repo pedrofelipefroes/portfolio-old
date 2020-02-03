@@ -1,111 +1,111 @@
-import { Link, animateScroll as scroll } from "react-scroll"
 import Fade from "react-reveal/Fade"
 import React from "react"
-import SEO from "../components/seo"
 
-import Layout from "../components/layout"
-import NavigationLink from "../components/navigationLink"
-import ProjectCard from "../components/projectCard"
+import Layout from "../components/layout/layout"
+import NavigationLink from "../components/navigation-link/navigation-link"
+import ProjectCard from "../components/project-card/project-card"
 
-import "../styles/index.scss"
+import "../styles/pages/index.scss"
 
-const IndexPage = () => {
-  let featuredProjects = [
-    {
-      title: "Rebranding Avenue Code",
-      subtitle: "A new identify for the global technology consulting company.",
-      img: "/rebranding-avenue-code/header.jpg",
-      url: "/rebranding-avenue-code",
-    },
-  ]
+export default function IndexPage({
+  data: {
+    allMdx: { edges },
+  },
+}) {
+  const projects = edges.map((edge, index) => (
+    <ProjectCard
+      key={edge.node.frontmatter.id}
+      activity={edge.node.frontmatter.activity.split(".")[0]}
+      img={edge.node.frontmatter.featuredImage.childImageSharp.fluid}
+      index={"0" + (index + 1)}
+      highlightColor={"#" + edge.node.frontmatter.highlightColor}
+      path={edge.node.frontmatter.path}
+      title={edge.node.frontmatter.title}
+    />
+  ))
 
   return (
-    <Layout hasNav={false} className="p-index">
-      <SEO title="" />
-      <header className="p-index__header">
-        <section className="p-index__header__title">
-          <Fade cascade>
+    <Layout navHasCompactFooter navIsOnDark className="p-index">
+      <div className="u-content-container--L">
+        <header className="p-index__header">
+          <Fade>
             <h1>
-              Designer<span className="highlighted-type">+</span>
+              Froes, from Design <br />
+              to finish.
             </h1>
-            <h1>
-              Developer<span className="highlighted-type">+</span>
-            </h1>
-            <h1>Marketer</h1>
           </Fade>
+        </header>
+        <section className="p-index__section p-index__section--about">
+          <h4 className="u-color-type-variant">01 — About</h4>
+          <h3>
+            Hello! I am Froes,
+            <br />a Designer skilled in Coding and Marketing who strives for
+            cohesive user experiences.
+          </h3>
+          <p>
+            <NavigationLink
+              className="p-index__navigation-link"
+              hasArrow
+              label="Read full bio"
+              to="/about"
+            />
+          </p>
         </section>
-        <section className="p-index__header__headline">
-          <Fade top delay={1000} duration={500} distance={"24px"}>
-            <h1>
-              <span className="highlighted-type">I am </span>Froes
-            </h1>
-          </Fade>
-          <Fade top delay={1500} duration={1000} distance={"24px"}>
-            <h3>
-              and I love to develop cohesive user experiences through
-              comprehensive design systems.
-            </h3>
-          </Fade>
+        <section className="p-index__section">
+          <h4 className="p-index__section__featured-cases-title u-color-type-variant">
+            02 — Featured Cases
+          </h4>
+          {projects}
         </section>
-        <section className="p-index__header__links">
-          <Fade delay={2500} duration={2000}>
-            <NavigationLink label="About" to="/about" />
-          </Fade>
-          <Fade delay={2750} duration={2000}>
-            <NavigationLink label="Showcase" to="/showcase" />
-          </Fade>
-          <Fade delay={3000} duration={2000}>
-            <Link
-              to="work-0"
-              smooth={true}
-              className="p-index__header__links__featured c-navigation-link highlighted-type"
+        {/* <section className="p-index__section">
+          <h4 className="u-color-type-variant">03 — Showcase</h4>
+          <h3>Here are some minor projects I have been working on.</h3>
+        </section> */}
+        <section className="p-index__section p-index__section--contact">
+          <h4 className="u-color-type-variant">03 — Contact</h4>
+          <h3>
+            Like to get in touch? I would love to connect and learn more about
+            you, too. Message me at{" "}
+            <a
+              className="p-index__navigation-link"
+              href="mailto:hello@froes.design"
             >
-              <strong className="c-navigation-link__label">
-                Featured Work
-              </strong>
-              <svg
-                className="p-index__header__links__featured__arrow"
-                width="16px"
-                height="32px "
-                viewBox="0 0 24 48"
-                version="1.1"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <rect id="line" width="2" height="16" x="11.5" y="4" />
-                <g id="beak">
-                  <rect
-                    width="8"
-                    height="2"
-                    x="0"
-                    y="0"
-                    transform="translate(12.5, 18) rotate(135) translate(-12.5, -13) translate(7.5, 10)"
-                  />
-                  <rect
-                    width="2"
-                    height="8"
-                    x="6"
-                    y="0"
-                    transform="translate(12.5, 18) rotate(135) translate(-12.5, -13) translate(7.5, 10)"
-                  />
-                </g>
-              </svg>
-            </Link>
-          </Fade>
+              hello@froes.design
+            </a>
+          </h3>
+          <h3>
+            Or reach me on
+            <br />
+            <a
+              className="p-index__navigation-link"
+              href="https://www.linkedin.com/in/froesdesign"
+            >
+              linkedin.com/in/froesdesign
+            </a>
+          </h3>
         </section>
-      </header>
-      <div className="p-index__featured l-container__content--L">
-        {featuredProjects.map((project, index) => (
-          <ProjectCard
-            id={index}
-            title={project.title}
-            subtitle={project.subtitle}
-            img={project.img}
-            url={project.url}
-          />
-        ))}
       </div>
     </Layout>
   )
 }
 
-export default IndexPage
+export const IndexPageQuery = graphql`
+  query IndexPageQuery {
+    allMdx(sort: { order: DESC, fields: [frontmatter___order] }) {
+      edges {
+        node {
+          frontmatter {
+            path
+            id
+            featuredImage {
+              ...coverImage
+            }
+            highlightColor
+            title
+            activity
+          }
+        }
+      }
+    }
+  }
+`
