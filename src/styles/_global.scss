@@ -20,7 +20,7 @@ h1 {
   letter-spacing: map-get($type-title-1, "character-spacing");
   line-height: map-get($type-title-1, "leading");
 
-  @include bp-medium {
+  @include bp-small {
     font-size: map-get($type-title-1, "size--M");
   }
 }
@@ -31,7 +31,7 @@ h2 {
   letter-spacing: map-get($type-title-2, "character-spacing");
   line-height: map-get($type-title-2, "leading");
 
-  @include bp-medium {
+  @include bp-small {
     font-size: map-get($type-title-2, "size--M");
   }
 }
@@ -59,7 +59,7 @@ p {
   letter-spacing: map-get($type-body-2, "character-spacing");
   line-height: map-get($type-body-2, "leading");
 
-  @include bp-medium {
+  @include bp-small {
     font-size: map-get($type-body-2, "size--M");
   }
 }
