@@ -30,13 +30,17 @@ export default function IndexPage({
         <header className="p-index__header">
           <Fade>
             <h1>
-              Froes, from Design <br />
-              to finish.
+              Froes, from <br />
+              Design to finish.
             </h1>
           </Fade>
         </header>
         <section className="p-index__section p-index__section--about">
-          <h4 className="u-color-type-variant">01 — About</h4>
+          <h4 className="u-color-type-variant p-index__section__title">
+            About
+            <span className="p-index__section__divider"></span>
+            01
+          </h4>
           <h3>
             Hello! I am Froes,
             <br />a Designer skilled in Coding and Marketing who strives for
@@ -50,19 +54,25 @@ export default function IndexPage({
               to="/about"
             />
           </p>
+          <p className="u-color-type-variant">
+            <strong>Check featured cases:</strong>
+          </p>
         </section>
-        <section className="p-index__section">
-          <h4 className="p-index__section__featured-cases-title u-color-type-variant">
-            02 — Featured Cases
+        <section className="p-index__section">{projects}</section>
+        {/* <section className="p-index__section p-index__section--showcase">
+          <h4 className="u-color-type-variant p-index__section__title">
+            Showcase
+            <span className="p-index__section__divider"></span>
+            02
           </h4>
-          {projects}
-        </section>
-        {/* <section className="p-index__section">
-          <h4 className="u-color-type-variant">03 — Showcase</h4>
           <h3>Here are some minor projects I have been working on.</h3>
         </section> */}
         <section className="p-index__section p-index__section--contact">
-          <h4 className="u-color-type-variant">03 — Contact</h4>
+          <h4 className="u-color-type-variant p-index__section__title">
+            Contact
+            <span className="p-index__section__divider"></span>
+            02
+          </h4>
           <h3>
             Like to get in touch? I would love to connect and learn more about
             you, too. Message me at{" "}
