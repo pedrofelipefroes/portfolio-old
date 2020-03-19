@@ -16,6 +16,7 @@ export default function IndexPage({
     <ProjectCard
       key={edge.node.frontmatter.id}
       activity={edge.node.frontmatter.activity.split(".")[0]}
+      headline={edge.node.frontmatter.headline}
       img={edge.node.frontmatter.featuredImage.childImageSharp.fluid}
       index={"0" + (index + 1)}
       highlightColor={"#" + edge.node.frontmatter.highlightColor}
@@ -110,6 +111,7 @@ export const IndexPageQuery = graphql`
             featuredImage {
               ...coverImage
             }
+            headline
             highlightColor
             title
             activity
