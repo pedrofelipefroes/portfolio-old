@@ -1,78 +1,90 @@
 @import "../../styles/index.scss";
 
-@keyframes c-nav__background-is-set {
-  from {
-    background-color: transparent;
-  }
-  to {
-    background-color: map-get($color, "background");
-  }
-}
-
-@keyframes c-nav__background-is-set--on-dark {
-  from {
-    background-color: transparent;
-  }
-  to {
-    background-color: map-get($color, "type");
-  }
-}
-
 .c-nav {
-  background-color: map-get($color, "background");
+  background-color: map-get($color, "light");
   position: fixed;
-  width: 100%;
   top: 0;
+  transition: top 1s $animation-ease-out-expo;
+  width: 100%;
   z-index: 100;
 
-  @include bp-small {
-    animation: 800ms $animation-ease-out-expo 2400ms both
-      c-nav__background-is-set;
+  &--on-dark {
+    background-color: map-get($color, "dark");
   }
 
-  &__link-to-home {
-    color: map-get($color, "type");
-    margin-left: map-get($spacing, "L");
+  &--hidden {
+    top: -1 * (map-get($spacing, "XL") + map-get($spacing, "L"));
+  }
 
-    &::before {
-      content: "Froes";
-      font-weight: bold;
+  &__arrow {
+    fill: map-get($color, "dark-grey");
+    fill-rule: evenodd;
+    margin: -1 * map-get($spacing, "XS");
+    padding: map-get($spacing, "XS");
+    transition: transform 1s $animation-ease-out-expo;
+    z-index: 110;
+
+    &:hover {
+      cursor: pointer;
+      opacity: 0.5;
+    }
+
+    @include bp-small {
+      display: none;
+    }
+
+    &--inverted {
+      transform: rotateY(180deg);
+    }
+  }
+
+  &__home-url {
+    position: absolute;
+    margin-left: 0;
+    transition: margin-left 1s $animation-ease-out-expo;
+
+    &--hidden {
+      margin-left: -1 * (map-get($spacing, "XXL") + map-get($spacing, "S"));
+
+      @include bp-small {
+        margin-left: 0;
+      }
     }
   }
 
   &__items {
     display: flex;
-  }
-
-  &__items &__item {
-    color: map-get($color, "type-variant");
-    margin-right: map-get($spacing, "L");
-  }
-
-  &__item--selected {
-    border-bottom: solid 1px map-get($color, "type-variant");
-    opacity: 0.5;
-    padding: 0 map-get($spacing, "XS") / 2 map-get($spacing, "XS") / 2;
-    margin: 0 -1 * map-get($spacing, "XS") / 2 -1 * map-get($spacing, "XS") / 2;
-  }
-
-  &--on-dark {
-    background-color: map-get($color, "type");
+    flex-grow: 1;
+    justify-content: space-between;
 
     @include bp-small {
-      animation: 800ms $animation-ease-out-expo 2400ms both
-        c-nav__background-is-set--on-dark;
+      justify-content: flex-end;
     }
-  }
 
-  &--on-dark &__link-to-home {
-    color: map-get($color, "background-variant");
+    &__links {
+      right: 0;
+      position: relative;
+      transition: right 1s $animation-ease-out-expo;
+
+      &--hidden--S {
+        right: 100vw;
+
+        @include bp-small {
+          position: unset;
+          right: unset;
+        }
+      }
+
+      a + a {
+        margin-left: map-get($spacing, "L");
+      }
+    }
   }
 
   .u-content-container--XL {
     display: flex;
     flex-grow: 1;
     justify-content: space-between;
-    padding: map-get($spacing, "M") 0;
+    padding: map-get($spacing, "M") map-get($spacing, "L");
   }
 }
