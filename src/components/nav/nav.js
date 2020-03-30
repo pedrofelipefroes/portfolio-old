@@ -1,6 +1,7 @@
-import { Link } from "gatsby"
-import React, { Component } from "react"
 import classnames from "classnames"
+import { Link } from "gatsby"
+import PropTypes from "prop-types"
+import React, { Component } from "react"
 
 import "./nav.scss"
 
@@ -107,6 +108,14 @@ class Nav extends Component {
       </nav>
     )
   }
+}
+
+Nav.propTypes = {
+  isOnDark: PropTypes.bool,
+}
+
+Nav.defautProps = {
+  isOnDark: false,
 }
 
 export default Nav
