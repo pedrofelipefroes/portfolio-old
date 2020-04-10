@@ -90,7 +90,7 @@ export const projectPageQuery = graphql`
       body
       frontmatter {
         id
-        featuredImage {
+        coverImage {
           ...coverImage
           base
         }
