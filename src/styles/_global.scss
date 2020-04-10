@@ -1,6 +1,4 @@
 html {
-  --color-primary: map-get($color, "type-variant");
-
   font-family: $type-family;
   -moz-osx-font-smoothing: grayscale;
   -ms-text-size-adjust: 100%;
@@ -9,81 +7,87 @@ html {
 }
 
 body {
-  background: map-get($color, "background");
-  color: map-get($color, "type");
+  background: map-get($color, "light");
+  color: map-get($color, "dark");
   margin: 0;
 }
 
 h1 {
   font-size: map-get($type-title-1, "size--S");
   font-weight: map-get($type-title-1, "weight");
-  letter-spacing: map-get($type-title-1, "character-spacing");
+  letter-spacing: map-get($type-title-1, "character-spacing--S");
   line-height: map-get($type-title-1, "leading");
 
   @include bp-small {
     font-size: map-get($type-title-1, "size--M");
+    letter-spacing: map-get($type-title-1, "character-spacing--M");
   }
 }
 
 h2 {
   font-size: map-get($type-title-2, "size--S");
   font-weight: map-get($type-title-2, "weight");
-  letter-spacing: map-get($type-title-2, "character-spacing");
+  letter-spacing: map-get($type-title-2, "character-spacing--S");
   line-height: map-get($type-title-2, "leading");
 
   @include bp-small {
     font-size: map-get($type-title-2, "size--M");
+    letter-spacing: map-get($type-title-2, "character-spacing--M");
   }
 }
 
 h3 {
   font-size: map-get($type-body-1, "size--S");
   font-weight: map-get($type-body-1, "weight");
-  letter-spacing: map-get($type-body-1, "character-spacing");
+  letter-spacing: map-get($type-body-1, "character-spacing--S");
   line-height: map-get($type-body-1, "leading");
 
   @include bp-medium {
     font-size: map-get($type-body-1, "size--M");
+    letter-spacing: map-get($type-body-1, "character-spacing--M");
   }
-}
-
-h4 {
-  font-size: map-get($type-caption-1, "size--S");
-  font-weight: map-get($type-caption-1, "weight");
-  line-height: map-get($type-caption-1, "leading");
 }
 
 p {
   font-size: map-get($type-body-2, "size--S");
   font-weight: map-get($type-body-2, "weight");
-  letter-spacing: map-get($type-body-2, "character-spacing");
+  letter-spacing: map-get($type-body-2, "character-spacing--S");
   line-height: map-get($type-body-2, "leading");
 
   @include bp-small {
     font-size: map-get($type-body-2, "size--M");
+    letter-spacing: map-get($type-body-2, "character-spacing--M");
   }
 }
 
 small {
-  font-size: map-get($type-caption, "size--S");
-  font-weight: map-get($type-caption, "weight");
-  letter-spacing: map-get($type-caption, "character-spacing");
-  line-height: map-get($type-caption, "leading");
+  font-size: map-get($type-caption-1, "size");
+  font-weight: map-get($type-caption-1, "weight");
+  letter-spacing: map-get($type-caption-1, "character-spacing");
+  line-height: map-get($type-caption-1, "leading");
+}
+
+small.caption-2 {
+  font-size: map-get($type-caption-2, "size");
+  font-weight: map-get($type-caption-2, "weight");
+  letter-spacing: map-get($type-caption-2, "character-spacing");
+  line-height: map-get($type-caption-2, "leading");
 }
 
 a {
   color: map-get($type-anchor, "color");
   font-weight: map-get($type-anchor, "weight");
   text-decoration: none;
+  transition: opacity $animation-ease-out-expo;
 
   &:hover {
-    opacity: .5;
+    opacity: 0.5;
     text-decoration: none;
   }
 }
 
 em {
-  color: map-get($color, "type-variant");
+  color: map-get($color, "dark-grey");
 }
 
 strong {
@@ -92,4 +96,13 @@ strong {
 
 video {
   outline: none;
+}
+
+.highlight {
+  color: map-get($type-highlight, "color");
+  font-size: map-get($type-highlight, "size");
+  font-weight: map-get($type-highlight, "weight");
+  line-height: map-get($type-highlight, "leading--default");
+  letter-spacing: map-get($type-highlight, "character-spacing");
+  text-transform: map-get($type-highlight, "text-transform");
 }

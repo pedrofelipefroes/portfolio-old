@@ -1,37 +1,16 @@
-$grayscale-100: #ffffff;
-$grayscale-200: #f0f0f0;
-$grayscale-300: #737373;
-$grayscale-400: #131313;
-
-$grayscale-gradient: linear-gradient(
-  90deg,
-  rgba(238, 238, 238, 0.7) 0%,
-  rgba(190, 190, 190, 0.7) 50%,
-  rgba(238, 238, 238, 0.7) 99%
-);
-$rainbow-gradient: linear-gradient(
-  90deg,
-  rgba(38, 183, 237, 0.7) 0%,
-  rgba(101, 214, 196, 0.7) 12.5%,
-  rgba(147, 219, 123, 0.7) 25%,
-  rgba(249, 245, 0, 0.7) 50%,
-  rgba(254, 104, 40, 0.7) 85%,
-  rgba(255, 19, 59, 0.7) 100%
-);
+$color--alabaster: #f0ece4;
+$color--dim-gray: #6e6967;
+$color--licorice: #141211;
+$color--white: #ffffff;
 
 $color: (
-  "background": $grayscale-100,
-  "background-variant": $grayscale-200,
-  "type": $grayscale-400,
-  "type-variant": $grayscale-300,
-  "highlight": $rainbow-gradient,
-  "highlight-variant": $grayscale-gradient,
+  "dark": $color--licorice,
+  "dark-grey": $color--dim-gray,
+  "light": $color--white,
+  "light-grey": $color--alabaster,
 );
 
-$animation-ease-out-expo: cubic-bezier(0.19, 1, 0.22, 1);
-
 $spacing-scale: 0.5rem;
-
 $spacing: (
   "XS": $spacing-scale * 1,
   "S": $spacing-scale * 2,
@@ -42,7 +21,7 @@ $spacing: (
 );
 
 @mixin bp-small {
-  @media screen and (min-width: 37.5rem) {
+  @media screen and (min-width: 48rem) {
     @content;
   }
 }
@@ -60,7 +39,6 @@ $spacing: (
 }
 
 $container-scale: 1rem;
-
 $container: (
   "XS": $container-scale * 16,
   "S": $container-scale * 32,
@@ -69,34 +47,27 @@ $container: (
   "XL": $container-scale * 90,
 );
 
-$container-text--S: 32rem;
-$container-text--M: 40rem;
-$container-text--L: 48rem;
-
-$container-content--S: 64rem;
-$container-content--L: 90rem;
-
-$content-container--small: 32rem;
-$content-container--medium: 64rem;
-$content-container--large: 90rem;
+$animation-ease-out-expo: cubic-bezier(0.19, 1, 0.22, 1);
 
 $type-family: "Helvetica Neue", -apple-system, BlinkMacSystemFont, sans-serif;
 $type-scale: 1rem;
 
 $type-title-1: (
+  "size--S": $type-scale * 2.75,
   "size--M": $type-scale * 5.5,
-  "size--S": $type-scale * 2.625,
   "weight": 500,
   "leading": 1.0454545455,
-  "character-spacing": -0.05rem,
+  "character-spacing--S": -0.025rem,
+  "character-spacing--M": -0.05rem,
 );
 
 $type-title-2: (
-  "size--S": $type-scale * 1.4375,
+  "size--S": $type-scale * 1.875,
   "size--M": $type-scale * 2.375,
   "weight": 500,
   "leading": 1.1052631579,
-  "character-spacing": -0.02375rem,
+  "character-spacing--S": -0.01875rem,
+  "character-spacing--M": -0.02375rem,
 );
 
 $type-body-1: (
@@ -104,31 +75,44 @@ $type-body-1: (
   "size--M": $type-scale * 1.5,
   "weight": 500,
   "leading": 1.4166666667,
-  "character-spacing": -0.01625rem,
+  "character-spacing--S": -0.013125rem,
+  "character-spacing--M": -0.01625rem,
 );
 
 $type-body-2: (
   "size--S": $type-scale * 1.0625,
   "size--M": $type-scale * 1.125,
   "weight": normal,
-  "leading": 1.6470588235,
-  "character-spacing": -0.013125rem,
+  "leading": 1.6111111111,
+  "character-spacing--S": -0.0125rem,
+  "character-spacing--M": -0.013125rem,
 );
 
 $type-caption-1: (
-  "size--S": $type-scale * 0.9375,
+  "size": $type-scale * 0.9375,
   "weight": 500,
-  "leading": 1.0666666667,
-);
-
-$type-caption: (
-  "size--S": $type-scale * 0.9375,
-  "weight": normal,
-  "leading": 1.4285714286,
+  "leading": 1.4,
   "character-spacing": -0.00625rem,
 );
 
+$type-caption-2: (
+  "size": $type-scale * 0.75,
+  "weight": normal,
+  "leading": 1.3333333333,
+  "character-spacing": -0.005rem,
+);
+
 $type-anchor: (
-  "color": map-get($color, "type"),
+  "color": map-get($color, "dark-grey"),
   "weight": 500,
+);
+
+$type-highlight: (
+  "color": map-get($color, "dark-grey"),
+  "size": $type-scale * 0.75,
+  "weight": bold,
+  "leading--default": 2,
+  "leading--condensed": 1.3333333333,
+  "character-spacing": 0.05375rem,
+  "text-transform": uppercase,
 );
