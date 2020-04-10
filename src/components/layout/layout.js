@@ -5,16 +5,15 @@ import Footer from "../footer/footer"
 import Nav from "../nav/nav"
 
 import "./layout.scss"
-import CompactFooter from "../compact-footer/compact-footer"
 
-const Layout = ({ children, className, navHasCompactFooter, navIsOnDark }) => {
+const Layout = ({ children, className, isOnDark }) => {
   return (
     <>
-      <Nav isOnDark={navIsOnDark} />
+      <Nav isOnDark={isOnDark} />
       <main className={className ? `c-layout ${className}` : "c-layout"}>
         {children}
       </main>
-      {navHasCompactFooter ? <CompactFooter /> : <Footer />}
+      <Footer isOnDark={isOnDark} />
     </>
   )
 }
@@ -22,13 +21,11 @@ const Layout = ({ children, className, navHasCompactFooter, navIsOnDark }) => {
 Layout.propTypes = {
   children: PropTypes.node.isRequired,
   className: PropTypes.string,
-  navHasCompactFooter: PropTypes.bool,
-  navIsOnDark: PropTypes.bool,
+  isOnDark: PropTypes.bool,
 }
 
 Layout.defaultProps = {
-  navHasCompactFooter: false,
-  navIsOnDark: false,
+  isOnDark: false,
 }
 
 export default Layout
