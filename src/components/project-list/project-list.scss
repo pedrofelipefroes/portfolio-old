@@ -1,0 +1,14 @@
+@import "../../styles/index.scss";
+
+.c-project-list {
+  display: grid;
+  margin-bottom: map-get($spacing, "XXL");
+  position: relative;
+  row-gap: map-get($spacing, "L");
+  width: 100%;
+  z-index: 50;
+
+  @include bp-small {
+    row-gap: unset;
+  }
+}
