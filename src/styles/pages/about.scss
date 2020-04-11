@@ -16,7 +16,7 @@
     }
 
     h1 {
-      max-width: $container-text--L;
+      max-width: map-get($container, "L");
     }
   }
 
@@ -31,7 +31,7 @@
     h2,
     p,
     ul {
-      max-width: $container-text--S;
+      max-width: map-get($container, "S");
     }
   }
 
@@ -45,7 +45,7 @@
 
       background: $marquee-background;
       margin-bottom: -2rem;
-      max-width: $container-text--S;
+      max-width: map-get($container, "S");
       overflow: hidden;
       padding-bottom: map-get($spacing, "S");
       padding-top: map-get($spacing, "XL");
@@ -85,7 +85,7 @@
     }
 
     &__img {
-      max-width: $container-text--S;
+      max-width: map-get($container, "S");
       z-index: 50;
     }
   }
