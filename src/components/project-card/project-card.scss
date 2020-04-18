@@ -1,11 +1,11 @@
 @import "../../styles/index.scss";
 
 .c-project-card {
-  box-shadow: 0 map-get($spacing, "XS") map-get($spacing, "XS")
+  box-shadow: 0 map-get($spacing, "XS") map-get($spacing, "S") 0
     transparentize(map-get($color, "dark"), 0.1);
   transition: all 500ms $animation-ease-out-expo;
   margin: 5%;
-  transform: scale(1.5);
+  transform: scale(1);
   width: 90%;
 
   @include bp-small {
@@ -22,9 +22,10 @@
   }
 
   &:hover {
-    box-shadow: 0 map-get($spacing, "S") map-get($spacing, "S")
-      transparentize(map-get($color, "dark"), 0.1);
+    box-shadow: 0 map-get($spacing, "S") map-get($spacing, "S") 0
+      transparentize(map-get($color, "dark"), 0.3);
     opacity: 1;
+    transform: scale(1.02);
   }
 
   &:hover &__img picture,

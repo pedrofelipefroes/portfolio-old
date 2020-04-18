@@ -6,10 +6,6 @@ import ProjectCard from "../project-card/project-card"
 import "./project-list.scss"
 
 class ProjectList extends Component {
-  constructor(props) {
-    super(props)
-  }
-
   mapData() {
     return this.props.items.map(item => (
       <ProjectCard

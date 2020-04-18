@@ -7,61 +7,109 @@ import styled from "styled-components"
 import "./project-card.scss"
 
 class ProjectCard extends Component {
-  constructor(props) {
-    super(props)
+  // constructor(props) {
+  //   super(props)
 
-    this.projectCard = React.createRef()
+  // this.projectCard = React.createRef()
 
-    this.state = {
-      boundingRectCenter: 0,
-      isInTransformArea: false,
-    }
+  // this.state = {
+  //   boundingRectCenter: 0,
+  //   isInTransformAreaBottomHalf: false,
+  //   isInTransformAreaUpperHalf: false,
+  //   isScrollingDown: true,
+  // }
 
-    this.handleScroll = this.handleScroll.bind(this)
-  }
+  // this.handleScroll = this.handleScroll.bind(this)
+  // }
 
-  componentDidMount() {
-    window.addEventListener("scroll", this.handleScroll)
-  }
+  // componentDidMount() {
+  //   window.addEventListener("scroll", this.handleScroll)
+  // }
 
-  getTransformArea() {
-    return {
-      bottom: window.innerHeight,
-      top: 0,
-    }
-  }
+  // getTransformArea() {
+  //   return {
+  //     center: window.innerHeight / 2,
+  //     bottom: window.innerHeight,
+  //     top: 0,
+  //   }
+  // }
 
-  getTransformValues() {
-    let transformScale = {
-      bottom: 1.5,
-      top: 1,
-    }
+  // getTransformValue(bottomHalf, upperHalf, isScrollingDown) {
+  //   let currentTransformScale
+  //   let transformScale = {
+  //     highlight: 1.1,
+  //     regular: 1,
+  //   }
 
-    let currentTransformScale =
-      transformScale.bottom +
-      ((this.state.boundingRectCenter - this.getTransformArea().bottom) *
-        (transformScale.top - transformScale.bottom)) /
-        (this.getTransformArea().top - this.getTransformArea().bottom)
+  //   if (isScrollingDown && bottomHalf) {
+  //     currentTransformScale = this.setTransformValue(
+  //       this.getTransformArea().center,
+  //       transformScale.highlight,
+  //       this.getTransformArea().bottom,
+  //       transformScale.regular
+  //     )
+  //   } else if (isScrollingDown && upperHalf) {
+  //     currentTransformScale = this.setTransformValue(
+  //       this.getTransformArea().top,
+  //       transformScale.regular,
+  //       this.getTransformArea().center,
+  //       transformScale.highlight
+  //     )
+  //   } else if (!isScrollingDown && bottomHalf) {
+  //     currentTransformScale = this.setTransformValue(
+  //       this.getTransformArea().bottom,
+  //       transformScale.regular,
+  //       this.getTransformArea().center,
+  //       transformScale.highlight
+  //     )
+  //   } else if (!isScrollingDown && upperHalf) {
+  //     currentTransformScale = this.setTransformValue(
+  //       this.getTransformArea().center,
+  //       transformScale.highlight,
+  //       this.getTransformArea().top,
+  //       transformScale.regular
+  //     )
+  //   }
 
-    this.projectCard.current.style.transform =
-      "scale(" + currentTransformScale + ")"
-  }
+  //   this.projectCard.current.style.transform =
+  //     "scale(" + currentTransformScale + ")"
+  // }
 
-  handleScroll() {
-    let boundingRect = this.projectCard.current.getBoundingClientRect()
-    let boundingRectCenter = boundingRect.top - boundingRect.height / 2
+  // setTransformValue(finalPos, finalScale, initialPos, initialScale) {
+  //   return (
+  //     initialScale +
+  //     ((this.state.boundingRectCenter - initialPos) *
+  //       (finalScale - initialScale)) /
+  //       (finalPos - initialPos)
+  //   )
+  // }
 
-    this.setState({
-      boundingRectCenter: boundingRectCenter,
-      isInTransformArea:
-        boundingRectCenter < this.getTransformArea().bottom &&
-        boundingRectCenter > this.getTransformArea().top,
-    })
+  // handleScroll() {
+  //   let boundingRect = this.projectCard.current.getBoundingClientRect()
+  //   let boundingRectCenter = boundingRect.top + boundingRect.height / 2
 
-    if (this.state.isInTransformArea) {
-      this.getTransformValues()
-    }
-  }
+  //   this.setState({
+  //     boundingRectCenter: boundingRectCenter,
+  //     isInTransformAreaBottomHalf:
+  //       boundingRectCenter < this.getTransformArea().bottom &&
+  //       boundingRectCenter > this.getTransformArea().center,
+  //     isInTransformAreaUpperHalf:
+  //       boundingRectCenter < this.getTransformArea().center &&
+  //       boundingRectCenter > this.getTransformArea().top,
+  //     isScrollingDown: boundingRectCenter < this.state.boundingRectCenter,
+  //   })
+
+  //   if (
+  //     this.state.isInTransformAreaBottomHalf ||
+  //     this.state.isInTransformAreaUpperHalf
+  //   ) {
+  //     this.getTransformValue(
+  //       this.state.isInTransformAreaBottomHalf,
+  //       this.state.isInTransformAreaUpperHalf,
+  //       this.state.isScrollingDown
+  //     )
+  //   }
+  // }
 
   render() {
     const ProjectDetails = styled.div`
@@ -78,8 +126,8 @@ class ProjectCard extends Component {
       <Link
         className={"c-project-card c-project-card--" + this.props.id}
         to={this.props.path}
-        ref={this.projectCard}
-        onScroll={this.handleScroll}
+        // ref={this.projectCard}
+        // onScroll={this.handleScroll}
       >
         <ProjectDetails
           projectActivity={this.props.activity}
