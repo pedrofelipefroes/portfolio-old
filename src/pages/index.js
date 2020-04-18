@@ -1,3 +1,4 @@
+import { graphql } from "gatsby"
 import Fade from "react-reveal/Fade"
 import React, { Component } from "react"
 
