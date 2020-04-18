@@ -18,6 +18,10 @@ h1 {
   letter-spacing: map-get($type-title-1, "character-spacing--S");
   line-height: map-get($type-title-1, "leading");
 
+  @include bp-extra-small {
+    font-size: map-get($type-title-1, "size--XS");
+  }
+
   @include bp-small {
     font-size: map-get($type-title-1, "size--M");
     letter-spacing: map-get($type-title-1, "character-spacing--M");

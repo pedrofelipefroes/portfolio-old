@@ -20,6 +20,12 @@ $spacing: (
   "XXL": $spacing-scale * 16,
 );
 
+@mixin bp-extra-small {
+  @media screen and (max-width: 24rem) {
+    @content;
+  }
+}
+
 @mixin bp-small {
   @media screen and (min-width: 48rem) {
     @content;
@@ -53,6 +59,7 @@ $type-family: "Helvetica Neue", -apple-system, BlinkMacSystemFont, sans-serif;
 $type-scale: 1rem;
 
 $type-title-1: (
+  "size--XS": $type-scale * 2.1,
   "size--S": $type-scale * 2.75,
   "size--M": $type-scale * 5.5,
   "weight": 500,
