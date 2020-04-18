@@ -31,7 +31,9 @@ class IndexPage extends Component {
         <div className="u-content-container--XL">
           <header className="p-index__header" ref={this.headerHeight}>
             <h1>
-              Froes develops cohesive user experiences from Design to finish.
+              <Fade>
+                Froes develops cohesive user experiences from Design to finish.
+              </Fade>
             </h1>
             <Fade bottom>
               <NavigationLink to="/about" label="More Info" />
