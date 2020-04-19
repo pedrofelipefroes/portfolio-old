@@ -20,8 +20,17 @@ $spacing: (
   "XXL": $spacing-scale * 16,
 );
 
+$container-scale: 1rem;
+$container: (
+  "XS": $container-scale * 16,
+  "S": $container-scale * 32,
+  "M": $container-scale * 40,
+  "L": $container-scale * 64,
+  "XL": $container-scale * 90,
+);
+
 @mixin bp-extra-small {
-  @media screen and (max-width: 24rem) {
+  @media screen and (max-width: 20rem) {
     @content;
   }
 }
@@ -43,15 +52,6 @@ $spacing: (
     @content;
   }
 }
-
-$container-scale: 1rem;
-$container: (
-  "XS": $container-scale * 16,
-  "S": $container-scale * 32,
-  "M": $container-scale * 40,
-  "L": $container-scale * 64,
-  "XL": $container-scale * 90,
-);
 
 $animation-ease-out-expo: cubic-bezier(0.19, 1, 0.22, 1);
 
