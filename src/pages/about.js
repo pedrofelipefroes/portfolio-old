@@ -1,156 +1,123 @@
 import { graphql } from "gatsby"
 import Fade from "react-reveal/Fade"
 import Img from "gatsby-image"
-import React from "react"
+import React, { Component } from "react"
 
 import Layout from "../components/layout/layout"
-import SEO from "../components/seo/seo"
 
 import "../styles/pages/about.scss"
 
-const AboutPage = ({ data }) => {
-  var tools = [
-    [
-      "Product Design",
-      "Color Psychology",
-      "Typography",
-      "Design Sprint",
-      "Designer-to-Developer Handoff",
-      "User-centered Design",
-      "Wireframing",
-      "User Research",
-      "Competitive Analysis",
-      "Mobile Guidelines",
-      "Design Thinking",
-      "UX Design",
-      "Mobile Design",
-      "Design Systems",
-      "UI Design",
-      "Branding Identities",
-      "Graphic Design",
-      "Responsive Design",
-      "Branding Extension",
-    ],
-    [
-      "Behavior-driven Development",
-      "Sass",
-      "Angular",
-      "CSS",
-      "Vue.JS",
-      "JavaScript",
-      "BEM",
-      "React.Js",
-      "CSS Architetures",
-      "Server-side Rendering",
-      "HTML",
-      "Java",
-      "Semantic HTML",
-      "Test-driven Development",
-      "Front-end Development",
-      "Style Guides",
-      "Microinteractions",
-      "SQL",
-      "Accessibility Standards",
-      "CSS Preprocessors",
-      "Email Design",
-      "Programming Logic",
-      "Component Architeture",
-    ],
-    [
-      "Customer Relationship Management",
-      "Template Creation and Maintenance",
-      "Scrum",
-      "Search Engine Optimization",
-      "UX Writing",
-      "Brand Awareness",
-      "Kanban",
-      "Campaign Conceptualization and Management",
-      "Search Engine Marketing",
-      "Content Personalization",
-      "Landing Page Design",
-      "Agile Methodologies",
-      "Branding Guide Lines",
-      "Email Marketing",
-      "Lead Capture",
-    ],
-  ]
+class AboutPage extends Component {
+  constructor() {
+    super()
 
-  function createMarquee(items) {
-    let marquee = []
-
-    for (let i = 0; i < 3; i++) {
-      let marqueeClass = `marquee-container marquee-container--${i + 1}`
-      marquee.push(
-        <div className={marqueeClass}>
-          <h2>
-            {items[i].map(item => (
-              <>{item} </>
-            ))}
-          </h2>
-        </div>
-      )
+    this.state = {
+      headerHeight: 0,
     }
 
-    return marquee
+    this.header = React.createRef()
+    this.handleScroll = this.handleScroll.bind(this)
   }
 
-  return (
-    <Layout navHasAbout={false} className="p-about">
-      <SEO title="About " />
-      <div className="u-content-container--L">
-        <h1 className="p-about__header">
-          Adding up <span className="u-color-type-variant">Design</span> +{" "}
-          <span className="u-color-type-variant">Development</span> +{" "}
-          <span className="u-color-type-variant">Marketing</span> leads to
-          powerful user experiences.
-        </h1>
-        <section className="p-about__info">
-          <figure className="p-about__info__picture">
-            <div className="p-about__info__picture__marquee">
-              <Fade top cascade duration={3000}>
-                <div>{createMarquee(tools)}</div>
-              </Fade>
-            </div>
+  componentDidMount() {
+    window.addEventListener("scroll", this.handleScroll)
+
+    this.setState({
+      headerHeight: this.header.current.clientHeight,
+    })
+  }
+
+  handleScroll() {
+    let scrolledToTop = window.pageYOffset
+    this.header.current.style.top = -scrolledToTop * 0.64 + "px"
+  }
+
+  render() {
+    return (
+      <Layout className="p-about" isOnDark>
+        <div className="u-content-container--L">
+          <h1
+            className="p-about__header"
+            ref={this.header}
+            onScroll={this.handleScroll}
+          >
+            <Fade>From Design</Fade>
+            <Fade>to Development</Fade>
+            <Fade>to Marketing</Fade>
+            <Fade>to powerful, integrated user experiences.</Fade>
+          </h1>
+          <section
+            className="p-about__info"
+            style={{ paddingTop: this.state.headerHeight + "px" }}
+          >
             <Img
-              className="p-about__info__picture__img"
-              fluid={data.file.childImageSharp.fluid}
-              alt="Portrait picture of Froes."
+              className="p-about__info__img"
+              fluid={this.props.data.file.childImageSharp.fluid}
+              alt="A portrait picture of me."
             />
-          </figure>
-          <div className="p-about__info__text">
-            <h2>
-              I am <span className="u-color-type-variant">Froes</span>—a liaison
-              between all three—and connecting them from conception to execution
-              is something I love to work with.
-            </h2>
-            <p>
-              Froes is short for Pedro Felipe Froes. I currently spend my work
-              hours in São Paulo, Brazil at Avenue Code collaborating with
-              gifted individuals.
-            </p>
-            <p>
-              Typography, drawing, and listening to sad songs are some of the
-              things I’m really into. I’d love to connect and learn more about
-              you too, reader! Contact me:
-            </p>
-            <ul>
-              {/* <li>
-                <strong>Resumé</strong>
-              </li> */}
-              <li>
-                <a href="https://www.linkedin.com/in/froesdesign">
-                  linkedin.com/froesdesign
-                </a>
-              </li>
-              <li>
-                <a href="mailto:hello@froes.design">hello@froes.design</a>
-              </li>
-            </ul>
-          </div>
-        </section>
-      </div>
-    </Layout>
-  )
+            <div className="p-about__info__description">
+              <h2>Hey there, I am Froes.</h2>
+              <h3>
+                From ideation to execution, full-stack Design work is something
+                I’ve been passionately doing since 2016.
+              </h3>
+            </div>
+          </section>
+          <section className="p-about__details-1">
+            <Fade delay={1000}>
+              <div>
+                <h3>Designer at core.</h3>
+                <p>
+                  Crafting the path to creative problem-solving, whether by
+                  research or bold visuals, always comes first.
+                </p>
+              </div>
+            </Fade>
+            <Fade delay={1250}>
+              <div>
+                <h3>Systems developer.</h3>
+                <p>
+                  As a Computer Engineer, I believe design and code create
+                  wonders when crafted off together.
+                </p>
+              </div>
+            </Fade>
+            <Fade delay={1500}>
+              <div>
+                <h3>Strategic storyteller.</h3>
+                <p>
+                  The story we tell—and branding we wrap it with—has the power
+                  to inspire people around us.
+                </p>
+              </div>
+            </Fade>
+          </section>
+          <section className="p-about__details-2">
+            <Fade delay={1000}>
+              <p>
+                Froes is short for Pedro Felipe Froes. I am currently spending
+                my days in São Paulo, Brazil working at Avenue Code &amp;
+                collaborating with gifted individuals.
+              </p>
+            </Fade>
+            <Fade delay={1250}>
+              <p>
+                Typography, drawing, and listening to{" "}
+                <a
+                  href="https://www.youtube.com/watch?v=1uFv9Ts7Sdw"
+                  rel="nofollow"
+                >
+                  sad songs
+                </a>{" "}
+                are some of the things I’m really into. I’d love to connect and
+                learn more about you, too!
+              </p>
+            </Fade>
+          </section>
+        </div>
+      </Layout>
+    )
+  }
 }
 
 export const query = graphql`
