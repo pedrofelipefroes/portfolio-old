@@ -1,72 +1,69 @@
 @import "../../styles/index.scss";
 
-@include bp-small {
-  @keyframes c-project-header__cover-is-focused {
-    from {
-      padding: 0;
-    }
-    to {
-      padding: map-get($spacing, "XL") map-get($spacing, "XL")
-        map-get($spacing, "L");
-    }
-  }
-}
-
-@include bp-large {
-  @keyframes c-project-header__cover-is-focused {
-    to {
-      padding: map-get($spacing, "XL") map-get($spacing, "XXL") 0;
-    }
-  }
-}
-
 .c-project-header {
-  margin-top: map-get($spacing, "XL");
-
-  @include bp-small {
-    margin-top: 0;
-  }
+  overflow: hidden;
 
   &__cover {
+    left: -25%;
+    position: fixed;
+    width: 150%;
+
     @include bp-small {
-      animation: 3200ms $animation-ease-out-expo both
-        c-project-header__cover-is-focused;
+      left: unset;
+      width: 100%;
     }
   }
 
-  &__title h1 {
-    display: inline-flex;
-    max-width: map-get($container, "S");
-    padding: map-get($spacing, "M") map-get($spacing, "L")
-      map-get($spacing, "XL");
+  &__title {
+    background-color: map-get($color, "light");
+    position: relative;
 
     @include bp-small {
-      background-color: map-get($color, "background");
-      margin-top: -1 * map-get($spacing, "XXL");
-      position: relative;
       z-index: 50;
     }
 
-    @include bp-medium {
+    @include bp-large {
+      margin-top: -1 * map-get($spacing, "XXL") !important;
       box-sizing: border-box;
-      max-width: map-get($container, "M");
+    }
+
+    h1 {
+      max-width: map-get($container, "S");
+      padding: map-get($spacing, "M") map-get($spacing, "L") 0;
+
+      @include bp-small {
+        max-width: map-get($container, "M") + map-get($spacing, "XL");
+      }
+
+      @include bp-large {
+        padding: (map-get($spacing, "L") + map-get($spacing, "M"))
+          map-get($spacing, "XL") 0;
+      }
     }
   }
 
   &__details-and-subtitle {
+    background-color: map-get($color, "light");
     display: flex;
     flex-direction: column;
+    padding-top: map-get($spacing, "L");
+    position: relative;
+    z-index: 50;
 
     @include bp-small {
       align-items: flex-end;
+      padding-top: map-get($spacing, "XL");
+    }
+
+    @include bp-large {
+      padding-left: map-get($spacing, "L");
     }
   }
 
   &__details {
     display: flex;
     flex-direction: column;
-    flex-shrink: 0;
-    margin: 0 map-get($spacing, "L") map-get($spacing, "L");
+    padding: 0 map-get($spacing, "L") map-get($spacing, "L");
 
     @include bp-small {
       align-self: flex-start;
@@ -84,26 +81,23 @@
       flex-direction: column;
 
       & + & {
-        margin-top: map-get($spacing, "S");
+        margin-top: map-get($spacing, "XS");
       }
 
       @include bp-small {
-        flex-basis: map-get($container, "XS");
-
         & + & {
-          margin-left: map-get($spacing, "L");
           margin-top: 0;
+          margin-left: map-get($spacing, "L");
         }
       }
 
       @include bp-medium {
-        flex-basis: unset;
         max-width: map-get($container, "XS");
         padding-right: map-get($spacing, "L");
 
         & + & {
           margin-left: 0;
-          margin-top: map-get($spacing, "S");
+          margin-top: map-get($spacing, "XS");
         }
       }
     }

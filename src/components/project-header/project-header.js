@@ -1,37 +1,74 @@
 import PropTypes from "prop-types"
-import React from "react"
-import Reveal from "react-reveal/Reveal"
+import React, { Component } from "react"
 
 import "./project-header.scss"
 
-const ProjectHeader = ({ cover, details, subtitle, title }) => {
-  const detailsTitles = ["Activity", "Design Process", "Client", "Timeline"]
+class ProjectHeader extends Component {
+  constructor(props) {
+    super(props)
 
-  return (
-    <header className="c-project-header">
-      <figure className="c-project-header__cover u-content-container--XL">
-        <Reveal>{cover}</Reveal>
-      </figure>
-      <section className="c-project-header__title u-content-container--L">
-        <h1>{title}</h1>
-      </section>
-      <div className="c-project-header__details-and-subtitle u-content-container--L">
-        <section className="c-project-header__details">
-          {details.map((item, index) => (
-            <div className="c-project-header__details__content">
-              <small>
-                <strong>{detailsTitles[index]}</strong>
-              </small>
-              <small className="u-color-type-variant">{item}</small>
+    this.state = {
+      coverHeight: 0,
+    }
+
+    this.cover = React.createRef()
+    this.title = React.createRef()
+    this.handleScroll = this.handleScroll.bind(this)
+  }
+
+  componentDidMount() {
+    window.addEventListener("scroll", this.handleScroll)
+
+    this.setState({
+      coverHeight: this.cover.current.clientHeight,
+    })
+  }
+
+  handleScroll() {
+    let scrolledToTop = window.pageYOffset
+    this.cover.current.style.top = -scrolledToTop * 0.48 + "px"
+    this.title.current.style.top = -scrolledToTop * 0.64 + "px"
+  }
+
+  render() {
+    return (
+      <header className="c-project-header">
+        <video
+          className="c-project-header__cover"
+          autoPlay
+          muted
+          playsInline
+          poster={this.props.coverImg}
+          ref={this.cover}
+        >
+          <source src={this.props.coverVideo} type="video/mp4" />
+        </video>
+        <div
+          ref={this.title}
+          style={{ paddingTop: this.state.coverHeight + "px" }}
+        >
+          <div className="c-project-header__title u-content-container--L">
+            <h1>{this.props.title}</h1>
+          </div>
+          <div className="c-project-header__details-and-subtitle u-content-container--L">
+            <div className="c-project-header__details">
+              {this.props.details.map((item, index) => (
+                <div className="c-project-header__details__content">
+                  <small>{["Activity", "Client", "Duration"][index]}</small>
+                  <small>
+                    <em>{item}</em>
+                  </small>
+                </div>
+              ))}
             </div>
-          ))}
-        </section>
-        <section className="c-project-header__subtitle">
-          <h3>{subtitle}</h3>
-        </section>
-      </div>
-    </header>
-  )
+            <div className="c-project-header__subtitle">
+              <h3>{this.props.subtitle}</h3>
+            </div>
+          </div>
+        </div>
+      </header>
+    )
+  }
 }
 
 ProjectHeader.propTypes = {
