@@ -1,0 +1,19 @@
+@import "../index.scss";
+
+.p-showcase {
+  background-color: map-get($color, "dark");
+  color: map-get($color, "light-grey");
+  overflow: hidden;
+
+  &__header {
+    max-width: map-get($container, "M");
+    padding: map-get($spacing, "XXL") map-get($spacing, "L")
+      map-get($spacing, "XL");
+    position: fixed;
+
+    @include bp-medium {
+      padding-left: map-get($spacing, "XL");
+      padding-right: map-get($spacing, "XL");
+    }
+  }
+}
