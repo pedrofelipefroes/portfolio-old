@@ -27,6 +27,10 @@ class AboutPage extends Component {
     })
   }
 
+  componentWillUnmount() {
+    window.removeEventListener("scroll", this.handleScroll)
+  }
+
   handleScroll() {
     let scrolledToTop = window.pageYOffset
     this.header.current.style.top = -scrolledToTop * 0.64 + "px"
