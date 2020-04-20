@@ -1,4 +1,5 @@
 html {
+  background-color: map-get($color, "dark");
   font-family: $type-family;
   -moz-osx-font-smoothing: grayscale;
   -ms-text-size-adjust: 100%;
