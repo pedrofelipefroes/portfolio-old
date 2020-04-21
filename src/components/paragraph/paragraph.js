@@ -1,15 +1,16 @@
+import Fade from "react-reveal/Fade"
 import PropTypes from "prop-types"
 import React from "react"
-
-import TextContainer from "../text-container/text-container"
 
 import "./paragraph.scss"
 
 const Paragraph = ({ children }) => {
   return (
-    <TextContainer className="c-paragraph">
-      <p>{children}</p>
-    </TextContainer>
+    <div className="c-paragraph u-content-container--L u-text-container">
+      <Fade delay={500}>
+        <p>{children}</p>
+      </Fade>
+    </div>
   )
 }
 

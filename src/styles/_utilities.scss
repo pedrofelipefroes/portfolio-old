@@ -16,14 +16,25 @@
   max-width: map-get($container, "XL");
 }
 
-.u-color-background-variant {
-  color: map-get($color, "background-variant");
-}
+.u-text-container {
+  align-items: flex-end;
+  background-color: map-get($color, "light");
+  display: flex;
+  flex-direction: column;
+  position: relative;
 
-.u-color-type {
-  color: map-get($color, "type");
-}
+  .c-img-carousel + &,
+  .c-img-container + &,
+  & + & {
+    padding-top: map-get($spacing, "L");
+  }
 
-.u-color-type-variant {
-  color: map-get($color, "type-variant");
+  & + &--is-header,
+  .c-img-container + &--is-header {
+    padding-top: map-get($spacing, "XXL");
+  }
+
+  .c-img-container__caption + &--is-header {
+    padding-top: map-get($spacing, "XL");
+  }
 }
