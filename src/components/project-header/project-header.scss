@@ -5,8 +5,9 @@
 
   &__cover {
     left: -25%;
-    position: fixed;
+    position: relative;
     width: 150%;
+    z-index: 20;
 
     @include bp-small {
       left: unset;
@@ -15,99 +16,98 @@
   }
 
   &__title {
-    background-color: map-get($color, "light");
-    position: relative;
+    &--front {
+      align-items: flex-end;
+      clip-path: inset(0 0 0 0);
+      color: map-get($color, "light");
+      display: flex;
+      height: calc(150vw / 2);
+      position: absolute;
+      top: 0;
+      width: 100%;
+      z-index: 30;
 
-    @include bp-small {
-      z-index: 50;
+      @include bp-small {
+        height: calc(100vw / 2);
+      }
+
+      .u-content-container--L {
+        flex-grow: 1;
+      }
     }
 
-    @include bp-large {
-      margin-top: -1 * map-get($spacing, "XXL") !important;
-      box-sizing: border-box;
+    &--back {
+      position: relative;
+      z-index: 10;
+
+      h1 {
+        bottom: 0;
+        position: absolute;
+      }
     }
 
     h1 {
-      max-width: map-get($container, "S");
-      padding: map-get($spacing, "M") map-get($spacing, "L") 0;
+      max-width: calc(100vw - 4rem);
+      padding: 0 map-get($spacing, "L") map-get($spacing, "L");
 
       @include bp-small {
+        padding-bottom: map-get($spacing, "M");
         max-width: map-get($container, "M") + map-get($spacing, "XL");
       }
 
-      @include bp-large {
-        padding: (map-get($spacing, "L") + map-get($spacing, "M"))
-          map-get($spacing, "XL") 0;
+      @include bp-medium {
+        padding-bottom: map-get($spacing, "XL");
       }
     }
   }
 
-  &__details-and-subtitle {
-    background-color: map-get($color, "light");
+  &__subtitle {
     display: flex;
-    flex-direction: column;
-    padding-top: map-get($spacing, "L");
-    position: relative;
-    z-index: 50;
+    padding: map-get($spacing, "M") map-get($spacing, "L");
 
-    @include bp-small {
-      align-items: flex-end;
-      padding-top: map-get($spacing, "XL");
-    }
-
-    @include bp-large {
-      padding-left: map-get($spacing, "L");
+    h3 {
+      max-width: map-get($container, "M") - map-get($spacing, "XL");
     }
   }
 
   &__details {
     display: flex;
     flex-direction: column;
-    padding: 0 map-get($spacing, "L") map-get($spacing, "L");
+    margin: 0 map-get($spacing, "L") map-get($spacing, "L");
 
     @include bp-small {
       align-self: flex-start;
       flex-direction: row;
     }
+  }
 
-    @include bp-medium {
-      flex-direction: column;
-      flex-shrink: 1;
-      position: absolute;
+  &__details__item {
+    display: flex;
+    flex-direction: column;
+
+    & + & {
+      margin-top: map-get($spacing, "XS");
     }
 
-    &__content {
-      display: flex;
-      flex-direction: column;
-
+    @include bp-small {
       & + & {
-        margin-top: map-get($spacing, "XS");
-      }
-
-      @include bp-small {
-        & + & {
-          margin-top: 0;
-          margin-left: map-get($spacing, "L");
-        }
-      }
-
-      @include bp-medium {
-        max-width: map-get($container, "XS");
-        padding-right: map-get($spacing, "L");
-
-        & + & {
-          margin-left: 0;
-          margin-top: map-get($spacing, "XS");
-        }
+        margin-top: 0;
+        margin-left: map-get($spacing, "L");
       }
     }
   }
 
-  &__subtitle {
-    box-sizing: border-box;
-    margin-bottom: map-get($spacing, "L");
-    max-width: map-get($container, "M");
-    padding-left: map-get($spacing, "L");
-    padding-right: map-get($spacing, "L");
+  &__divider {
+    border-color: map-get($color, "light-grey");
+    border-style: solid;
+    border-width: 0 0 1px 0;
+    margin: 0 map-get($spacing, "L") map-get($spacing, "L");
+    max-width: map-get($container, "L");
+
+    @include bp-large {
+      max-width: map-get($container, "L");
+      margin-left: 0;
+      margin-right: 0;
+    }
   }
 }
