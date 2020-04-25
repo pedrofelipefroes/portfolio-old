@@ -36,4 +36,13 @@
   .c-img-container__caption + &--is-header {
     margin-top: map-get($spacing, "XL");
   }
+
+  & > h2,
+  & > h3,
+  & > p {
+    box-sizing: border-box;
+    max-width: map-get($container, "M");
+    padding: 0 map-get($spacing, "L");
+    width: 100%;
+  }
 }

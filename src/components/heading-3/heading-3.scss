@@ -1,7 +1,0 @@
-@import "../../styles/index.scss";
-
-.c-heading-3 h3 {
-  max-width: map-get($container, "M");
-  margin: 0 map-get($spacing, "L");
-  width: 100%;
-}

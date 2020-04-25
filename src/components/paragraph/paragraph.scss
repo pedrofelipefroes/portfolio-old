@@ -1,12 +1,6 @@
 @import "../../styles/index.scss";
 
 .c-paragraph {
-  p {
-    max-width: map-get($container, "M");
-    margin: 0 map-get($spacing, "L");
-    width: 100%;
-  }
-
   article > &:first-child {
     p::first-letter {
       font-size: 5.4rem;
