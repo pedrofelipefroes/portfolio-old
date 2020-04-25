@@ -18,7 +18,6 @@
 
 .u-text-container {
   align-items: flex-end;
-  background-color: map-get($color, "light");
   display: flex;
   flex-direction: column;
   position: relative;
@@ -26,15 +25,15 @@
   .c-img-carousel + &,
   .c-img-container + &,
   & + & {
-    padding-top: map-get($spacing, "L");
+    margin-top: map-get($spacing, "S");
   }
 
   & + &--is-header,
   .c-img-container + &--is-header {
-    padding-top: map-get($spacing, "XXL");
+    margin-top: map-get($spacing, "XXL");
   }
 
   .c-img-container__caption + &--is-header {
-    padding-top: map-get($spacing, "XL");
+    margin-top: map-get($spacing, "XL");
   }
 }

@@ -7,7 +7,7 @@ import "./paragraph.scss"
 const Paragraph = ({ children }) => {
   return (
     <div className="c-paragraph u-content-container--L u-text-container">
-      <Fade delay={500}>
+      <Fade delay={640}>
         <p>{children}</p>
       </Fade>
     </div>
