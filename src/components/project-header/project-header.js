@@ -28,6 +28,10 @@ class ProjectHeader extends Component {
     })
   }
 
+  componentWillUnmount() {
+    window.removeEventListener("scroll", this.handleScroll)
+  }
+
   setParallax(parallaxRate, scrolledToTop) {
     this.cover.current.style.top = -scrolledToTop * parallaxRate + "px"
     this.frontTitle.current.style.clipPath =
