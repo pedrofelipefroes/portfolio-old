@@ -1,15 +1,16 @@
+import Fade from "react-reveal/Fade"
 import PropTypes from "prop-types"
 import React from "react"
-
-import TextContainer from "../text-container/text-container"
 
 import "./heading-2.scss"
 
 const Heading2 = ({ children }) => {
   return (
-    <TextContainer isHeader className="c-heading-2">
-      <h2>{children}</h2>
-    </TextContainer>
+    <div className="c-heading-2 u-content-container--L u-text-container u-text-container--is-header">
+      <Fade delay={640}>
+        <h2>{children}</h2>
+      </Fade>
+    </div>
   )
 }
 
