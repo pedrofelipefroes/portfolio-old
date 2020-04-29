@@ -1,9 +1,7 @@
 const path = require("path")
-const { createFilePath } = require("gatsby-source-filesystem")
 
 exports.createPages = async ({ graphql, actions, reporter }) => {
   const { createPage } = actions
-
   const result = await graphql(`
     query {
       allMdx {
@@ -24,6 +22,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
   }
 
   const projects = result.data.allMdx.edges
+
   projects.forEach(({ node }) => {
     createPage({
       path: node.frontmatter.path,

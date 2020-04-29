@@ -9,6 +9,8 @@ module.exports = {
     url: `https://froes.design`,
   },
   plugins: [
+    `gatsby-plugin-sharp`,
+    `gatsby-transformer-sharp`,
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
@@ -30,14 +32,12 @@ module.exports = {
       },
     },
     `gatsby-plugin-react-helmet`,
-    `gatsby-plugin-sharp`,
     `gatsby-plugin-sass`,
-    `gatsby-transformer-sharp`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        name: `markdown-pages`,
-        path: path.join(__dirname, `src`, `pages`),
+        name: `projects`,
+        path: path.join(__dirname, `projects`),
       },
     },
     {
