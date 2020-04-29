@@ -25,7 +25,7 @@ module.exports = {
       resolve: `gatsby-plugin-mdx`,
       options: {
         defaultLayouts: {
-          default: require.resolve("./src/templates/project-page-layout.js"),
+          default: require.resolve("./src/templates/project-page-template.js"),
         },
       },
     },
