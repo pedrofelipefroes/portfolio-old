@@ -1,0 +1,80 @@
+@import "../../styles/index.scss";
+
+.c-media {
+  display: grid;
+  padding: 0 map-get($spacing, "L");
+
+  .u-text-container + & {
+    padding-top: map-get($spacing, "XL");
+  }
+
+  & + .u-text-container {
+    margin-top: map-get($spacing, "XL");
+  }
+
+  & + & {
+    margin-top: map-get($spacing, "XS");
+  }
+
+  &--has-caption + & {
+    margin-top: map-get($spacing, "L");
+  }
+
+  &--1 {
+    grid-template-columns: 1fr;
+  }
+
+  &--2,
+  &--4 {
+    column-gap: map-get($spacing, "XS");
+    row-gap: map-get($spacing, "XS");
+  }
+
+  &--2 {
+    grid-template-columns: 1fr 1fr;
+
+    & > .c-media__caption {
+      grid-column-end: span 2;
+    }
+  }
+
+  &--4 {
+    grid-template-columns: 1fr 1fr;
+
+    @include bp-small {
+      grid-template-columns: 1fr 1fr 1fr 1fr;
+    }
+
+    & > .c-media__caption {
+      grid-column-end: span 2;
+
+      @include bp-small {
+        grid-column-end: span 4;
+      }
+    }
+  }
+
+  &--M {
+    @extend .u-content-container--M;
+  }
+
+  &--L {
+    @extend .u-content-container--L;
+  }
+
+  &--XL {
+    @extend .u-content-container--XL;
+  }
+
+  &__caption {
+    color: map-get($color, "dark-grey");
+    justify-self: end;
+    margin-top: map-get($spacing, "S");
+    max-width: map-get($container, "S");
+    text-align: right;
+  }
+
+  img {
+    width: 100%;
+  }
+}
