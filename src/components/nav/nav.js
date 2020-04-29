@@ -13,12 +13,13 @@ class Nav extends Component {
       itemsAreVisible: false,
       navIsOnDark: props.isOnDark,
       navIsVisible: true,
-      previousScrollPosition: window.pageYOffset,
+      previousScrollPosition: 0,
     }
   }
 
   componentDidMount() {
     window.addEventListener("scroll", this.handleScroll)
+    this.setState({ previousScrollPosition: window.pageYOffset })
   }
 
   componentWillUnmount() {
