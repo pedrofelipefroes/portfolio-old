@@ -104,13 +104,29 @@ video {
 }
 
 article > blockquote {
-  margin: map-get($spacing, "XXL") 0 map-get($spacing, "L");
+  margin: map-get($spacing, "XXL") map-get($spacing, "L") map-get($spacing, "S");
+
+  @include bp-small {
+    margin-left: 0;
+    margin-right: 0;
+  }
+
   p {
     @extend small.caption-2;
   }
 
   .u-text-container + .u-text-container {
     margin-top: map-get($spacing, "XS");
+  }
+
+  .u-text-container p {
+    padding-left: 0;
+    padding-right: 0;
+
+    @include bp-small {
+      padding-left: map-get($spacing, "L");
+      padding-right: map-get($spacing, "L");
+    }
   }
 
   .u-text-container:first-of-type p {
