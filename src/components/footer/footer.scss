@@ -10,8 +10,12 @@
     color: map-get($color, "light-grey");
   }
 
+  &--on-dark &__copyright {
+    border-top: solid 1px map-get($color, "dark-grey");
+  }
+
   &__copyright {
-    border-top: solid 2px map-get($color, "dark-grey");
+    border-top: solid 1px map-get($color, "light-grey");
     display: flex;
     flex-direction: column;
     margin-top: map-get($spacing, "S") - map-get($spacing, "XS") / 2;
