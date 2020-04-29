@@ -1,12 +1,12 @@
 $color--alabaster: #f0ece4;
-$color--dim-gray: #6e6967;
+$color--gray: #827c7a;
 $color--licorice: #141211;
-$color--white: #ffffff;
+$color--baby-powder: #fafafa;
 
 $color: (
   "dark": $color--licorice,
-  "dark-grey": $color--dim-gray,
-  "light": $color--white,
+  "dark-grey": $color--gray,
+  "light": $color--baby-powder,
   "light-grey": $color--alabaster,
 );
 

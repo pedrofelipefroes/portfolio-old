@@ -22,19 +22,12 @@
   flex-direction: column;
   position: relative;
 
-  .c-img-carousel + &,
-  .c-img-container + &,
   & + & {
     margin-top: map-get($spacing, "S");
   }
 
-  & + &--is-header,
-  .c-img-container + &--is-header {
+  & + &--is-header {
     margin-top: map-get($spacing, "XXL");
-  }
-
-  .c-img-container__caption + &--is-header {
-    margin-top: map-get($spacing, "XL");
   }
 
   & > h2,

@@ -103,6 +103,27 @@ video {
   outline: none;
 }
 
+article > blockquote {
+  margin: map-get($spacing, "XXL") 0 map-get($spacing, "L");
+  p {
+    @extend small.caption-2;
+  }
+
+  .u-text-container + .u-text-container {
+    margin-top: map-get($spacing, "XS");
+  }
+
+  .u-text-container:first-of-type p {
+    border-top: solid 1px map-get($color, "light-grey");
+    padding-top: map-get($spacing, "M");
+  }
+
+  .u-text-container:last-of-type p {
+    border-bottom: solid 1px map-get($color, "light-grey");
+    padding-bottom: map-get($spacing, "M");
+  }
+}
+
 .highlight {
   color: map-get($type-highlight, "color");
   font-size: map-get($type-highlight, "size");
