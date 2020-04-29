@@ -60,7 +60,11 @@ export const IndexPageQuery = graphql`
           frontmatter {
             activity
             coverImage {
-              ...coverImage
+              childImageSharp {
+                fluid(maxWidth: 1184, quality: 100) {
+                  ...GatsbyImageSharpFluid_noBase64
+                }
+              }
               base
             }
             id
