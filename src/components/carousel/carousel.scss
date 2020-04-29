@@ -1,0 +1,178 @@
+@import "../../styles/index.scss";
+
+.c-carousel {
+  display: grid;
+  padding: 0 map-get($spacing, "L");
+
+  .u-text-container + & {
+    padding-top: map-get($spacing, "XL");
+  }
+
+  & + .u-text-container {
+    margin-top: map-get($spacing, "XL");
+  }
+
+  .carousel .slide {
+    background: transparent;
+  }
+
+  .carousel.carousel-slider .control-arrow {
+    background-color: transparentize(map-get($color, "dark-grey"), 0.5);
+    background-position: center;
+    background-repeat: no-repeat;
+    border-radius: map-get($spacing, "S");
+    bottom: unset;
+    padding: 0.25rem;
+    width: map-get($spacing, "L");
+    height: map-get($spacing, "L");
+    top: calc(50% - 1rem);
+
+    &:hover {
+      background-color: map-get($color, "dark-grey");
+    }
+
+    &::before {
+      content: unset;
+    }
+
+    &.control-next {
+      background-image: url("data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyB3aWR0aD0iMjRweCIgaGVpZ2h0PSIyNHB4IiB2aWV3Qm94PSIwIDAgMjQgMjQiIHZlcnNpb249IjEuMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayI+CiAgICA8IS0tIEdlbmVyYXRvcjogU2tldGNoIDY0ICg5MzUzNykgLSBodHRwczovL3NrZXRjaC5jb20gLS0+CiAgICA8dGl0bGU+QXJyb3c8L3RpdGxlPgogICAgPGRlc2M+Q3JlYXRlZCB3aXRoIFNrZXRjaC48L2Rlc2M+CiAgICA8ZGVmcz4KICAgICAgICA8cmVjdCBpZD0icGF0aC0xIiB4PSIwIiB5PSIwIiB3aWR0aD0iMzIwIiBoZWlnaHQ9IjcyIj48L3JlY3Q+CiAgICA8L2RlZnM+CiAgICA8ZyBpZD0iU3ltYm9scyIgc3Ryb2tlPSJub25lIiBzdHJva2Utd2lkdGg9IjEiIGZpbGw9Im5vbmUiIGZpbGwtcnVsZT0iZXZlbm9kZCI+CiAgICAgICAgPGcgaWQ9Ik5hdmJhci9TbWFsbC9EZWZhdWx0IiB0cmFuc2Zvcm09InRyYW5zbGF0ZSgtMjcyLjAwMDAwMCwgLTI0LjAwMDAwMCkiPgogICAgICAgICAgICA8bWFzayBpZD0ibWFzay0yIiBmaWxsPSJ3aGl0ZSI+CiAgICAgICAgICAgICAgICA8dXNlIHhsaW5rOmhyZWY9IiNwYXRoLTEiPjwvdXNlPgogICAgICAgICAgICA8L21hc2s+CiAgICAgICAgICAgIDxnIGlkPSJCYWNrZ3JvdW5kIj48L2c+CiAgICAgICAgICAgIDxwb2x5bGluZSBpZD0iSWNvbiIgc3Ryb2tlPSIjRkZGRkZGIiBzdHJva2Utd2lkdGg9IjIiIG1hc2s9InVybCgjbWFzay0yKSIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMjgxLjU3ODQyNywgMzUuOTQ0NTQ0KSByb3RhdGUoLTQ1LjAwMDAwMCkgdHJhbnNsYXRlKC0yODEuNTc4NDI3LCAtMzUuOTQ0NTQ0KSAiIHBvaW50cz0iMjg1LjQxMjA1OCAzMiAyODUuNTIyOTcxIDM5Ljg4OTA4NzMgMjc3LjYzMzg4MyAzOS43NzgxNzQ2Ij48L3BvbHlsaW5lPgogICAgICAgIDwvZz4KICAgIDwvZz4KPC9zdmc+");
+      margin-right: map-get($spacing, "XS");
+    }
+
+    &.control-prev {
+      background-image: url("data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyB3aWR0aD0iMjRweCIgaGVpZ2h0PSIyNHB4IiB2aWV3Qm94PSIwIDAgMjQgMjQiIHZlcnNpb249IjEuMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayI+CiAgICA8IS0tIEdlbmVyYXRvcjogU2tldGNoIDY0ICg5MzUzNykgLSBodHRwczovL3NrZXRjaC5jb20gLS0+CiAgICA8dGl0bGU+QXJyb3c8L3RpdGxlPgogICAgPGRlc2M+Q3JlYXRlZCB3aXRoIFNrZXRjaC48L2Rlc2M+CiAgICA8ZGVmcz4KICAgICAgICA8cmVjdCBpZD0icGF0aC0xIiB4PSIwIiB5PSIwIiB3aWR0aD0iMzIwIiBoZWlnaHQ9IjcyIj48L3JlY3Q+CiAgICA8L2RlZnM+CiAgICA8ZyBpZD0iU3ltYm9scyIgc3Ryb2tlPSJub25lIiBzdHJva2Utd2lkdGg9IjEiIGZpbGw9Im5vbmUiIGZpbGwtcnVsZT0iZXZlbm9kZCI+CiAgICAgICAgPGcgaWQ9Ik5hdmJhci9TbWFsbC9EZWZhdWx0IiB0cmFuc2Zvcm09InRyYW5zbGF0ZSgtMjY3LjAwMDAwMCwgLTI0LjAwMDAwMCkiPgogICAgICAgICAgICA8bWFzayBpZD0ibWFzay0yIiBmaWxsPSJ3aGl0ZSI+CiAgICAgICAgICAgICAgICA8dXNlIHhsaW5rOmhyZWY9IiNwYXRoLTEiPjwvdXNlPgogICAgICAgICAgICA8L21hc2s+CiAgICAgICAgICAgIDxnIGlkPSJCYWNrZ3JvdW5kIj48L2c+CiAgICAgICAgICAgIDxwb2x5bGluZSBpZD0iSWNvbiIgc3Ryb2tlPSIjRkZGRkZGIiBzdHJva2Utd2lkdGg9IjIiIG1hc2s9InVybCgjbWFzay0yKSIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMjgxLjU3ODQyNywgMzUuOTQ0NTQ0KSBzY2FsZSgtMSwgMSkgcm90YXRlKC00NS4wMDAwMDApIHRyYW5zbGF0ZSgtMjgxLjU3ODQyNywgLTM1Ljk0NDU0NCkgIiBwb2ludHM9IjI4NS40MTIwNTggMzIgMjg1LjUyMjk3MSAzOS44ODkwODczIDI3Ny42MzM4ODMgMzkuNzc4MTc0NiI+PC9wb2x5bGluZT4KICAgICAgICA8L2c+CiAgICA8L2c+Cjwvc3ZnPg==");
+      margin-left: map-get($spacing, "XS");
+    }
+  }
+
+  .carousel .control-dots {
+    margin: map-get($spacing, "S") 0 0;
+    position: relative;
+    text-align: right;
+
+    .dot {
+      background-color: map-get($color, "dark-grey");
+      box-shadow: none;
+      opacity: 0.5;
+      outline: none;
+
+      &:hover {
+        opacity: 1;
+      }
+
+      &.selected {
+        opacity: 1;
+      }
+
+      &.selected:hover {
+        opacity: 1;
+      }
+
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+  }
+
+  &--M {
+    @extend .u-content-container--M;
+  }
+
+  &--L {
+    @extend .u-content-container--L;
+  }
+
+  &--XL {
+    @extend .u-content-container--XL;
+  }
+
+  &__caption {
+    color: map-get($color, "dark-grey");
+    justify-self: end;
+    margin-top: map-get($spacing, "S");
+    max-width: map-get($container, "S");
+    text-align: right;
+  }
+}
+
+.c-img-carousel {
+  display: flex;
+  flex-direction: column;
+
+  & + & {
+    margin-top: map-get($spacing, "L");
+  }
+
+  .c-text-container + & {
+    margin-top: map-get($spacing, "XL");
+  }
+
+  &__title {
+    align-items: flex-end;
+    display: flex;
+    flex-direction: column;
+
+    p {
+      box-sizing: border-box;
+      margin-bottom: map-get($spacing, "L");
+      margin-top: map-get($spacing, "L");
+      max-width: map-get($container, "M");
+      padding-left: map-get($spacing, "L");
+      padding-right: map-get($spacing, "L");
+      width: 100%;
+    }
+  }
+
+  &__container.u-content-container--M {
+    align-self: flex-end;
+    margin: 0;
+  }
+
+  &__container .carousel {
+    .control-dots {
+      margin: map-get($spacing, "XS") 0 0;
+      position: unset;
+    }
+
+    .control-dots .dot {
+      background-color: map-get($color, "type-variant");
+      box-shadow: none;
+      opacity: 1;
+      outline: none;
+
+      &:hover {
+        opacity: 0.5;
+      }
+
+      &.selected {
+        background-color: map-get($color, "type");
+      }
+
+      &.selected:hover {
+        opacity: 1;
+      }
+    }
+
+    .slide picture img {
+      margin-bottom: -62.5%;
+      margin-top: -62.5%;
+      position: unset !important;
+    }
+  }
+
+  &__caption {
+    align-items: flex-end;
+    display: flex;
+    flex-direction: column;
+    text-align: right;
+
+    small {
+      margin-bottom: map-get($spacing, "XL");
+      margin-top: map-get($spacing, "L");
+      max-width: map-get($container, "S");
+      padding-left: map-get($spacing, "L");
+      padding-right: map-get($spacing, "L");
+    }
+  }
+}
