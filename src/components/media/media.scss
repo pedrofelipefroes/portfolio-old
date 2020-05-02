@@ -31,10 +31,14 @@
   }
 
   &--2 {
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr;
 
-    & > .c-media__caption {
-      grid-column-end: span 2;
+    @include bp-small {
+      grid-template-columns: 1fr 1fr;
+
+      & > .c-media__caption {
+        grid-column-end: span 2;
+      }
     }
   }
 
