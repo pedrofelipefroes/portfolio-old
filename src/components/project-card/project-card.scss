@@ -71,11 +71,11 @@
   }
 
   &__img::after {
-    font-size: map-get($type-title-2, "size--S");
-    font-weight: map-get($type-title-2, "weight");
+    font-size: map-get($type-body-1, "size--S");
+    font-weight: map-get($type-body-1, "weight");
     height: 100%;
-    letter-spacing: map-get($type-title-2, "character-spacing--S");
-    line-height: map-get($type-title-2, "leading");
+    letter-spacing: map-get($type-body-1, "character-spacing--S");
+    line-height: map-get($type-body-1, "leading");
     margin-top: -49%;
     z-index: 60;
 
