@@ -7,6 +7,7 @@ import React from "react"
 import Fade from "react-reveal/Fade"
 import Layout from "../components/layout/layout"
 import ProjectHeader from "../components/project-header/project-header"
+import Reveal from "react-reveal/Reveal"
 import SEO from "../components/seo/seo"
 
 import Heading2 from "../components/heading-2/heading-2"
@@ -22,7 +23,7 @@ function ProjectPageTemplate({ data: { project, media } }) {
     project.frontmatter.duration,
   ]
 
-  let shortcodes = { Carousel, Fade, Img, Media }
+  let shortcodes = { Carousel, Fade, Img, Media, Reveal }
 
   let components = {
     ...shortcodes,
@@ -40,8 +41,9 @@ function ProjectPageTemplate({ data: { project, media } }) {
 
   const getMediaSrc = index => {
     if (
-      media.edges[index].node.extension === "svg" ||
+      media.edges[index].node.extension === "gif" ||
       media.edges[index].node.extension === "mp4" ||
+      media.edges[index].node.extension === "svg" ||
       media.edges[index].node.base.includes(".poster")
     ) {
       return media.edges[index].node.publicURL
@@ -86,7 +88,7 @@ export const projectPageTemplateQuery = graphql`
     }
     media: allFile(
       filter: {
-        extension: { in: ["jpg", "mp4", "png", "svg"] }
+        extension: { in: ["gif", "jpg", "mp4", "png", "svg"] }
         relativeDirectory: { eq: $id }
       }
       sort: { fields: name }
