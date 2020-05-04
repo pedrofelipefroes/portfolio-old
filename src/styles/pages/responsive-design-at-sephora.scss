@@ -1,0 +1,102 @@
+@import "../index.scss";
+
+@keyframes auditIn {
+  from {
+    filter: blur(0);
+    opacity: 1;
+    padding: 0;
+  }
+  to {
+    filter: blur(0.125rem);
+    opacity: 0.64;
+    padding: map-get($spacing, "L");
+  }
+}
+
+.p-responsive-design-at-sephora {
+  &__cards {
+    grid-auto-rows: minmax(7.3125rem, max-content);
+
+    &__item {
+      background-color: white;
+      display: flex;
+      flex-direction: column;
+      padding: map-get($spacing, "M");
+    }
+  }
+
+  &__table {
+    grid-auto-rows: max-content;
+
+    &__item {
+      background-color: white;
+      display: flex;
+      flex-direction: column;
+      padding: map-get($spacing, "M");
+    }
+
+    &__item > small {
+      margin-bottom: map-get($spacing, "XS");
+    }
+
+    &__item > .highlight {
+      margin-top: map-get($spacing, "S");
+    }
+
+    &__item > .highlight:first-of-type {
+      margin-top: 0;
+    }
+  }
+
+  &__audit {
+    &__animation {
+      animation: auditIn 600ms $animation-ease-out-expo both;
+    }
+
+    &__items {
+      max-width: 24rem !important;
+      position: relative;
+
+      @include bp-small {
+        left: calc(50% - 20rem);
+        margin-top: -3 * map-get($spacing, "XXL") !important;
+        max-width: map-get($container, "M") !important;
+        position: absolute;
+      }
+    }
+
+    &__item {
+      background-color: white;
+      box-shadow: 0 map-get($spacing, "XS") map-get($spacing, "M") 0
+        transparentize(map-get($color, "dark"), 0.88);
+    }
+
+    &__item video {
+      box-sizing: border-box;
+      padding: map-get($spacing, "S") map-get($spacing, "S")
+        map-get($spacing, "XS");
+    }
+
+    &__item .highlight {
+      display: flex;
+      justify-content: center;
+      padding-bottom: map-get($spacing, "S");
+    }
+
+    &__image {
+      margin-bottom: -1 * map-get($spacing, "XXL") !important;
+
+      @include bp-small {
+        margin-bottom: 0 !important;
+      }
+    }
+
+    &__image .c-media__caption {
+      display: none;
+
+      @include bp-small {
+        display: unset;
+      }
+    }
+  }
+}

@@ -1,0 +1,305 @@
+---
+path: /responsive-design-at-sephora
+id: responsive-design-at-sephora
+order: 1
+coverImage: ../src/images/rebranding-avenue-code/00 - Artwork featuring a subway map with stations named after Avenue Code practice areas.poster.jpg
+title: Responsive Design at Sephora
+subtitle: Why Sephora international, large-scale e-commerce should invest into responsiveness across it’s platform.
+activity: UX Research & Strategy
+client: Sephora
+duration: January—March 2019
+---
+
+import "styles/pages/responsive-design-at-sephora.scss"
+
+Responsiveness is a design pattern in which combined layout elements adapt according to one’s screen size, providing the same level of user experience across every device.
+
+Responsive design, however, can be quite challenging to implement across a shipped product, since the transition process requires time and effort from multiple teams.
+
+Sephora’s engineering team faced this challenge in early 2019. Despite responsiveness clear benefits, justifying its implementation for a leadership board can be demanding.
+
+To give grounds for such investment, I was tasked by Sephora’s Director of Front-end Engineering to conduct UX research to raise awareness & gather data around the matter.
+
+I started the research by framing it as a design challenge:
+
+### How might we justify the transition to responsive web design at Sephora.com for the company's leadership board?
+
+Since the desired impact was to bring awareness and data for Sephora’s leadership, I wanted to design an easy-to-digest deck with responsiveness concepts and findings.
+
+To better structure the creation of this presentation deck, I divided the research process into 3 different stages, starting with Inspiration.
+
+## _Stage 01_ Inspiration
+
+Before moving to actual research, it was important to map which kind of data would provide insight for Sephora’s leadership on transitioning to responsive design.
+
+As they wouldn’t necessarily have any awareness around responsiveness, we started to frame questions that would be relevant for the leadership board around the subject.
+
+<Media
+  caption="We first framed questions based on everything that’d be important for the leadership board, and then narrow them out to only 8 questions."
+  className="p-responsive-design-at-sephora__cards"
+  numberOfItems={8}
+>
+  <div className="p-responsive-design-at-sephora__cards__item annotation">
+    <Fade delay={1000}>
+      <span className="highlight">Basics</span>
+      What is responsive design?
+    </Fade>
+  </div>
+  <div className="p-responsive-design-at-sephora__cards__item annotation">
+    <Fade delay={1250}>
+      <span className="highlight">Basics</span>
+      What is the sephora.com current design pattern?
+    </Fade>
+  </div>
+  <div className="p-responsive-design-at-sephora__cards__item annotation">
+    <Fade delay={1500}>
+      <span className="highlight">Basics</span>
+      Why should we transition to responsive design?
+    </Fade>
+  </div>
+  <div className="p-responsive-design-at-sephora__cards__item annotation">
+    <Fade delay={1750}>
+      <span className="highlight">Industry</span>
+      Which are the design patterns used by key retailers in the industry?
+    </Fade>
+  </div>
+  <div className="p-responsive-design-at-sephora__cards__item annotation">
+    <Fade delay={2000}>
+      <span className="highlight">Industry</span>
+      How do we compare against these key retailers?
+    </Fade>
+  </div>
+  <div className="p-responsive-design-at-sephora__cards__item annotation">
+    <Fade delay={2250}>
+      <span className="highlight">Transition</span>
+      What is the desired impact of transitioning to responsive design?
+    </Fade>
+  </div>
+  <div className="p-responsive-design-at-sephora__cards__item annotation">
+    <Fade delay={2500}>
+      <span className="highlight">Transition</span>
+      Which actions our internal teams would need to take?
+    </Fade>
+  </div>
+  <div className="p-responsive-design-at-sephora__cards__item annotation">
+    <Fade delay={2750}>
+      <span className="highlight">Transition</span>
+      How should we coordinate the transition to responsive design?
+    </Fade>
+  </div>
+</Media>
+
+After narrowing down our brainstorm questions, we were able to group them into 3 categories: basic concepts, industry analysis, and transitioning to responsiveness.
+
+Mapping these questions was essential to provide an outline for the presentation deck as well as guide the next research steps, which started by gathering data around the subject.
+
+## _Stage 02_ Ideation
+
+Before talking about transitioning to responsive design, the leadership needed to understand what it is, its pros & cons, and other design patterns available.
+
+Data was gathered around the 3 main design patterns—Responsive Design, Dynamic Serving, and especially Separate URLs, since it was Sephora’s current pattern.
+
+<Media
+  caption="Data from Google’s Mobile Friendly Overview."
+  className="p-responsive-design-at-sephora__design-patterns"
+  numberOfItems={3}
+>
+  <div className="p-responsive-design-at-sephora__table__item">
+    <Fade delay={1000}>
+      <small>Responsive Design</small>
+      <span className="highlight">Pros</span>
+      <ul>
+        <li className="annotation">1 URL;</li>
+        <li className="annotation">No content duplication;</li>
+        <li className="annotation">Consolidated SEO authority;</li>
+        <li className="annotation">No redirects.</li>
+      </ul>
+      <span className="highlight">Cons</span>
+      <ul>
+        <li className="annotation">Might require redesign.</li>
+      </ul>
+    </Fade>
+  </div>
+  <div className="p-responsive-design-at-sephora__table__item">
+    <Fade delay={1250}>
+      <small>Dynamic Serving</small>
+      <span className="highlight">Pros</span>
+      <ul>
+        <li className="annotation">1 URL;</li>
+        <li className="annotation">Consolidated SEO authority;</li>
+        <li className="annotation">Easier to transition to.</li>
+      </ul>
+      <span className="highlight">Cons</span>
+      <ul>
+        <li className="annotation">Difficult to implement;</li>
+        <li className="annotation">
+          Reliant on server-side user agent detection;
+        </li>
+        <li className="annotation">Difficult to maintain.</li>
+      </ul>
+    </Fade>
+  </div>
+  <div className="p-responsive-design-at-sephora__table__item">
+    <Fade delay={1500}>
+      <small>Separate URLs</small>
+      <span className="highlight">Pros</span>
+      <ul>
+        <li className="annotation">Easy to implement;</li>
+        <li className="annotation">Speedy web pages.</li>
+      </ul>
+      <span className="highlight">Cons</span>
+      <ul>
+        <li className="annotation">2 URLs;</li>
+        <li className="annotation">Risk of content duplication;</li>
+        <li className="annotation">Lots of redirects;</li>
+        <li className="annotation">Splits SEO authority;</li>
+        <li className="annotation">Expensive to maintain.</li>
+      </ul>
+    </Fade>
+  </div>
+</Media>
+
+While Separate URLs serve speedy web pages, it is also harder to maintain in the long run, and it impacts Sephora negatively due to the direct effect design patterns have on SEO.
+
+As Google favors search results for pages compliant to their best practices (which include responsiveness), it was vital to benchmark Sephora’s performance amongst other retailers.
+
+The performance from strategic web pages from these retailers was measured on [Lighthouse](https://developers.google.com/web/tools/lighthouse) and compared with Sephora’s via a spreadsheet developed by me.
+
+<Media
+  caption="Select web pages performance from key retailers, including Sephora, were measured on Lighthouse. Data are fictitious due to NDA."
+  className="p-responsive-design-at-sephora__audit__image"
+  size="L"
+>
+  <Reveal
+    delay={1000}
+    duration={2000}
+    effect="p-responsive-design-at-sephora__audit__animation"
+  >
+    <Img alt={props.media.desc(6)} fluid={props.media.src(6)} />
+  </Reveal>
+</Media>
+<Media
+  className="p-responsive-design-at-sephora__audit__items"
+  numberOfItems={4}
+>
+  <Fade bottom delay={200} duration={2000}>
+    <div className="p-responsive-design-at-sephora__audit__item">
+      <video autoPlay muted width="100%">
+        <source src={props.media.src(2)} type="video/mp4" />
+      </video>
+      <span className="highlight">Performance</span>
+    </div>
+  </Fade>
+  <Fade bottom delay={400} duration={2000}>
+    <div className="p-responsive-design-at-sephora__audit__item">
+      <video autoPlay muted width="100%">
+        <source src={props.media.src(3)} type="video/mp4" />
+      </video>
+      <span className="highlight">Best Practices</span>
+    </div>
+  </Fade>
+  <Fade bottom delay={600} duration={2000}>
+    <div className="p-responsive-design-at-sephora__audit__item">
+      <video autoPlay muted width="100%">
+        <source src={props.media.src(4)} type="video/mp4" />
+      </video>
+      <span className="highlight">Accessibility</span>
+    </div>
+  </Fade>
+  <Fade bottom delay={800} duration={2000}>
+    <div className="p-responsive-design-at-sephora__audit__item">
+      <video autoPlay muted width="100%">
+        <source src={props.media.src(5)} type="video/mp4" />
+      </video>
+      <span className="highlight">SEO</span>
+    </div>
+  </Fade>
+</Media>
+
+After gathering data from responsiveness concepts and retailers performance, it was time to understand what it’d take for Sephora to make the transition to responsive design.
+
+Going full responsive takes effort from different areas—design, front-end, SEO, and product—so it’s important devising a well-rounded plan before making the switch.
+
+From research discoveries and synchronization with other teams, we were able to develop a tentative timeline to implement responsiveness on a step-by-step basis.
+
+<Media
+  caption="Data were slightly modified due to NDA."
+  className="p-responsive-design-at-sephora__table"
+  numberOfItems={4}
+>
+  <div className="p-responsive-design-at-sephora__table__item">
+    <Fade delay={1000}>
+      <small>Design</small>
+      <ul>
+        <li className="annotation">Update design for responsiveness;</li>
+        <li className="annotation">Define breakpoints and behaviors.</li>
+      </ul>
+    </Fade>
+  </div>
+  <div className="p-responsive-design-at-sephora__table__item">
+    <Fade delay={1250}>
+      <small>Front-end</small>
+      <ul>
+        <li className="annotation">
+          Update server-side and clients-side rendering;
+        </li>
+        <li className="annotation">Update and unify components;</li>
+        <li className="annotation">Update CSS architecture;</li>
+        <li className="annotation">Configure mobile-specific content.</li>
+      </ul>
+    </Fade>
+  </div>
+  <div className="p-responsive-design-at-sephora__table__item">
+    <Fade delay={1500}>
+      <small>SEO</small>
+      <ul>
+        <li className="annotation">Update Analytics to unified domain;</li>
+        <li className="annotation">Map SEO data to be updated.</li>
+      </ul>
+    </Fade>
+  </div>
+  <div className="p-responsive-design-at-sephora__table__item">
+    <Fade delay={1750}>
+      <small>Product</small>
+      <ul>
+        <li className="annotation">Update deploy pipelines;</li>
+        <li className="annotation">Adapt CRM.</li>
+      </ul>
+    </Fade>
+  </div>
+</Media>
+
+## _Stage 03_ Implementation
+
+Rounding up the research stage led to the creation of an on-brand deck to present responsive design findings and transition insights for Sephora’s leadership.
+
+Research findings were summed up and simplified, and I designed visuals to make data easier to digest in the presentation.
+
+<Media caption="Sephora’s branding template was used to craft a presentation deck to display the UX research findings. Data are blurred due to NDA.">
+  <Img alt={props.media.desc(7)} fluid={props.media.src(7)} />
+</Media>
+<Media
+  caption="Visuals were designed to better explain how responsive behavior should work. As we resize web browser, Sephora page doesn’t display responsive behavior, while the Walmart page does."
+  numberOfItems={2}
+>
+  <img alt={props.media.desc(8)} src={props.media.src(8)} />
+  <img alt={props.media.desc(9)} src={props.media.src(9)} />
+</Media>
+
+The spreadsheet used to store research data was transformed into a dashboard and served as a companion piece for the presentation.
+
+Through the new dashboard toggles and formulas, it was possible to compare Sephora’s statuses against all retailers or just one of them if they wanted to.
+
+<Media caption="Caption: The dashboard was meant to help with data visualization and to provide a deeper look at the research findings. Data are blurred due to NDA.">
+  <Img alt={props.media.desc(10)} fluid={props.media.src(10)} />
+</Media>
+
+Finally, we were able to draw key insights and present them in the last portion of the presentation.
+
+For instance, transitioning to responsive design represented an opportunity to enhance code quality, improve performance, and consequentially the customer user experience.
+
+And tying this with the positive SEO impact and the reduced maintenance required by responsiveness meant it would allow for overall cost savings too.
+
+In the end, the research filled its role as an essential piece to provide awareness and strategy for Sephora's leadership on transitioning to a better, responsive experience.
+
+> Sephora is one of Avenue Code’s clients, and I worked on this project while I was an Avenue Code consultant. Research data, presentation design, and dashboard development was done by me in direct collaboration with Sephora’s Director of Front-end Engineering.
