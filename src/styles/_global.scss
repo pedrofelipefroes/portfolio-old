@@ -103,6 +103,20 @@ video {
   outline: none;
 }
 
+ul > li {
+  display: flex;
+}
+
+ul > li:not(:last-child) {
+  margin-bottom: map-get($spacing, "XS") / 2;
+}
+
+ul > li::before {
+  color: map-get($color, "dark-grey");
+  content: "• ";
+  margin-right: map-get($spacing, "XS");
+}
+
 article > blockquote {
   margin: map-get($spacing, "XXL") map-get($spacing, "L") map-get($spacing, "S");
 
@@ -144,7 +158,15 @@ article > blockquote {
   color: map-get($type-highlight, "color");
   font-size: map-get($type-highlight, "size");
   font-weight: map-get($type-highlight, "weight");
-  line-height: map-get($type-highlight, "leading--default");
+  line-height: map-get($type-highlight, "leading");
   letter-spacing: map-get($type-highlight, "character-spacing");
   text-transform: map-get($type-highlight, "text-transform");
+}
+
+.annotation {
+  color: map-get($type-annotation, "color");
+  font-size: map-get($type-annotation, "size");
+  font-weight: map-get($type-annotation, "weight");
+  line-height: map-get($type-annotation, "leading");
+  letter-spacing: map-get($type-annotation, "character-spacing");
 }

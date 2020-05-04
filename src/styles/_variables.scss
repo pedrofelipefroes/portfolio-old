@@ -118,8 +118,15 @@ $type-highlight: (
   "color": map-get($color, "dark-grey"),
   "size": $type-scale * 0.75,
   "weight": bold,
-  "leading--default": 2,
-  "leading--condensed": 1.3333333333,
+  "leading": 2,
   "character-spacing": 0.05375rem,
   "text-transform": uppercase,
+);
+
+$type-annotation: (
+  "color": map-get($color, "dark"),
+  "size": $type-scale * 0.875,
+  "weight": normal,
+  "leading": 1.4285714286,
+  "character-spacing": 0.01rem,
 );
