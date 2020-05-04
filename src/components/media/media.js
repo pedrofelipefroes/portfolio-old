@@ -5,22 +5,23 @@ import React from "react"
 
 import "./media.scss"
 
-const Media = ({ caption, children, numberOfItems, size }) => {
+const Media = ({ caption, children, className, numberOfItems, size }) => {
   return (
-    <div
-      className={classnames("c-media", {
-        "c-media--has-caption": caption,
-        [`c-media--${numberOfItems}`]: numberOfItems,
-        [`c-media--${size}`]: size,
-      })}
-    >
-      <Fade delay={640}>{children}</Fade>
-      {caption ? (
-        <Fade delay={640}>
+    <Fade delay={640}>
+      <div
+        className={classnames("c-media", {
+          "c-media--has-caption": caption,
+          [`c-media--${numberOfItems}`]: numberOfItems,
+          [`c-media--${size}`]: size,
+          [`${className}`]: className,
+        })}
+      >
+        {children}
+        {caption ? (
           <small className="caption-2 c-media__caption">{caption}</small>
-        </Fade>
-      ) : null}
-    </div>
+        ) : null}
+      </div>
+    </Fade>
   )
 }
 

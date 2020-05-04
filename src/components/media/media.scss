@@ -12,6 +12,10 @@
     margin-top: map-get($spacing, "XL");
   }
 
+  & + .u-text-container--is-header {
+    margin-top: map-get($spacing, "XXL");
+  }
+
   & + & {
     margin-top: map-get($spacing, "XS");
   }
@@ -25,7 +29,9 @@
   }
 
   &--2,
-  &--4 {
+  &--3,
+  &--4,
+  &--8 {
     column-gap: map-get($spacing, "XS");
     row-gap: map-get($spacing, "XS");
   }
@@ -42,7 +48,20 @@
     }
   }
 
-  &--4 {
+  &--3 {
+    grid-template-columns: 1fr;
+
+    @include bp-small {
+      grid-template-columns: 1fr 1fr 1fr;
+
+      & > .c-media__caption {
+        grid-column-end: span 3;
+      }
+    }
+  }
+
+  &--4,
+  &--8 {
     grid-template-columns: 1fr 1fr;
 
     @include bp-small {
