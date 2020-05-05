@@ -31,7 +31,7 @@ Media.propTypes = {
     PropTypes.node,
     PropTypes.arrayOf(PropTypes.node),
   ]).isRequired,
-  numberOfImg: PropTypes.number,
+  numberOfImg: PropTypes.string,
   size: PropTypes.string,
 }
 

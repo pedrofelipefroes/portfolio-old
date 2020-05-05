@@ -37,7 +37,7 @@ As they wouldn’t necessarily have any awareness around responsiveness, we star
 <Media
   caption="We first framed questions based on everything that’d be important for the leadership board, and then narrow them out to only 8 questions."
   className="p-responsive-design-at-sephora__cards"
-  numberOfItems={8}
+  numberOfItems={"2-8"}
 >
   <div className="p-responsive-design-at-sephora__cards__item annotation">
     <Fade delay={1000}>
@@ -102,7 +102,7 @@ Data was gathered around the 3 main design patterns—Responsive Design, Dynamic
 <Media
   caption="Data from Google’s Mobile Friendly Overview."
   className="p-responsive-design-at-sephora__design-patterns"
-  numberOfItems={3}
+  numberOfItems={"1-3"}
 >
   <div className="p-responsive-design-at-sephora__table__item">
     <Fade delay={1000}>
@@ -180,37 +180,29 @@ The performance from strategic web pages from these retailers was measured on [L
 </Media>
 <Media
   className="p-responsive-design-at-sephora__audit__items"
-  numberOfItems={4}
+  numberOfItems={"2-4"}
 >
   <Fade bottom delay={200} duration={2000}>
     <div className="p-responsive-design-at-sephora__audit__item">
-      <video autoPlay muted width="100%">
-        <source src={props.media.src(2)} type="video/mp4" />
-      </video>
+      <img alt={props.media.desc(2)} src={props.media.src(2)} />
       <span className="highlight">Performance</span>
     </div>
   </Fade>
   <Fade bottom delay={400} duration={2000}>
     <div className="p-responsive-design-at-sephora__audit__item">
-      <video autoPlay muted width="100%">
-        <source src={props.media.src(3)} type="video/mp4" />
-      </video>
+      <img alt={props.media.desc(3)} src={props.media.src(3)} />
       <span className="highlight">Best Practices</span>
     </div>
   </Fade>
   <Fade bottom delay={600} duration={2000}>
     <div className="p-responsive-design-at-sephora__audit__item">
-      <video autoPlay muted width="100%">
-        <source src={props.media.src(4)} type="video/mp4" />
-      </video>
+      <img alt={props.media.desc(4)} src={props.media.src(4)} />
       <span className="highlight">Accessibility</span>
     </div>
   </Fade>
   <Fade bottom delay={800} duration={2000}>
     <div className="p-responsive-design-at-sephora__audit__item">
-      <video autoPlay muted width="100%">
-        <source src={props.media.src(5)} type="video/mp4" />
-      </video>
+      <img alt={props.media.desc(5)} src={props.media.src(5)} />
       <span className="highlight">SEO</span>
     </div>
   </Fade>
@@ -225,7 +217,7 @@ From research discoveries and synchronization with other teams, we were able to 
 <Media
   caption="Data were slightly modified due to NDA."
   className="p-responsive-design-at-sephora__table"
-  numberOfItems={4}
+  numberOfItems={"1-4"}
 >
   <div className="p-responsive-design-at-sephora__table__item">
     <Fade delay={1000}>
@@ -280,7 +272,7 @@ Research findings were summed up and simplified, and I designed visuals to make 
 </Media>
 <Media
   caption="Visuals were designed to better explain how responsive behavior should work. As we resize web browser, Sephora page doesn’t display responsive behavior, while the Walmart page does."
-  numberOfItems={2}
+  numberOfItems={"1-2"}
 >
   <img alt={props.media.desc(8)} src={props.media.src(8)} />
   <img alt={props.media.desc(9)} src={props.media.src(9)} />
