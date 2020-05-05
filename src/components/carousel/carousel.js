@@ -8,7 +8,6 @@ import "react-responsive-carousel/lib/styles/carousel.min.css"
 import "./carousel.scss"
 
 const Carousel = ({ caption, children, size }) => {
-  console.log(children)
   return (
     <div
       className={classnames("c-carousel", {

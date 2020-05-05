@@ -72,6 +72,10 @@
       &:last-child {
         margin-right: 0;
       }
+
+      &::before {
+        content: unset;
+      }
     }
   }
 
