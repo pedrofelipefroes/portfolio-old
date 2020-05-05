@@ -2,10 +2,10 @@ const path = require(`path`)
 
 module.exports = {
   siteMetadata: {
-    title: `Froes — Designer, Developer & Marketer`,
-    titleTemplate: `%s — Froes — Designer, Developer & Marketer`,
-    description: `This is the portfolio of a Designer, Developer, and Marketer who loves to work developing cohesive user experiences through comprehensive design systems.`,
-    image: `/froes-og-image.png`,
+    title: `Froes`,
+    titleTemplate: `%s —— Full Stack Design Work`,
+    description: `From Design to Development to Marketing, Froes is a full stack Designer who stands for cohesive user experiences.`,
+    image: `/froes-og-image.jpg`,
     url: `https://froes.design`,
   },
   plugins: [

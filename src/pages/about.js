@@ -4,6 +4,7 @@ import Img from "gatsby-image"
 import React, { Component } from "react"
 
 import Layout from "../components/layout/layout"
+import SEO from "../components/seo/seo"
 
 import "../styles/pages/about.scss"
 
@@ -39,6 +40,11 @@ class AboutPage extends Component {
   render() {
     return (
       <Layout className="p-about" isOnDark>
+        <SEO
+          title="About"
+          description="From ideation to execution, full-stack Design work is something I’ve been passionately doing since 2016."
+          pathname={"/about"}
+        />
         <div className="u-content-container--L">
           <h1
             className="p-about__header"

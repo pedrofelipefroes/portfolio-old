@@ -5,6 +5,7 @@ import React, { Component } from "react"
 import Layout from "../components/layout/layout"
 import NavigationLink from "../components/navigation-link/navigation-link"
 import ProjectList from "../components/project-list/project-list"
+import SEO from "../components/seo/seo"
 
 import "../styles/pages/index.scss"
 
@@ -40,6 +41,7 @@ class IndexPage extends Component {
   render() {
     return (
       <Layout isOnDark className="p-index">
+        <SEO pathname={"/"} />
         <div className="u-content-container--XL">
           <header
             className="p-index__header"

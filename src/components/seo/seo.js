@@ -21,9 +21,11 @@ function SEO({ description, lang, image, meta, pathname, title }) {
   )
 
   const seo = {
-    title: title || site.siteMetadata.defaultTitle,
+    canonical: pathname ? `${site.siteMetadata.siteUrl}${pathname}` : null,
     description: description || site.siteMetadata.defaultDescription,
-    image: `${site.siteMetadata.siteUrl}${image || site.siteMetadata.defaultImage}`,
+    image: `${site.siteMetadata.siteUrl}${image ||
+      site.siteMetadata.defaultImage}`,
+    title: title || site.siteMetadata.defaultTitle,
     url: `${site.siteMetadata.siteUrl}${pathname || "/"}`,
   }
 
@@ -34,6 +36,16 @@ function SEO({ description, lang, image, meta, pathname, title }) {
       }}
       title={seo.title}
       titleTemplate={site.siteMetadata.titleTemplate}
+      link={
+        seo.canonical
+          ? [
+              {
+                rel: "canonical",
+                href: seo.canonical,
+              },
+            ]
+          : []
+      }
       meta={[
         {
           name: `description`,
@@ -82,7 +94,7 @@ function SEO({ description, lang, image, meta, pathname, title }) {
         {
           name: "twitter:card",
           content: "summary_large_image",
-        }
+        },
       ].concat(meta)}
     />
   )
