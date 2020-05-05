@@ -18,6 +18,7 @@
   &__title {
     &--front {
       align-items: flex-end;
+      -webkit-clip-path: inset(0 0 0 0);
       clip-path: inset(0 0 0 0);
       color: map-get($color, "light");
       display: flex;

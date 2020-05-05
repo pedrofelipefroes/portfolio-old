@@ -34,6 +34,12 @@ class ProjectHeader extends Component {
 
   setParallax(parallaxRate, scrolledToTop) {
     this.cover.current.style.top = -scrolledToTop * parallaxRate + "px"
+
+    this.frontTitle.current.style.webkitClipPath =
+      "inset(0 0 " +
+      scrolledToTop * (parallaxRate / (this.cover.current.clientHeight / 100)) +
+      "% 0)"
+
     this.frontTitle.current.style.clipPath =
       "inset(0 0 " +
       scrolledToTop * (parallaxRate / (this.cover.current.clientHeight / 100)) +
