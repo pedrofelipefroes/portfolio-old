@@ -21,6 +21,18 @@
     width: 50%;
   }
 
+  &:nth-child(even) {
+    justify-self: flex-end;
+  }
+
+  &:nth-child(3n) {
+    justify-self: center;
+  }
+
+  &:last-child {
+    margin-bottom: 50vh;
+  }
+
   &:hover {
     box-shadow: 0 map-get($spacing, "S") map-get($spacing, "S") 0
       transparentize(map-get($color, "dark"), 0.3);

@@ -43,6 +43,11 @@ class IndexPage extends Component {
             items={this.props.data.allMdx.edges}
             distanceFromHeader={this.state.headerHeight}
           />
+          <h3 className="p-index__warning">
+            More select cases
+            <br />
+            coming soon.
+          </h3>
         </div>
       </Layout>
     )

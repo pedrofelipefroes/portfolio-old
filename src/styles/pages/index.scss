@@ -37,6 +37,14 @@
     }
   }
 
+  &__warning {
+    text-align: center;
+
+    @include bp-extra-small {
+      display: none;
+    }
+  }
+
   .u-content-container--XL {
     align-items: center;
     flex-direction: column;
