@@ -35,16 +35,14 @@
       padding: map-get($spacing, "M");
     }
 
-    &__item > small {
+    &__item small {
+      display: block;
       margin-bottom: map-get($spacing, "XS");
     }
 
-    &__item > .highlight {
-      margin-top: map-get($spacing, "S");
-    }
-
-    &__item > .highlight:first-of-type {
-      margin-top: 0;
+    &__item .highlight {
+      display: block;
+      margin-top: map-get($spacing, "XS");
     }
   }
 
