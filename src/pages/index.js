@@ -16,20 +16,36 @@ class IndexPage extends Component {
       headerHeight: 0,
     }
 
-    this.headerHeight = React.createRef()
+    this.header = React.createRef()
+    this.handleScroll = this.handleScroll.bind(this)
   }
 
   componentDidMount() {
+    window.addEventListener("scroll", this.handleScroll)
+
     this.setState({
-      headerHeight: this.headerHeight.current.clientHeight,
+      headerHeight: this.header.current.clientHeight,
     })
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener("scroll", this.handleScroll)
+  }
+
+  handleScroll() {
+    let scrolledToTop = window.pageYOffset
+    this.header.current.style.top = -scrolledToTop * 0.32 + "px"
   }
 
   render() {
     return (
       <Layout isOnDark className="p-index">
         <div className="u-content-container--XL">
-          <header className="p-index__header" ref={this.headerHeight}>
+          <header
+            className="p-index__header"
+            ref={this.header}
+            onScroll={this.handleScroll}
+          >
             <h1>
               <Fade>
                 Froes develops cohesive user experiences from Design to finish.
@@ -43,11 +59,13 @@ class IndexPage extends Component {
             items={this.props.data.allMdx.edges}
             distanceFromHeader={this.state.headerHeight}
           />
-          <h3 className="p-index__warning">
-            More select cases
-            <br />
-            coming soon.
-          </h3>
+          <Fade bottom delay={640}>
+            <h3 className="p-index__warning">
+              More select cases
+              <br />
+              coming soon.
+            </h3>
+          </Fade>
         </div>
       </Layout>
     )

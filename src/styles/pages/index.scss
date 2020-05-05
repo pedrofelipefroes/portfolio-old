@@ -38,6 +38,7 @@
   }
 
   &__warning {
+    margin-bottom: map-get($spacing, "XL");
     text-align: center;
 
     @include bp-extra-small {
