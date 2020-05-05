@@ -2,7 +2,7 @@
 
 .c-project-list {
   display: grid;
-  margin-bottom: map-get($spacing, "XXL");
+  margin-bottom: map-get($spacing, "XL");
   position: relative;
   row-gap: map-get($spacing, "L");
   width: 100%;
