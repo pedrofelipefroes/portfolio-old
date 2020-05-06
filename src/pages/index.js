@@ -41,7 +41,7 @@ class IndexPage extends Component {
   render() {
     return (
       <Layout isOnDark className="p-index">
-        <SEO pathname={"/"} />
+        <SEO pathname={"/"} title="Froes — Designer." />
         <div className="u-content-container--XL">
           <header
             className="p-index__header"
