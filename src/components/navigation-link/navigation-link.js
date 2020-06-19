@@ -6,7 +6,7 @@ import "./navigation-link.scss"
 
 const NavigationLink = ({ label, to }) => (
   <Link className="c-navigation-link highlight" to={to}>
-    <span className="c-navigation-link__label">{label}</span>
+    <span>{label}</span>
     <svg
       className="c-navigation-link__arrow"
       width="88px"
