@@ -59,11 +59,12 @@ $type-family: "Helvetica Neue", -apple-system, BlinkMacSystemFont, sans-serif;
 $type-scale: 1rem;
 
 $type-title-1: (
-  "size--XS": $type-scale * 2.1,
+  "size--XS": $type-scale * 2,
   "size--S": $type-scale * 2.75,
   "size--M": $type-scale * 5.5,
   "weight": 500,
   "leading": 1.0454545455,
+  "character-spacing--XS": -0.018125rem,
   "character-spacing--S": -0.025rem,
   "character-spacing--M": -0.05rem,
 );

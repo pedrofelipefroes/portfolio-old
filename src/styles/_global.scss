@@ -21,6 +21,7 @@ h1 {
 
   @include bp-extra-small {
     font-size: map-get($type-title-1, "size--XS");
+    letter-spacing: map-get($type-title-1, "character-spacing--XS");
   }
 
   @include bp-small {
