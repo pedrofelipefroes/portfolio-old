@@ -1,3 +1,4 @@
+import Img from "gatsby-image"
 import PropTypes from "prop-types"
 import React, { Component } from "react"
 
@@ -82,16 +83,22 @@ class ProjectHeader extends Component {
   render() {
     return (
       <header className="c-project-header">
-        <video
-          className="c-project-header__cover"
-          autoPlay
-          muted
-          playsInline
-          poster={this.props.coverImg}
-          ref={this.cover}
-        >
-          <source src={this.props.coverVideo} type="video/mp4" />
-        </video>
+        {this.props.hasVideo ? (
+          <video
+            className="c-project-header__cover"
+            autoPlay
+            loop
+            muted
+            playsInline
+            poster={this.props.coverImg}
+            ref={this.cover}
+          >
+            <source src={this.props.coverVideo} type="video/mp4" />
+          </video>
+        ) : (
+          <Img fluid={this.coverImg} alt={this.coverImgAlt} ref={this.cover} />
+        )}
+
         <div
           className="c-project-header__title c-project-header__title--front"
           ref={this.frontTitle}
@@ -121,6 +128,13 @@ class ProjectHeader extends Component {
         <div className="u-content-container--L">
           <hr className="c-project-header__divider" />
         </div>
+        <div className="u-content-container--L">
+          <div className="c-project-header__role">
+            {this.props.role.map(item => (
+              <small key={item}>{item}</small>
+            ))}
+          </div>
+        </div>
       </header>
     )
   }
@@ -128,10 +142,17 @@ class ProjectHeader extends Component {
 
 ProjectHeader.propTypes = {
   coverImg: PropTypes.string.isRequired,
+  coverImgAlt: PropTypes.string,
   coverVideo: PropTypes.string.isRequired,
   details: PropTypes.array.isRequired,
+  hasVideo: PropTypes.bool,
+  role: PropTypes.array,
   subtitle: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired,
+}
+
+ProjectHeader.propTypes = {
+  hasVideo: false,
 }
 
 export default ProjectHeader

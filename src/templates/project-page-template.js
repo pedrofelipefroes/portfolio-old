@@ -54,20 +54,36 @@ function ProjectPageTemplate({ data: { project, media } }) {
 
   return (
     <MDXProvider components={components}>
-      <Layout className={`p-${project.frontmatter.id}`} projectTitle={project.frontmatter.title}>
+      <Layout
+        className={`p-${project.frontmatter.id}`}
+        projectTitle={project.frontmatter.title}
+      >
         <SEO
           description={project.frontmatter.subtitle}
           image={media.edges[0].node.publicURL}
           pathname={project.frontmatter.path}
           title={project.frontmatter.title}
         />
-        <ProjectHeader
-          coverImg={media.edges[0].node.publicURL}
-          coverVideo={media.edges[1].node.publicURL}
-          details={details}
-          subtitle={project.frontmatter.subtitle}
-          title={project.frontmatter.title}
-        />
+        {project.frontmatter.hasVideo ? (
+          <ProjectHeader
+            coverImg={media.edges[0].node.publicURL}
+            coverVideo={media.edges[1].node.publicURL}
+            details={details}
+            hasVideo={true}
+            role={project.frontmatter.role}
+            subtitle={project.frontmatter.subtitle}
+            title={project.frontmatter.title}
+          />
+        ) : (
+          <ProjectHeader
+            coverImg={media.edges[0].node.childImageSharp.fluid}
+            coverImgAlt={getMediaDesc(0)}
+            details={details}
+            role={project.frontmatter.role}
+            subtitle={project.frontmatter.subtitle}
+            title={project.frontmatter.title}
+          />
+        )}
         <article>
           <MDXRenderer media={{ desc: getMediaDesc, src: getMediaSrc }}>
             {project.body}
@@ -86,9 +102,11 @@ export const projectPageTemplateQuery = graphql`
         id
         title
         subtitle
+        hasVideo
         activity
         client
         duration
+        role
       }
     }
     media: allFile(

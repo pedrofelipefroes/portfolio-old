@@ -4,14 +4,23 @@
   overflow: hidden;
 
   &__cover {
-    left: -25%;
+    left: calc(-1 * calc(25% + 3rem));
     position: relative;
-    width: 150%;
+    width: calc(150% + 6rem);
     z-index: 20;
 
-    @include bp-small {
+    @include bp-medium {
       left: unset;
       width: 100%;
+    }
+
+    @include bp-large {
+      align-items: center;
+      box-sizing: border-box;
+      display: flex;
+      flex-direction: column;
+      margin: (3rem + map-get($spacing, "XL")) auto 0;
+      width: calc(100% - 8rem);
     }
   }
 
@@ -22,14 +31,20 @@
       clip-path: inset(0 0 0 0);
       color: map-get($color, "light");
       display: flex;
-      height: calc(150vw / 2);
+      height: calc(calc(150vw + 6rem) / 2);
       position: absolute;
       top: 0;
       width: 100%;
       z-index: 30;
 
-      @include bp-small {
+      @include bp-medium {
         height: calc(100vw / 2);
+      }
+
+      @include bp-large {
+        box-sizing: border-box;
+        height: calc(calc(100vw - 8rem) / 2);
+        margin: (3rem + map-get($spacing, "XL")) 0 0;
       }
 
       .u-content-container--L {
@@ -56,7 +71,7 @@
         max-width: map-get($container, "M") + map-get($spacing, "XL");
       }
 
-      @include bp-medium {
+      @include bp-large {
         padding-bottom: map-get($spacing, "XL");
       }
     }
@@ -65,6 +80,10 @@
   &__subtitle {
     display: flex;
     padding: map-get($spacing, "M") map-get($spacing, "L");
+
+    @include bp-large {
+      padding-top: map-get($spacing, "XL");
+    }
 
     h3 {
       max-width: map-get($container, "M") - map-get($spacing, "XL");
@@ -109,6 +128,31 @@
       max-width: map-get($container, "L");
       margin-left: 0;
       margin-right: 0;
+    }
+  }
+
+  &__role {
+    color: map-get($color, "dark-grey");
+    padding: 0 map-get($spacing, "L") map-get($spacing, "L");
+
+    @include bp-medium {
+      position: absolute;
+    }
+
+    small {
+      display: flex;
+
+      @include bp-small {
+        max-width: map-get($container, "S");
+      }
+
+      @include bp-medium {
+        max-width: map-get($container, "XS");
+      }
+    }
+
+    small + small {
+      margin-top: map-get($spacing, "S");
     }
   }
 }
