@@ -6,10 +6,10 @@ import Nav from "../nav/nav"
 
 import "./layout.scss"
 
-const Layout = ({ children, className, isOnDark }) => {
+const Layout = ({ children, className, isOnDark, projectTitle }) => {
   return (
     <>
-      <Nav isOnDark={isOnDark} />
+      <Nav isOnDark={isOnDark} projectTitle={projectTitle} />
       <main className={className ? `c-layout ${className}` : "c-layout"}>
         {children}
       </main>
@@ -22,6 +22,7 @@ Layout.propTypes = {
   children: PropTypes.node.isRequired,
   className: PropTypes.string,
   isOnDark: PropTypes.bool,
+  projectTitle: PropTypes.string,
 }
 
 Layout.defaultProps = {

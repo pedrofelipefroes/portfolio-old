@@ -54,7 +54,7 @@ function ProjectPageTemplate({ data: { project, media } }) {
 
   return (
     <MDXProvider components={components}>
-      <Layout className={`p-${project.frontmatter.id}`}>
+      <Layout className={`p-${project.frontmatter.id}`} projectTitle={project.frontmatter.title}>
         <SEO
           description={project.frontmatter.subtitle}
           image={media.edges[0].node.publicURL}

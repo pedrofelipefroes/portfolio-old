@@ -55,14 +55,19 @@ class Nav extends Component {
         })}
       >
         <div className="u-content-container--XL">
-          <Link
-            to="/"
-            className={classnames("highlight c-nav__home-url", {
-              "c-nav__home-url--hidden": this.state.itemsAreVisible,
-            })}
-          >
-            Froes.design
-          </Link>
+          <div className="c-nav__home">
+            <Link
+              to="/"
+              className={classnames("highlight c-nav__home__url", {
+                "c-nav__home__url--hidden": this.state.itemsAreVisible,
+              })}
+            >
+              Froes.design
+            </Link>
+            <p className="highlight c-nav__home__title">
+              {this.props.projectTitle}
+            </p>
+          </div>
           <div className="c-nav__items">
             <div
               className={classnames("c-nav__items__links", {

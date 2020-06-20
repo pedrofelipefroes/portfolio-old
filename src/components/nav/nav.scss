@@ -1,7 +1,7 @@
 @import "../../styles/index.scss";
 
 .c-nav {
-  background-color: map-get($color, "light");
+  background-color: map-get($color, "dark");
   position: fixed;
   top: 0;
   transition: top 1s $animation-ease-out-expo;
@@ -9,7 +9,7 @@
   z-index: 100;
 
   &--on-dark {
-    background-color: map-get($color, "dark");
+    background-color: transparent;
   }
 
   &--hidden {
@@ -38,8 +38,12 @@
     }
   }
 
-  &__home-url {
+  &__home {
+    display: inline-flex;
     position: absolute;
+  }
+
+  &__home__url {
     margin-left: 0;
     transition: margin-left 1s $animation-ease-out-expo;
 
@@ -49,6 +53,16 @@
       @include bp-small {
         margin-left: 0;
       }
+    }
+  }
+
+  &__home__title {
+    display: none;
+    color: map-get($color, "light") !important;
+    margin-left: map-get($spacing, "S");
+
+    @include bp-small {
+      display: inline-flex;
     }
   }
 
@@ -85,6 +99,6 @@
     display: flex;
     flex-grow: 1;
     justify-content: space-between;
-    padding: map-get($spacing, "XS") map-get($spacing, "S");
+    padding: (map-get($spacing, "S") - 0.25rem) map-get($spacing, "L");
   }
 }
