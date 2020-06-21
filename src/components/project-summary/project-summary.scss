@@ -1,0 +1,161 @@
+@import "../../styles/index.scss";
+
+.c-project-summary {
+  &__intro {
+    display: flex;
+    flex-direction: column;
+
+    @include bp-medium {
+      flex-direction: row;
+    }
+  }
+
+  &__role {
+    @extend .u-color--dark-grey;
+
+    display: flex;
+    flex-direction: column;
+    flex-shrink: 0;
+    margin: 0 map-get($spacing, "L") map-get($spacing, "L");
+
+    @include bp-small {
+      max-width: map-get($container, "S");
+    }
+
+    @include bp-medium {
+      max-width: map-get($container, "XS");
+    }
+
+    small + small {
+      margin-top: map-get($spacing, "S");
+    }
+  }
+
+  &__outline-and-results {
+    align-items: flex-end;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    max-width: map-get($container, "M");
+    margin: 0 map-get($spacing, "L") map-get($spacing, "XXL");
+  }
+
+  &__outline {
+    width: 100%;
+
+    h3 {
+      margin-bottom: map-get($spacing, "XS") / 2;
+    }
+
+    &__item + &__item {
+      margin-top: map-get($spacing, "L");
+    }
+  }
+
+  &__results {
+    margin-top: map-get($spacing, "S");
+    width: 100%;
+
+    li + li {
+      margin-top: map-get($spacing, "XS");
+    }
+
+    li > p::before {
+      @extend .u-color--dark-grey;
+
+      content: "•";
+      display: inline-flex;
+      position: relative;
+      width: map-get($spacing, "S");
+    }
+
+    li > small {
+      margin-left: map-get($spacing, "S");
+    }
+  }
+
+  &__process {
+    display: flex;
+    flex-direction: column;
+    margin: map-get($spacing, "XL") map-get($spacing, "L")
+      map-get($spacing, "XXL");
+
+    @include bp-medium {
+      align-items: flex-start;
+      flex-direction: row;
+      justify-content: center;
+    }
+
+    &__header {
+      margin: 0 map-get($spacing, "L");
+    }
+
+    &__item {
+      display: flex;
+      flex-direction: column;
+
+      & + & {
+        margin-top: map-get($spacing, "L");
+      }
+
+      @include bp-small {
+        align-self: center;
+        max-width: map-get($container, "S");
+      }
+
+      @include bp-medium {
+        align-self: unset;
+        max-width: map-get($container, "XS");
+        text-align: center;
+
+        & + & {
+          margin-top: unset;
+          margin-left: map-get($spacing, "XL");
+        }
+      }
+    }
+
+    &__item > h3:first-child {
+      @extend .u-color--light;
+
+      border-radius: 50%;
+      display: flex;
+      flex-direction: column;
+      padding: 0.4375rem 0;
+      position: absolute;
+      text-align: center;
+      width: 2.5rem;
+
+      @include bp-medium {
+        align-self: center;
+        padding: 0.1875rem 0;
+        position: relative;
+      }
+    }
+
+    &__item--1 > h3:first-child {
+      background-color: map-get($color, "tint--1");
+    }
+
+    &__item--2 > h3:first-child {
+      background-color: map-get($color, "tint--2");
+    }
+
+    &__item--3 > h3:first-child {
+      background-color: map-get($color, "tint--3");
+    }
+
+    &__item > small:last-child {
+      margin-top: map-get($spacing, "XS");
+    }
+
+    &__item__header,
+    &__item > small:last-child {
+      margin-left: map-get($spacing, "L") + map-get($spacing, "M");
+
+      @include bp-medium {
+        margin-left: unset;
+      }
+    }
+  }
+}
