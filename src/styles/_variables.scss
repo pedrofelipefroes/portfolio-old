@@ -2,12 +2,18 @@ $color--alabaster: #f0ece4;
 $color--gray: #827c7a;
 $color--licorice: #141211;
 $color--baby-powder: #fafafa;
+$color--candy-pink: #e45e6a;
+$color--dark-electric-blue: #506d83;
+$color--sunray: #f0b456;
 
 $color: (
   "dark": $color--licorice,
   "dark-grey": $color--gray,
   "light": $color--baby-powder,
   "light-grey": $color--alabaster,
+  "tint--1": $color--candy-pink,
+  "tint--2": $color--dark-electric-blue,
+  "tint--3": $color--sunray,
 );
 
 $spacing-scale: 0.5rem;
@@ -54,6 +60,7 @@ $container: (
 }
 
 $animation-ease-out-expo: cubic-bezier(0.19, 1, 0.22, 1);
+$animation-ease-in-out-back: cubic-bezier(0.68, -0.6, 0.32, 1.6);
 
 $type-family: "Helvetica Neue", -apple-system, BlinkMacSystemFont, sans-serif;
 $type-scale: 1rem;
@@ -116,18 +123,9 @@ $type-anchor: (
 );
 
 $type-highlight: (
-  "color": map-get($color, "dark-grey"),
   "size": $type-scale * 0.75,
   "weight": bold,
   "leading": 2,
   "character-spacing": 0.05375rem,
   "text-transform": uppercase,
-);
-
-$type-annotation: (
-  "color": map-get($color, "dark"),
-  "size": $type-scale * 0.9375,
-  "weight": normal,
-  "leading": 1.4,
-  "character-spacing": 0.00625rem,
 );

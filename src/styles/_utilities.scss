@@ -1,3 +1,27 @@
+.u-color--dark {
+  color: map-get($color, "dark");
+}
+
+.u-color--dark-grey {
+  color: map-get($color, "dark-grey");
+}
+
+.u-color--light {
+  color: map-get($color, "light");
+}
+
+.u-color--light-grey {
+  color: map-get($color, "light-grey");
+}
+
+.u-font-weight--normal {
+  font-weight: normal;
+}
+
+.u-font-weight--bold {
+  font-weight: 500;
+}
+
 .u-content-container--M {
   box-sizing: border-box;
   margin: 0 auto;
@@ -27,12 +51,17 @@
   }
 
   & + &--is-header {
-    margin-top: map-get($spacing, "XXL");
+    margin-top: map-get($spacing, "L");
+  }
+
+  &--is-header + & {
+    margin-top: map-get($spacing, "XS") / 2;
   }
 
   & > h2,
   & > h3,
-  & > p {
+  & > p,
+  & > ul {
     box-sizing: border-box;
     max-width: map-get($container, "M");
     padding: 0 map-get($spacing, "L");

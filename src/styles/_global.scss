@@ -101,21 +101,7 @@ strong {
 }
 
 video {
-  outline: none;
-}
-
-ul > li {
-  display: flex;
-}
-
-ul > li:not(:last-child) {
-  margin-bottom: map-get($spacing, "XS") / 2;
-}
-
-ul > li::before {
-  color: map-get($color, "dark-grey");
-  content: "• ";
-  margin-right: map-get($spacing, "XS");
+  outline: 0;
 }
 
 article > blockquote {
@@ -162,12 +148,4 @@ article > blockquote {
   line-height: map-get($type-highlight, "leading");
   letter-spacing: map-get($type-highlight, "character-spacing");
   text-transform: map-get($type-highlight, "text-transform");
-}
-
-.annotation {
-  color: map-get($type-annotation, "color");
-  font-size: map-get($type-annotation, "size");
-  font-weight: map-get($type-annotation, "weight");
-  line-height: map-get($type-annotation, "leading");
-  letter-spacing: map-get($type-annotation, "character-spacing");
 }
