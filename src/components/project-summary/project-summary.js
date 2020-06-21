@@ -54,14 +54,16 @@ const ProjectSummary = ({ outline, process, results, role }) => {
                 (index + 1)
               }
             >
-              <h3>{index + 1}</h3>
-              <div className="c-project-summary__process__item__header">
+              <h3 className="c-project-summary__process__item__label">
+                {index + 1}
+              </h3>
+              <div className="c-project-summary__process__item__content">
                 <h3>{item[0]}</h3>
                 <small className="u-color--dark-grey">
                   Solution Stage {index + 1}
                 </small>
+                <small className="u-font-weight--normal">{item[1]}</small>
               </div>
-              <small className="u-font-weight--normal">{item[1]}</small>
             </div>
           </Fade>
         ))}
