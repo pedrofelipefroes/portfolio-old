@@ -7,6 +7,7 @@ import React from "react"
 import Fade from "react-reveal/Fade"
 import Layout from "../components/layout/layout"
 import ProjectHeader from "../components/project-header/project-header"
+import ProjectSummary from "../components/project-summary/project-summary"
 import Reveal from "react-reveal/Reveal"
 import SEO from "../components/seo/seo"
 
@@ -17,12 +18,6 @@ import Media from "../components/media/media"
 import Paragraph from "../components/paragraph/paragraph"
 
 function ProjectPageTemplate({ data: { project, media } }) {
-  let details = [
-    project.frontmatter.activity,
-    project.frontmatter.client,
-    project.frontmatter.duration,
-  ]
-
   let shortcodes = { Carousel, Fade, Img, Media, Reveal }
 
   let components = {
@@ -68,9 +63,8 @@ function ProjectPageTemplate({ data: { project, media } }) {
           <ProjectHeader
             coverImg={media.edges[0].node.publicURL}
             coverVideo={media.edges[1].node.publicURL}
-            details={details}
             hasVideo={true}
-            role={project.frontmatter.role}
+            specs={project.frontmatter.specs}
             subtitle={project.frontmatter.subtitle}
             title={project.frontmatter.title}
           />
@@ -78,12 +72,17 @@ function ProjectPageTemplate({ data: { project, media } }) {
           <ProjectHeader
             coverImg={media.edges[0].node.childImageSharp.fluid}
             coverImgAlt={getMediaDesc(0)}
-            details={details}
-            role={project.frontmatter.role}
+            specs={project.frontmatter.specs}
             subtitle={project.frontmatter.subtitle}
             title={project.frontmatter.title}
           />
         )}
+        <ProjectSummary
+          outline={project.frontmatter.outline}
+          process={project.frontmatter.process}
+          results={project.frontmatter.results}
+          role={project.frontmatter.role}
+        />
         <article>
           <MDXRenderer media={{ desc: getMediaDesc, src: getMediaSrc }}>
             {project.body}
@@ -99,13 +98,14 @@ export const projectPageTemplateQuery = graphql`
     project: mdx(frontmatter: { id: { eq: $id } }) {
       body
       frontmatter {
-        id
-        title
-        subtitle
         hasVideo
-        activity
-        client
-        duration
+        id
+        outline
+        process
+        results
+        specs
+        subtitle
+        title
         role
       }
     }
