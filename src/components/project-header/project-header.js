@@ -114,13 +114,11 @@ class ProjectHeader extends Component {
           <h3>{this.props.subtitle}</h3>
         </div>
         <div className="u-content-container--L">
-          <div className="c-project-header__details">
-            {this.props.details.map((item, index) => (
-              <div className="c-project-header__details__item" key={item}>
+          <div className="c-project-header__specs">
+            {this.props.specs.map((item, index) => (
+              <div className="c-project-header__specs__item" key={item}>
                 <small>{["Activity", "Client", "Duration"][index]}</small>
-                <small>
-                  <em>{item}</em>
-                </small>
+                <small className="u-color--dark-grey">{item}</small>
               </div>
             ))}
           </div>
@@ -128,25 +126,17 @@ class ProjectHeader extends Component {
         <div className="u-content-container--L">
           <hr className="c-project-header__divider" />
         </div>
-        <div className="u-content-container--L">
-          <div className="c-project-header__role">
-            {this.props.role.map(item => (
-              <small key={item}>{item}</small>
-            ))}
-          </div>
-        </div>
       </header>
     )
   }
 }
 
 ProjectHeader.propTypes = {
-  coverImg: PropTypes.string.isRequired,
+  coverImg: PropTypes.string,
   coverImgAlt: PropTypes.string,
-  coverVideo: PropTypes.string.isRequired,
-  details: PropTypes.array.isRequired,
+  coverVideo: PropTypes.string,
   hasVideo: PropTypes.bool,
-  role: PropTypes.array,
+  specs: PropTypes.array.isRequired,
   subtitle: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired,
 }

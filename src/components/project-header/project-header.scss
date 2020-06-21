@@ -26,10 +26,11 @@
 
   &__title {
     &--front {
+      @extend .u-color--light;
+
       align-items: flex-end;
       -webkit-clip-path: inset(0 0 0 0);
       clip-path: inset(0 0 0 0);
-      color: map-get($color, "light");
       display: flex;
       height: calc(calc(150vw + 6rem) / 2);
       position: absolute;
@@ -72,7 +73,7 @@
       }
 
       @include bp-large {
-        padding-bottom: map-get($spacing, "XL");
+        padding-bottom: map-get($spacing, "L");
       }
     }
   }
@@ -82,7 +83,7 @@
     padding: map-get($spacing, "M") map-get($spacing, "L");
 
     @include bp-large {
-      padding-top: map-get($spacing, "XL");
+      padding-top: map-get($spacing, "L");
     }
 
     h3 {
@@ -90,7 +91,7 @@
     }
   }
 
-  &__details {
+  &__specs {
     display: flex;
     flex-direction: column;
     margin: 0 map-get($spacing, "L") map-get($spacing, "L");
@@ -99,20 +100,20 @@
       align-self: flex-start;
       flex-direction: row;
     }
-  }
 
-  &__details__item {
-    display: flex;
-    flex-direction: column;
+    &__item {
+      display: flex;
+      flex-direction: column;
 
-    & + & {
-      margin-top: map-get($spacing, "XS");
-    }
-
-    @include bp-small {
       & + & {
-        margin-top: 0;
-        margin-left: map-get($spacing, "L");
+        margin-top: map-get($spacing, "XS");
+      }
+
+      @include bp-small {
+        & + & {
+          margin-top: 0;
+          margin-left: map-get($spacing, "L");
+        }
       }
     }
   }
@@ -128,31 +129,6 @@
       max-width: map-get($container, "L");
       margin-left: 0;
       margin-right: 0;
-    }
-  }
-
-  &__role {
-    color: map-get($color, "dark-grey");
-    padding: 0 map-get($spacing, "L") map-get($spacing, "L");
-
-    @include bp-medium {
-      position: absolute;
-    }
-
-    small {
-      display: flex;
-
-      @include bp-small {
-        max-width: map-get($container, "S");
-      }
-
-      @include bp-medium {
-        max-width: map-get($container, "XS");
-      }
-    }
-
-    small + small {
-      margin-top: map-get($spacing, "S");
     }
   }
 }
