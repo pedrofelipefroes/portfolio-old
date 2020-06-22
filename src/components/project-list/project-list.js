@@ -9,7 +9,7 @@ class ProjectList extends Component {
   mapData() {
     return this.props.items.map(item => (
       <ProjectCard
-        activity={item.node.frontmatter.activity}
+        activity={item.node.frontmatter.specs[0]}
         alt={item.node.frontmatter.coverImage.base
           .split(" - ")[1]
           .split(".")[0]

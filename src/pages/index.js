@@ -83,7 +83,6 @@ export const IndexPageQuery = graphql`
       edges {
         node {
           frontmatter {
-            activity
             coverImage {
               childImageSharp {
                 fluid(maxWidth: 1184, quality: 100) {
@@ -94,6 +93,7 @@ export const IndexPageQuery = graphql`
             }
             id
             path
+            specs
             title
           }
         }

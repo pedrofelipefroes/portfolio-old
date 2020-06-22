@@ -96,7 +96,12 @@ class ProjectHeader extends Component {
             <source src={this.props.coverVideo} type="video/mp4" />
           </video>
         ) : (
-          <Img fluid={this.coverImg} alt={this.coverImgAlt} ref={this.cover} />
+          <img
+            alt={this.props.coverImgAlt}
+            className="c-project-header__cover"
+            ref={this.cover}
+            src={this.props.coverImg.src}
+          />
         )}
 
         <div
