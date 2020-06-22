@@ -4,27 +4,20 @@ import { MDXRenderer } from "gatsby-plugin-mdx"
 import Img from "gatsby-image"
 import React from "react"
 
+import Carousel from "../components/carousel/carousel"
 import Fade from "react-reveal/Fade"
 import Layout from "../components/layout/layout"
+import Media from "../components/media/media"
 import ProjectHeader from "../components/project-header/project-header"
 import ProjectSummary from "../components/project-summary/project-summary"
 import Reveal from "react-reveal/Reveal"
 import SEO from "../components/seo/seo"
-
-import Heading2 from "../components/heading-2/heading-2"
-import Heading3 from "../components/heading-3/heading-3"
-import Carousel from "../components/carousel/carousel"
-import Media from "../components/media/media"
-import Paragraph from "../components/paragraph/paragraph"
 
 function ProjectPageTemplate({ data: { project, media } }) {
   let shortcodes = { Carousel, Fade, Img, Media, Reveal }
 
   let components = {
     ...shortcodes,
-    h2: Heading2,
-    h3: Heading3,
-    p: Paragraph,
   }
 
   const getMediaDesc = index => {

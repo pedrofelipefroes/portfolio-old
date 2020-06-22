@@ -1,4 +1,3 @@
-import Img from "gatsby-image"
 import PropTypes from "prop-types"
 import React, { Component } from "react"
 
