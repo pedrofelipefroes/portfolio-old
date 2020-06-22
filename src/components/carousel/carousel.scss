@@ -2,7 +2,6 @@
 
 .c-carousel {
   display: grid;
-  padding: 0 map-get($spacing, "L");
 
   .u-text-container + & {
     padding-top: map-get($spacing, "XL");
@@ -47,7 +46,7 @@
   }
 
   .carousel .control-dots {
-    margin: map-get($spacing, "S") 0 0;
+    padding: 0 map-get($spacing, "L") 0 0;
     position: relative;
     text-align: right;
 
